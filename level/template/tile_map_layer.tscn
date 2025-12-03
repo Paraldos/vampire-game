@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bddmso73hq54k"]
+[gd_scene load_steps=9 format=3 uid="uid://bddmso73hq54k"]
 
 [ext_resource type="Texture2D" uid="uid://cbuvqud3fdove" path="res://assets/images/watertiles.png" id="1_nmjxy"]
 [ext_resource type="Texture2D" uid="uid://c4pesjgecbk3l" path="res://assets/images/grasstile.png" id="2_vrdux"]
 [ext_resource type="Texture2D" uid="uid://imfxc040v35h" path="res://assets/images/buildingtile.png" id="3_3enmj"]
+[ext_resource type="Script" uid="uid://drosqth72i1i" path="res://level/template/tile_map_layer.gd" id="4_vrdux"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_036b0"]
 texture = ExtResource("1_nmjxy")
@@ -29,6 +30,7 @@ texture_region_size = Vector2i(8, 8)
 0:0/0/z_index = 1
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 1:0/0 = 0
+1:0/0/z_index = 1
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 1:1/0 = 0
@@ -45,4 +47,5 @@ sources/3 = SubResource("TileSetAtlasSource_bj0lu")
 
 [node name="TileMapLayer" type="TileMapLayer"]
 tile_set = SubResource("TileSet_tlwt5")
+script = ExtResource("4_vrdux")
 metadata/_edit_lock_ = true
