@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ecaqckrc07h8" path="res://dialog_controller/dialog_ui.gd" id="1_172wb"]
 
 [node name="DialogTemplate" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_172wb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

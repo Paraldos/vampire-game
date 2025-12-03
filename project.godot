@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogController="*res://dialog_controller/dialog_controller.tscn"
+SignalController="*res://signal_controller/signal_controller.tscn"
 
 [display]
 

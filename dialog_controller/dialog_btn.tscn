@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6yt3i33tcpd1"]
+
+[ext_resource type="Script" uid="uid://0b6xiv4nmbt0" path="res://dialog_controller/dialog_btn.gd" id="1_ybvjm"]
+
+[node name="DialogBtn" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_ybvjm")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

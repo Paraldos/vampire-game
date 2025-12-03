@@ -13,20 +13,21 @@ btn_text = "Test"
 options = [NodePath("../test2"), NodePath("../test3"), NodePath("../test4")]
 metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
 
-[node name="test2" type="Node" parent="."]
+[node name="test2" type="Node" parent="." node_paths=PackedStringArray("options")]
 script = ExtResource("2_tkkac")
-paragraph_text = "test paragraph"
+paragraph_text = "Test2 Paragraph"
 btn_text = "Test2"
+options = [NodePath("../test4")]
 metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
 
 [node name="test3" type="Node" parent="."]
 script = ExtResource("2_tkkac")
-paragraph_text = "test paragraph"
+paragraph_text = "Rest3 paragraph"
 btn_text = "Test3"
 metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
 
 [node name="test4" type="Node" parent="."]
 script = ExtResource("2_tkkac")
-paragraph_text = "test paragraph"
+paragraph_text = "test4 paragraph"
 btn_text = "Test4"
 metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
