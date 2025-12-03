@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx08tb7na0ym5"]
+[gd_scene load_steps=3 format=3 uid="uid://dx08tb7na0ym5"]
 
 [ext_resource type="Script" uid="uid://ecaqckrc07h8" path="res://dialog_controller/dialog_ui.gd" id="1_172wb"]
+[ext_resource type="Theme" uid="uid://3ftmlmopt0i6" path="res://themes/main_theme.tres" id="2_rcocg"]
 
 [node name="DialogTemplate" type="CanvasLayer"]
 process_mode = 3
@@ -10,9 +11,11 @@ script = ExtResource("1_172wb")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 160.0
+offset_top = 188.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_rcocg")
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
@@ -33,6 +36,7 @@ layout_mode = 2
 [node name="paragraph" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Bert"
 
 [node name="option_btns" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
