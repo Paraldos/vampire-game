@@ -15,6 +15,10 @@ run/main_scene="uid://beas7opmmqyt1"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogController="*res://dialog_controller/dialog_controller.tscn"
+
 [display]
 
 window/size/viewport_width=320

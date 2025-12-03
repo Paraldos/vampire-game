@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://u0kwuegmiu1w"]
+
+[ext_resource type="Script" uid="uid://bbiao0h6qf8of" path="res://dialog_controller/dialog_controller.gd" id="1_le42q"]
+[ext_resource type="Script" uid="uid://d0aba2e1s8rqx" path="res://dialog_controller/dialog_option.gd" id="2_tkkac"]
+
+[node name="DialogController" type="Node"]
+script = ExtResource("1_le42q")
+
+[node name="test" type="Node" parent="." node_paths=PackedStringArray("options")]
+script = ExtResource("2_tkkac")
+paragraph_text = "test paragraph"
+btn_text = "Test"
+options = [NodePath("../test2"), NodePath("../test3"), NodePath("../test4")]
+metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
+
+[node name="test2" type="Node" parent="."]
+script = ExtResource("2_tkkac")
+paragraph_text = "test paragraph"
+btn_text = "Test2"
+metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
+
+[node name="test3" type="Node" parent="."]
+script = ExtResource("2_tkkac")
+paragraph_text = "test paragraph"
+btn_text = "Test3"
+metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
+
+[node name="test4" type="Node" parent="."]
+script = ExtResource("2_tkkac")
+paragraph_text = "test paragraph"
+btn_text = "Test4"
+metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
