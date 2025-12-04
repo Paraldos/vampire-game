@@ -6,32 +6,26 @@
 [node name="DialogController" type="Node"]
 script = ExtResource("1_le42q")
 
-[node name="test" type="Node" parent="." node_paths=PackedStringArray("options")]
+[node name="TestNPC" type="Node" parent="." node_paths=PackedStringArray("options")]
 script = ExtResource("2_tkkac")
 speaker = "Test NPC"
 paragraph_text = "test paragraph"
-btn_text = "Test"
-options = [NodePath("../test2"), NodePath("../test3"), NodePath("../test4")]
+btn_text = "Return"
+options = [NodePath("TestNPC1"), NodePath("TestNPC2")]
+add_end_conversation = true
 metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
 
-[node name="test2" type="Node" parent="." node_paths=PackedStringArray("options")]
+[node name="TestNPC1" type="Node" parent="TestNPC"]
 script = ExtResource("2_tkkac")
 speaker = "Test NPC"
-paragraph_text = "Test2 Paragraph"
-btn_text = "Test2"
-options = [NodePath("../test4")]
+paragraph_text = "Dies Ist Antwort 1"
+btn_text = "Antwort 1"
 metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
 
-[node name="test3" type="Node" parent="."]
+[node name="TestNPC2" type="Node" parent="TestNPC" node_paths=PackedStringArray("options")]
 script = ExtResource("2_tkkac")
 speaker = "Test NPC"
-paragraph_text = "Rest3 paragraph"
-btn_text = "Test3"
-metadata/_custom_type_script = "uid://d0aba2e1s8rqx"
-
-[node name="test4" type="Node" parent="."]
-script = ExtResource("2_tkkac")
-speaker = "Test NPC"
-paragraph_text = "test4 paragraph"
-btn_text = "Test4"
+paragraph_text = "Dies ist Antwort 2"
+btn_text = "Antwort 2"
+options = [NodePath("..")]
 metadata/_custom_type_script = "uid://d0aba2e1s8rqx"

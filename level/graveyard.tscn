@@ -14,7 +14,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAIAAwAAAAA
 position = Vector2(136, 56)
 
 [node name="Player" parent="." index="2" instance=ExtResource("2_ujcix")]
-position = Vector2(56, 72)
+position = Vector2(136, 80)
 
 [node name="SceneTransition" parent="." index="3" instance=ExtResource("4_wb1sq")]
 position = Vector2(320, 120)

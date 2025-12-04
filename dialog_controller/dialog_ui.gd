@@ -34,6 +34,9 @@ func _update_btns():
 		var btn = option_btn_bp.instantiate()
 		btn.option = option
 		option_btns.add_child(btn)
+	if current_dialog.add_end_conversation:
+		var btn = option_btn_bp.instantiate()
+		option_btns.add_child(btn)
 	if current_dialog.options.size() == 0:
 		var btn = option_btn_bp.instantiate()
 		option_btns.add_child(btn)
