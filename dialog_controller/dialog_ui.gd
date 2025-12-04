@@ -37,3 +37,9 @@ func _update_btns():
 	if current_dialog.options.size() == 0:
 		var btn = option_btn_bp.instantiate()
 		option_btns.add_child(btn)
+	call_deferred("_focus_first_button")
+
+func _focus_first_button() -> void:
+	await get_tree().create_timer(0.03).timeout
+	var first := option_btns.get_child(0)
+	first.grab_focus()
