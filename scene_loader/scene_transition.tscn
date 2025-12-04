@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://djhrq1blg40jy"]
+
+[ext_resource type="Script" uid="uid://dr1tord2oabtk" path="res://scene_loader/scene_transition.gd" id="1_p7sgy"]
+[ext_resource type="PackedScene" uid="uid://cagqcctl84hi2" path="res://scene_loader/transition_point.tscn" id="2_rtjfw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mporx"]
+size = Vector2(176, 4)
+
+[node name="SceneTransition" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_p7sgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_mporx")
+
+[node name="TransitionTargetPoint" parent="." instance=ExtResource("2_rtjfw")]
+position = Vector2(0, 16)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
