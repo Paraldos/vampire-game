@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var paragraph: Label = %paragraph
-@onready var option_btns: HBoxContainer = %option_btns
+@onready var option_btns: VBoxContainer = %option_btns
 var current_dialog
 var option_btn_bp = preload("res://dialog_controller/dialog_btn.tscn")
 
@@ -22,7 +22,10 @@ func _on_change_dialog(new_dialog):
 	_update_btns()
 
 func _update_text():
-	paragraph.text = current_dialog.paragraph_text
+	paragraph.text = ""
+	if current_dialog.speaker:
+		paragraph.text += current_dialog.speaker + ": "
+	paragraph.text += current_dialog.paragraph_text
 
 func _update_btns():
 	for btn in option_btns.get_children():

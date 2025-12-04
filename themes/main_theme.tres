@@ -1,4 +1,43 @@
-[gd_resource type="Theme" format=3 uid="uid://3ftmlmopt0i6"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://3ftmlmopt0i6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxwtt"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.1882353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjgu6"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.1882353)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vu6l5"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vu6l5"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.1882353)
 
 [resource]
 default_font_size = 6
+Button/colors/font_color = Color(0.65882355, 0.70980394, 0.69803923, 1)
+Button/colors/font_focus_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+Button/colors/font_hover_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+Button/colors/font_hover_pressed_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+Button/colors/font_pressed_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+Button/constants/outline_size = 2
+Button/styles/focus = SubResource("StyleBoxFlat_vxwtt")
+Button/styles/hover = SubResource("StyleBoxFlat_rjgu6")
+Button/styles/normal = SubResource("StyleBoxEmpty_vu6l5")
+Button/styles/pressed = SubResource("StyleBoxFlat_vu6l5")
+Label/colors/font_color = Color(0.65882355, 0.70980394, 0.69803923, 1)
+Label/constants/outline_size = 2
