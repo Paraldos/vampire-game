@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 DialogController="*res://dialog_controller/dialog_controller.tscn"
 SignalController="*res://signal_controller/signal_controller.tscn"
 SceneLoader="*res://scene_loader/scene_loader.tscn"
+Utils="*res://utils.tscn"
 
 [display]
 
