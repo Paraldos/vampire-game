@@ -1,15 +1,31 @@
 extends Node2D
 
-@export var speed: float = 70.0
-var path : Array[Vector2]
-var move_speed = 0.2
-var moving = false
+@onready var camera: Camera2D = %Camera2D
 
-func _physics_process(_delta: float) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+var path : Array[Vector2]
+var current_target: Vector2
+var speed := 80.0
+var moving := false
+
+func _ready() -> void:
+	_init_camera()
+
+func _init_camera():
+	var rect: Rect2i = Utils.map.get_used_rect()
+	var tile_size := Utils.map.tile_set.tile_size.x
+	camera.limit_left   = rect.position.x * tile_size
+	camera.limit_top    = rect.position.y * tile_size
+	camera.limit_right  = rect.end.x * tile_size
+	camera.limit_bottom = rect.end.y * tile_size
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed('left_click'):
 		_on_left_click()
-	if path and not moving:
-		_move()
+	if not moving and path.size() > 0:
+		current_target = path.pop_front()
+		moving = true
+	if moving:
+		_move(delta)
 
 func _on_left_click():
 	# player tile
@@ -22,15 +38,11 @@ func _on_left_click():
 	path.clear()
 	for tile in tile_path:
 		path.append(Utils.map.map_to_local(tile))
-	print(tile_path)
-	print(path)
-	if path.size() > 0 and global_position.distance_to(path[0]) < 0.5:
+	if path.size() > 0 and global_position.distance_to(path[0]) < 1.0:
 		path.pop_front()
 
-func _move():
-	moving = true
-	var target = path.pop_front()
-	var tween = create_tween()
-	tween.tween_property(self, "global_position", target, move_speed)
-	await tween.finished
-	moving = false
+func _move(delta: float) -> void:
+	global_position = global_position.move_toward(current_target, speed * delta)
+	if global_position.distance_to(current_target) < 0.01:
+		global_position = current_target
+		moving = false
