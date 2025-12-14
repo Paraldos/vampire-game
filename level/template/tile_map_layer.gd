@@ -10,7 +10,6 @@ var astar_grid
 
 func _ready() -> void:
 	Utils.map = self
-	_adjust_building_rim()
 	_init_astar()
 
 func _adjust_building_rim() -> void:
@@ -33,7 +32,7 @@ func _cell_matches(cell: Vector2i, source_id: int, atlas_coords: Vector2i) -> bo
 func _init_astar():
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = Rect2i(get_used_rect())
-	astar_grid.cell_size = Vector2i(8,8)
+	astar_grid.cell_size = Vector2i(16,16)
 	astar_grid.default_compute_heuristic = AStarGrid2D.HEURISTIC_OCTILE
 	astar_grid.update()
 	for cell: Vector2i in get_used_cells():

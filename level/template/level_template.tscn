@@ -7,4 +7,16 @@
 y_sort_enabled = true
 script = ExtResource("1_smkg2")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03529412, 0.039215688, 0.078431375, 1)
+
 [node name="TileMapLayer" parent="." instance=ExtResource("2_fovfw")]
+tile_map_data = PackedByteArray()
