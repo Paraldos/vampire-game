@@ -6,10 +6,10 @@ const BUILDING_SOURCE_ID: int = 3
 const BUILDING_RIM_ATLAS: Vector2i = Vector2i(0, 0)
 const BUILDING_RIM_REPLACEMENT_ATLAS: Vector2i = Vector2i(1, 0)
 const BUILDING_WALL_ATLAS = Vector2(0,1)
+var astar_grid
 
 func _ready() -> void:
-	Utils.visible_path = line_2d
-	Utils.tile_map = self
+	Utils.map = self
 	_adjust_building_rim()
 	_init_astar()
 
@@ -31,13 +31,24 @@ func _cell_matches(cell: Vector2i, source_id: int, atlas_coords: Vector2i) -> bo
 	return cell_source_id == source_id and cell_atlas == atlas_coords
 
 func _init_astar():
-	Utils.astar_grid = AStarGrid2D.new()
-	Utils.astar_grid.region = Rect2i(get_used_rect())
-	Utils.astar_grid.cell_size = Vector2i(16,16)
-	# Utils.astar_grid.Heuristic = AStarGrid2D.HEURISTIC_OCTILE
-	Utils.astar_grid.update()
+	astar_grid = AStarGrid2D.new()
+	astar_grid.region = Rect2i(get_used_rect())
+	astar_grid.cell_size = Vector2i(16,16)
+	astar_grid.default_compute_heuristic = AStarGrid2D.HEURISTIC_OCTILE
+	astar_grid.update()
 	for cell: Vector2i in get_used_cells():
 		if _cell_matches(cell, BUILDING_SOURCE_ID, BUILDING_WALL_ATLAS):
-			Utils.astar_grid.set_point_solid(cell)
+			astar_grid.set_point_solid(cell)
 		if _cell_matches(cell, BUILDING_SOURCE_ID, BUILDING_RIM_ATLAS):
-			Utils.astar_grid.set_point_solid(cell)
+			astar_grid.set_point_solid(cell)
+
+func _update_visible_path(path):
+	var new_points: PackedVector2Array = []
+	for point in path:
+		new_points.append(point * 8)
+	line_2d.points = new_points
+
+func get_astar_path(start_cell, target_cell):
+	var path = astar_grid.get_id_path(start_cell, target_cell)
+	_update_visible_path(path)
+	return path
