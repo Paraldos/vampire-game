@@ -7,6 +7,7 @@ var moving := false
 
 func _ready() -> void:
 	SignalController.left_click_enemy.connect(_on_left_click_enemy)
+	SignalController.left_clicked_floor.connect(_on_left_clicked_floor)
 
 func _physics_process(delta: float) -> void:
 	# if Input.is_action_just_pressed('left_click'):
@@ -17,8 +18,9 @@ func _physics_process(delta: float) -> void:
 	if moving:
 		_move(delta)
 
-func _on_left_click():
-	path = _get_path(get_global_mouse_position())
+func _on_left_clicked_floor(target_cell):
+	var tile_path = _get_tile_path(target_cell)
+	path = _tile_path_to_cell_path(tile_path)
 
 func _on_left_click_enemy(enemy : Enemy):
 	path = _get_path_to_target(enemy.global_position)

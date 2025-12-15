@@ -9,6 +9,16 @@ func _ready() -> void:
 	Utils.map = self
 	_init_astar()
 
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed('left_click'):
+		var local_mouse := to_local(get_global_mouse_position())
+		var cell: Vector2i = local_to_map(local_mouse)
+		if not astar_grid.region.has_point(cell):
+			return
+		if astar_grid.is_point_solid(cell):
+			return
+		SignalController.left_clicked_floor.emit(cell)
+
 func _init_astar():
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = Rect2i(get_used_rect())
