@@ -1,26 +1,16 @@
 extends Node2D
 
-@onready var camera: Camera2D = %Camera2D
-
 var path : Array[Vector2]
 var current_target: Vector2
 var speed := 80.0
 var moving := false
 
 func _ready() -> void:
-	_init_camera()
-
-func _init_camera():
-	var rect: Rect2i = Utils.map.get_used_rect()
-	var tile_size := Utils.map.tile_set.tile_size.x
-	camera.limit_left   = rect.position.x * tile_size
-	camera.limit_top    = rect.position.y * tile_size
-	camera.limit_right  = rect.end.x * tile_size
-	camera.limit_bottom = rect.end.y * tile_size
+	SignalController.left_click_enemy.connect(_on_left_click_enemy)
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed('left_click'):
-		_on_left_click()
+	# if Input.is_action_just_pressed('left_click'):
+	# 	_on_left_click()
 	if not moving and path.size() > 0:
 		current_target = path.pop_front()
 		moving = true
@@ -28,21 +18,56 @@ func _physics_process(delta: float) -> void:
 		_move(delta)
 
 func _on_left_click():
-	# player tile
-	var player_tile: Vector2i = Utils.map.local_to_map(global_position)
-	if path.size() > 0: player_tile = Utils.map.local_to_map(path[0])
-	# clicked tile
-	var clicked_tile: Vector2i = Utils.map.local_to_map(get_global_mouse_position())
-	# path
-	var tile_path: Array[Vector2i] = Utils.map.get_astar_path(player_tile, clicked_tile)
-	path.clear()
-	for tile in tile_path:
-		path.append(Utils.map.map_to_local(tile))
-	if path.size() > 0 and global_position.distance_to(path[0]) < 1.0:
-		path.pop_front()
+	path = _get_path(get_global_mouse_position())
+
+func _on_left_click_enemy(enemy : Enemy):
+	path = _get_path_to_target(enemy.global_position)
 
 func _move(delta: float) -> void:
 	global_position = global_position.move_toward(current_target, speed * delta)
 	if global_position.distance_to(current_target) < 0.01:
 		global_position = current_target
 		moving = false
+
+# ========================================= Helper
+func _get_tile_path(target_cell) -> Array[Vector2i]:
+	var player_cell: Vector2i = Utils.map.local_to_map(global_position)
+	if path.size() > 0:
+		player_cell = Utils.map.local_to_map(path[0])
+	return Utils.map.get_astar_path(player_cell, target_cell)
+
+func _get_path(target_position) -> Array[Vector2]:
+	var tile_path = _get_tile_path(Utils.map.local_to_map(target_position))
+	return _tile_path_to_cell_path(tile_path)
+
+func _tile_path_to_cell_path(tile_path : Array[Vector2i]):
+	var pos_path : Array[Vector2]
+	for tile in tile_path:
+		pos_path.append(Utils.map.map_to_local(tile))
+	if pos_path.size() > 0 and global_position.distance_to(pos_path[0]) < 1.0:
+		pos_path.pop_front()
+	return pos_path
+
+func _get_path_to_target(target_pos : Vector2) -> Array[Vector2]:
+	var player_cell: Vector2i = Utils.map.local_to_map(global_position) 
+	var target_cell = Utils.map.local_to_map(target_pos)
+	var surronding_cells = [
+		target_cell + Vector2i(1,0),
+		target_cell + Vector2i(-1,0),
+		target_cell + Vector2i(0,1),
+		target_cell + Vector2i(0,-1),
+	]
+	if surronding_cells.has(player_cell):
+		return [] as Array[Vector2]
+	var best_path: Array[Vector2i] = []
+	for cell in surronding_cells:
+		if not Utils.map.astar_grid.region.has_point(cell):
+			continue
+		if Utils.map.astar_grid.is_point_solid(cell):
+			continue
+		var p: Array[Vector2i] = _get_tile_path(cell)
+		if p.is_empty():
+			continue
+		if best_path.size() == 0 or p.size() < best_path.size():
+			best_path = p
+	return _tile_path_to_cell_path(best_path)

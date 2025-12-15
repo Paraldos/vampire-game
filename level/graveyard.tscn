@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dxwnxtp3cmvgj" path="res://level/template/level_template.tscn" id="1_ggvrn"]
 [ext_resource type="PackedScene" uid="uid://bmvw4pnmvyhoh" path="res://player/player.tscn" id="2_ujcix"]
 [ext_resource type="PackedScene" uid="uid://c0xj1midoc787" path="res://level/deco/torch.tscn" id="3_v1x5o"]
-[ext_resource type="PackedScene" uid="uid://ymwlpt7cigxr" path="res://npcs/template/npc.tscn" id="4_wb1sq"]
+[ext_resource type="PackedScene" uid="uid://ymwlpt7cigxr" path="res://enemies/template/enemy.tscn" id="4_wb1sq"]
 
 [node name="Graveyard" instance=ExtResource("1_ggvrn")]
 
@@ -37,5 +37,5 @@ position = Vector2(0, 79)
 [node name="Torch8" parent="Deco" index="7" instance=ExtResource("3_v1x5o")]
 position = Vector2(112, 47)
 
-[node name="NPC" parent="." index="4" instance=ExtResource("4_wb1sq")]
+[node name="Enemy" parent="." index="4" instance=ExtResource("4_wb1sq")]
 position = Vector2(288, 96)
