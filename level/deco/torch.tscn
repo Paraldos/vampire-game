@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0xj1midoc787"]
+
+[ext_resource type="Texture2D" uid="uid://vvmgekunskjy" path="res://assets/images/torch-Sheet.png" id="1_ug6dg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ddvv"]
+atlas = ExtResource("1_ug6dg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14xjk"]
+atlas = ExtResource("1_ug6dg")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn6wh"]
+atlas = ExtResource("1_ug6dg")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wynsr"]
+atlas = ExtResource("1_ug6dg")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ay5lt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ddvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14xjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn6wh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wynsr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Torch" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_ay5lt")
+autoplay = "default"
+frame_progress = 0.03509066
