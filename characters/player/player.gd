@@ -64,10 +64,8 @@ func _attack(target_position : Vector2):
 
 func _move(delta: float) -> void:
 	global_position = global_position.move_toward(movement_target, speed * delta)
-	if global_position.x < movement_target.x and main_sprite.flip_h == false:
-		main_sprite.flip_h = true
-	if global_position.x > movement_target.x and main_sprite.flip_h == true:
-		main_sprite.flip_h = false
+	if global_position.x != movement_target.x:
+		main_sprite.flip_h = global_position.x > movement_target.x
 	if global_position.distance_to(movement_target) < 0.01:
 		global_position = movement_target
 		moving = false
