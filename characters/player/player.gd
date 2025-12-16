@@ -14,48 +14,53 @@ var speed := 80.0
 var moving := false
 var target_enemy : Enemy
 var rng = RandomNumberGenerator.new()
+var attacking = false
 
 func _ready() -> void:
 	rng.randomize()
 	SignalController.left_click_enemy.connect(_on_left_click_enemy)
 	SignalController.left_clicked_floor.connect(_on_left_clicked_floor)
 
-func _on_left_clicked_floor(target_cell):
-	if Input.is_action_pressed('shift'):
-		_shift_click()
-	else:
-		var tile_path = movement_helper.get_tile_path(target_cell)
-		path = movement_helper.tile_path_to_cell_path(tile_path)
-		target_enemy = null
-
-func _on_left_click_enemy(enemy : Enemy):
-	if Input.is_action_pressed('shift'):
-		_shift_click()
-	else:
-		path = movement_helper.get_path_to_target(enemy.global_position)
-		target_enemy = enemy
-
-func _shift_click():
-	var target_cell = movement_helper.pos_to_cell(get_global_mouse_position())
-	var target_position = movement_helper.cell_to_pos(target_cell)
-	_attack(target_position)
-
 func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed('left_click') and Input.is_action_pressed('shift'):
+		_shift_click()
 	if not moving and target_enemy and movement_helper._target_is_neighbour(target_enemy.global_position):
-			_attack(target_enemy.global_position)
+		_attack(target_enemy.global_position  + Vector2(8,8))
+		target_enemy = null
 	if not moving and path.size() > 0:
 		movement_target = path.pop_front()
 		moving = true
 	if moving:
 		_move(delta)
 
+func _on_left_clicked_floor(target_cell):
+	if Input.is_action_pressed('shift'): return
+	if attacking: return
+	else:
+		var tile_path = movement_helper.get_tile_path(target_cell)
+		path = movement_helper.tile_path_to_cell_path(tile_path)
+		target_enemy = null
+
+func _on_left_click_enemy(enemy : Enemy):
+	if Input.is_action_pressed('shift'): return
+	if attacking: return
+	else:
+		path = movement_helper.get_path_to_target(enemy.global_position)
+		target_enemy = enemy
+
+func _shift_click():
+	if attacking: return
+	_attack(get_global_mouse_position())
+
 func _attack(target_position : Vector2):
-	sword_animation.look_at(target_position + Vector2(8,8))
-	sword_animation.play()
-	animation_player_main.play('attack')
-	hitbox.look_at(target_position + Vector2(8,8))
+	attacking = true
+	hitbox.look_at(target_position)
 	hitbox.enable()
-	target_enemy = null
+	animation_player_main.play('attack')
+	sword_animation.look_at(target_position)
+	sword_animation.play()
+	await sword_animation.finished
+	attacking = false
 
 func _move(delta: float) -> void:
 	global_position = global_position.move_toward(movement_target, speed * delta)

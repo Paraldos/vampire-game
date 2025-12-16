@@ -1,7 +1,7 @@
 extends Node2D
 
 var rng = RandomNumberGenerator.new()
-signal animation_finished
+signal finished
 
 func _ready() -> void:
 	rng.randomize()
@@ -14,4 +14,4 @@ func play():
 	sprit.play()
 	await sprit.animation_finished
 	sprit.visible = false
-	animation_finished.emit()
+	finished.emit()
