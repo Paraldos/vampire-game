@@ -4,6 +4,7 @@ extends Node2D
 @onready var animation_player_main: AnimationPlayer = %AnimationPlayerMain
 
 @onready var sword_animation: Node2D = %SwordAnimation
+@onready var hitbox: Hitbox = $Hitbox
 
 @onready var movement_helper: Node2D = %MovementHelper
 
@@ -39,9 +40,15 @@ func _physics_process(delta: float) -> void:
 
 func _attack():
 	if not movement_helper._target_is_neighbour(target_enemy.global_position): return
+
 	sword_animation.look_at(target_enemy.global_position + Vector2(8,8))
 	sword_animation.play()
+
 	animation_player_main.play('attack')
+
+	hitbox.look_at(target_enemy.global_position + Vector2(8,8))
+	hitbox.enable()
+
 	target_enemy = null
 
 func _move(delta: float) -> void:
