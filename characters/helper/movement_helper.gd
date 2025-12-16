@@ -1,23 +1,29 @@
 extends Node2D
 
+func pos_to_cell(pos : Vector2) -> Vector2i:
+	return Utils.map.local_to_map(pos)
+
+func cell_to_pos(cell) -> Vector2:
+	return Utils.map.map_to_local(cell)
+
 func get_tile_path(target_cell) -> Array[Vector2i]:
-	var player_cell: Vector2i = Utils.map.local_to_map(global_position)
+	var player_cell: Vector2i = pos_to_cell(global_position)
 	return Utils.map.get_astar_path(player_cell, target_cell)
 
 func get_position_path(target_position) -> Array[Vector2]:
-	var tile_path = get_tile_path(Utils.map.local_to_map(target_position))
+	var tile_path = get_tile_path(pos_to_cell(target_position))
 	return tile_path_to_cell_path(tile_path)
 
 func tile_path_to_cell_path(tile_path : Array[Vector2i]):
 	var pos_path : Array[Vector2]
 	for tile in tile_path:
-		pos_path.append(Utils.map.map_to_local(tile))
+		pos_path.append(cell_to_pos(tile))
 	if pos_path.size() > 0 and global_position.distance_to(pos_path[0]) < 1.0:
 		pos_path.pop_front()
 	return pos_path
 
 func _get_surronding_cells(target_pos : Vector2) -> Array:
-	var target_cell = Utils.map.local_to_map(target_pos)
+	var target_cell = pos_to_cell(target_pos)
 	var surronding_cells = [
 		target_cell + Vector2i(1,0),
 		target_cell + Vector2i(-1,0),
@@ -27,7 +33,7 @@ func _get_surronding_cells(target_pos : Vector2) -> Array:
 	return surronding_cells
 
 func _target_is_neighbour(target_pos : Vector2) -> bool:
-	var player_cell: Vector2i = Utils.map.local_to_map(global_position)
+	var player_cell: Vector2i = pos_to_cell(global_position)
 	var surronding_cells = _get_surronding_cells(target_pos)
 	return surronding_cells.has(player_cell)
 

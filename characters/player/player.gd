@@ -21,34 +21,40 @@ func _ready() -> void:
 	SignalController.left_clicked_floor.connect(_on_left_clicked_floor)
 
 func _on_left_clicked_floor(target_cell):
-	var tile_path = movement_helper.get_tile_path(target_cell)
-	path = movement_helper.tile_path_to_cell_path(tile_path)
-	target_enemy = null
+	if Input.is_action_pressed('shift'):
+		_shift_click()
+	else:
+		var tile_path = movement_helper.get_tile_path(target_cell)
+		path = movement_helper.tile_path_to_cell_path(tile_path)
+		target_enemy = null
 
 func _on_left_click_enemy(enemy : Enemy):
-	path = movement_helper.get_path_to_target(enemy.global_position)
-	target_enemy = enemy
+	if Input.is_action_pressed('shift'):
+		_shift_click()
+	else:
+		path = movement_helper.get_path_to_target(enemy.global_position)
+		target_enemy = enemy
+
+func _shift_click():
+	var target_cell = movement_helper.pos_to_cell(get_global_mouse_position())
+	var target_position = movement_helper.cell_to_pos(target_cell)
+	_attack(target_position)
 
 func _physics_process(delta: float) -> void:
-	if not moving and target_enemy:
-		_attack()
+	if not moving and target_enemy and movement_helper._target_is_neighbour(target_enemy.global_position):
+			_attack(target_enemy.global_position)
 	if not moving and path.size() > 0:
 		movement_target = path.pop_front()
 		moving = true
 	if moving:
 		_move(delta)
 
-func _attack():
-	if not movement_helper._target_is_neighbour(target_enemy.global_position): return
-
-	sword_animation.look_at(target_enemy.global_position + Vector2(8,8))
+func _attack(target_position : Vector2):
+	sword_animation.look_at(target_position + Vector2(8,8))
 	sword_animation.play()
-
 	animation_player_main.play('attack')
-
-	hitbox.look_at(target_enemy.global_position + Vector2(8,8))
+	hitbox.look_at(target_position + Vector2(8,8))
 	hitbox.enable()
-
 	target_enemy = null
 
 func _move(delta: float) -> void:
