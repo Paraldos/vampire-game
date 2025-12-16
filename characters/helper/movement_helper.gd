@@ -16,8 +16,7 @@ func tile_path_to_cell_path(tile_path : Array[Vector2i]):
 		pos_path.pop_front()
 	return pos_path
 
-func get_path_to_target(target_pos : Vector2) -> Array[Vector2]:
-	var player_cell: Vector2i = Utils.map.local_to_map(global_position) 
+func _get_surronding_cells(target_pos : Vector2) -> Array:
 	var target_cell = Utils.map.local_to_map(target_pos)
 	var surronding_cells = [
 		target_cell + Vector2i(1,0),
@@ -25,7 +24,16 @@ func get_path_to_target(target_pos : Vector2) -> Array[Vector2]:
 		target_cell + Vector2i(0,1),
 		target_cell + Vector2i(0,-1),
 	]
-	if surronding_cells.has(player_cell):
+	return surronding_cells
+
+func _target_is_neighbour(target_pos : Vector2) -> bool:
+	var player_cell: Vector2i = Utils.map.local_to_map(global_position)
+	var surronding_cells = _get_surronding_cells(target_pos)
+	return surronding_cells.has(player_cell)
+
+func get_path_to_target(target_pos : Vector2) -> Array[Vector2]:
+	var surronding_cells = _get_surronding_cells(target_pos)
+	if _target_is_neighbour(target_pos):
 		return [] as Array[Vector2]
 	var best_path: Array[Vector2i] = []
 	for cell in surronding_cells:

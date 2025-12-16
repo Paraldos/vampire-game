@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://ymwlpt7cigxr"]
 
 [ext_resource type="Texture2D" uid="uid://cvuecmxmvt6ng" path="res://assets/images/practice_dummy.png" id="1_3ottj"]
-[ext_resource type="Script" uid="uid://pkbjlgvwgg2c" path="res://enemies/template/enemy.gd" id="1_wqjt8"]
-[ext_resource type="Shader" uid="uid://83s7q3gacun4" path="res://enemies/template/outline.gdshader" id="2_g5l37"]
+[ext_resource type="Script" uid="uid://pkbjlgvwgg2c" path="res://characters/enemies/template/enemy.gd" id="1_wqjt8"]
+[ext_resource type="Shader" uid="uid://83s7q3gacun4" path="res://characters/enemies/template/outline.gdshader" id="2_g5l37"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_knr1s"]
 shader = ExtResource("2_g5l37")
