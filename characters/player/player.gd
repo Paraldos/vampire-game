@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var main_sprite: Sprite2D = %MainSprite
-@onready var animation_player_main: AnimationPlayer = %AnimationPlayerMain
+@onready var character_sprite_container: Node2D = %CharacterSpriteContainer
+@onready var character_sprite: Sprite2D = %CharacterSprite
 @onready var sword_animation: Node2D = %SwordAnimation
 @onready var hitbox: Hitbox = $Hitbox
 @onready var character_helper: Node2D = $CharacterHelper
@@ -57,9 +57,9 @@ func _shift_click():
 
 func _attack(target_position : Vector2):
 	attacking = true
+	character_sprite.attack_animation(target_position)
 	hitbox.look_at(target_position)
 	hitbox.enable()
-	animation_player_main.play('attack')
 	sword_animation.look_at(target_position)
 	sword_animation.play()
 	await sword_animation.finished
@@ -67,8 +67,6 @@ func _attack(target_position : Vector2):
 
 func _move(delta: float) -> void:
 	global_position = global_position.move_toward(movement_target, speed * delta)
-	if global_position.x != movement_target.x:
-		main_sprite.flip_h = global_position.x > movement_target.x
 	if global_position.distance_to(movement_target) < 0.01:
 		global_position = movement_target
 		moving = false
