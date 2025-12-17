@@ -24,14 +24,14 @@ func attack_animation(target_pos: Vector2) -> void:
 	attacking = false
 	animation_player_main.play("idle")
 
-func _lunge_animation(lunge_pos: Vector2):
+func _lunge_animation(lunge_pos: Vector2) -> void:
 	var attack_tween: Tween
 	var old_pos := global_position
 	global_position += lunge_pos
 	attack_tween = create_tween()
 	attack_tween.tween_property(self, "global_position", old_pos, attack_time)
 
-func _squeeze_animation(dir : Vector2):
+func _squeeze_animation(dir : Vector2) -> void:
 	var old_scale := scale
 	var squeeze := Vector2.ONE
 	var squeeze_tween: Tween
