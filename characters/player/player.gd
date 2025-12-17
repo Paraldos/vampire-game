@@ -2,19 +2,19 @@ extends Node2D
 
 @onready var main_sprite: Sprite2D = %MainSprite
 @onready var animation_player_main: AnimationPlayer = %AnimationPlayerMain
-
 @onready var sword_animation: Node2D = %SwordAnimation
 @onready var hitbox: Hitbox = $Hitbox
-
 @onready var movement_helper: Node2D = %MovementHelper
 
-var path : Array[Vector2]
+var path : Array[Vector2i]
 var movement_target: Vector2
 var speed := 80.0
 var moving := false
 var target_enemy : Enemy
 var rng = RandomNumberGenerator.new()
 var attacking = false
+var player_cell : Vector2i :
+	get: return Utils.pos_to_cell(global_position)
 
 func _ready() -> void:
 	rng.randomize()
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		_attack(target_enemy.global_position  + Vector2(8,8))
 		target_enemy = null
 	if not moving and path.size() > 0:
-		movement_target = path.pop_front()
+		movement_target = Utils.cell_to_pos(path.pop_front())
 		moving = true
 	if moving:
 		_move(delta)
@@ -37,10 +37,8 @@ func _on_left_clicked_floor(target_cell):
 	if Input.is_action_pressed('shift'): return
 	if attacking: return
 	else:
-		var tile_path = movement_helper.get_tile_path(target_cell)
-		path = movement_helper.tile_path_to_cell_path(tile_path)
-		if moving:
-			path.pop_front()
+		path = Utils.map.get_astar_path(player_cell, target_cell)
+		if moving: path.pop_front()
 		target_enemy = null
 
 func _on_left_click_enemy(enemy : Enemy):
