@@ -35,7 +35,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 5.0
 }]
 
 [node name="Torch" type="Node2D"]
@@ -44,4 +44,4 @@ animations = [{
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_ay5lt")
 autoplay = "default"
-frame_progress = 0.03509066
+frame_progress = 0.7227619

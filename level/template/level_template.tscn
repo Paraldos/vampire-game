@@ -18,8 +18,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.03529412, 0.039215688, 0.078431375, 1)
+metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_fovfw")]
 
 [node name="Deco" type="Node2D" parent="."]
 position = Vector2(0, 1)
+metadata/_edit_lock_ = true
