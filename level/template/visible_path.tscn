@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://2kidiv2auf0x"]
+
+[ext_resource type="Script" uid="uid://cf7ahr64fnxw0" path="res://level/template/visible_path.gd" id="1_sib7x"]
+
+[node name="VisiblePath" type="Line2D"]
+width = 1.0
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("1_sib7x")

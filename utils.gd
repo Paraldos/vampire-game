@@ -1,6 +1,7 @@
 extends Node
 
 var map : TileMapLayer
+var visible_path_bp = preload('res://level/template/visible_path.tscn')
 
 func pos_to_cell(pos : Vector2) -> Vector2i:
 	return map.local_to_map(pos)
@@ -18,4 +19,6 @@ func add_visible_path(path):
 	var new_points: PackedVector2Array = []
 	for point in path:
 		new_points.append((point * 16) + Vector2i(8,8))
-	map.line_2d.points = new_points
+	var visible_path = visible_path_bp.instantiate()
+	visible_path.points = new_points
+	get_tree().current_scene.add_child(visible_path)

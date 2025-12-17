@@ -7,6 +7,7 @@ extends Node2D
 @onready var character_helper: Node2D = $CharacterHelper
 
 var path : Array[Vector2i]
+var visible_path = false
 var movement_target: Vector2
 var speed := 80.0
 var moving := false
@@ -39,12 +40,15 @@ func _on_left_clicked_floor(target_cell):
 	path = Utils.get_astar_path(player_cell, target_cell)
 	if moving: path.pop_front()
 	target_enemy = null
+	if visible_path:
+		Utils.add_visible_path(path)
 
 func _on_left_click_enemy(enemy : Enemy):
 	if Input.is_action_pressed('shift'): return
 	if attacking: return
 	path = character_helper.get_path_to_target(enemy.global_position)
-	Utils.add_visible_path(path)
+	if visible_path:
+		Utils.add_visible_path(path)
 	target_enemy = enemy
 
 func _shift_click():

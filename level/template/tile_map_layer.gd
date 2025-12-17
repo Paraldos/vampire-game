@@ -1,7 +1,5 @@
 extends TileMapLayer
 
-@onready var line_2d: Line2D = $Line2D
-
 const BUILDING_SOURCE_ID: int = 3
 var astar_grid
 
@@ -30,9 +28,3 @@ func _init_astar():
 		var cell_source_id: int = get_cell_source_id(cell)
 		if cell_source_id == BUILDING_SOURCE_ID:
 			astar_grid.set_point_solid(cell)
-
-func _update_visible_path(path):
-	var new_points: PackedVector2Array = []
-	for point in path:
-		new_points.append((point * 16) + Vector2i(8,8))
-	line_2d.points = new_points
