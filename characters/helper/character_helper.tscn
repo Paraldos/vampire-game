@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://h5g3vof4xi7f"]
+
+[ext_resource type="Script" uid="uid://bse6s1xfrd5wh" path="res://characters/helper/character_helper.gd" id="1_lk5xm"]
+
+[node name="CharacterHelper" type="Node2D"]
+script = ExtResource("1_lk5xm")

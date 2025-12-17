@@ -7,3 +7,15 @@ func pos_to_cell(pos : Vector2) -> Vector2i:
 
 func cell_to_pos(cell) -> Vector2:
 	return map.map_to_local(cell)
+
+func get_astar_path(start_cell, target_cell) -> Array[Vector2i]:
+	var path = map.astar_grid.get_id_path(start_cell, target_cell)
+	if start_cell == target_cell:
+		path = [] as Array[Vector2i]
+	return path
+
+func add_visible_path(path):
+	var new_points: PackedVector2Array = []
+	for point in path:
+		new_points.append((point * 16) + Vector2i(8,8))
+	map.line_2d.points = new_points

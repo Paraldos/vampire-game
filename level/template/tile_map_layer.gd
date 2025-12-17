@@ -9,7 +9,7 @@ func _ready() -> void:
 	Utils.map = self
 	_init_astar()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed('left_click'):
 		var local_mouse := to_local(get_global_mouse_position())
 		var cell: Vector2i = local_to_map(local_mouse)
@@ -34,12 +34,5 @@ func _init_astar():
 func _update_visible_path(path):
 	var new_points: PackedVector2Array = []
 	for point in path:
-		new_points.append(point * 16)
+		new_points.append((point * 16) + Vector2i(8,8))
 	line_2d.points = new_points
-
-func get_astar_path(start_cell, target_cell) -> Array[Vector2i]:
-	var path = astar_grid.get_id_path(start_cell, target_cell)
-	if start_cell == target_cell:
-		path = [] as Array[Vector2i]
-	# _update_visible_path(path)
-	return path

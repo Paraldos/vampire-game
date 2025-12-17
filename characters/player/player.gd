@@ -4,7 +4,7 @@ extends Node2D
 @onready var animation_player_main: AnimationPlayer = %AnimationPlayerMain
 @onready var sword_animation: Node2D = %SwordAnimation
 @onready var hitbox: Hitbox = $Hitbox
-@onready var movement_helper: Node2D = %MovementHelper
+@onready var character_helper: Node2D = $CharacterHelper
 
 var path : Array[Vector2i]
 var movement_target: Vector2
@@ -24,7 +24,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed('left_click') and Input.is_action_pressed('shift'):
 		_shift_click()
-	if not moving and target_enemy and movement_helper._target_is_neighbour(target_enemy.global_position):
+	if not moving and target_enemy and character_helper._target_is_neighbour(target_enemy.global_position):
 		_attack(target_enemy.global_position  + Vector2(8,8))
 		target_enemy = null
 	if not moving and path.size() > 0:
@@ -36,17 +36,16 @@ func _physics_process(delta: float) -> void:
 func _on_left_clicked_floor(target_cell):
 	if Input.is_action_pressed('shift'): return
 	if attacking: return
-	else:
-		path = Utils.map.get_astar_path(player_cell, target_cell)
-		if moving: path.pop_front()
-		target_enemy = null
+	path = Utils.get_astar_path(player_cell, target_cell)
+	if moving: path.pop_front()
+	target_enemy = null
 
 func _on_left_click_enemy(enemy : Enemy):
 	if Input.is_action_pressed('shift'): return
 	if attacking: return
-	else:
-		path = movement_helper.get_path_to_target(enemy.global_position)
-		target_enemy = enemy
+	path = character_helper.get_path_to_target(enemy.global_position)
+	Utils.add_visible_path(path)
+	target_enemy = enemy
 
 func _shift_click():
 	if attacking: return
