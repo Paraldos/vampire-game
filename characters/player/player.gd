@@ -39,6 +39,8 @@ func _on_left_clicked_floor(target_cell):
 	else:
 		var tile_path = movement_helper.get_tile_path(target_cell)
 		path = movement_helper.tile_path_to_cell_path(tile_path)
+		if moving:
+			path.pop_front()
 		target_enemy = null
 
 func _on_left_click_enemy(enemy : Enemy):
