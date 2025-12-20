@@ -18,7 +18,7 @@ func get_astar_path(start_cell, target_cell) -> Array[Vector2i]:
 func add_visible_path(path):
 	var new_points: PackedVector2Array = []
 	for point in path:
-		new_points.append((point * 16) + Vector2i(8,8))
+		new_points.append(cell_to_pos(point))
 	var visible_path = visible_path_bp.instantiate()
 	visible_path.points = new_points
 	get_tree().current_scene.add_child(visible_path)

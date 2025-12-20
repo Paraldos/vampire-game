@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://ymwlpt7cigxr"]
+
+[ext_resource type="Script" uid="uid://pkbjlgvwgg2c" path="res://characters/enemy_template/enemy.gd" id="1_wqjt8"]
+[ext_resource type="PackedScene" uid="uid://dlly4so1oej8g" path="res://characters/player/character_sprite.tscn" id="2_emraa"]
+[ext_resource type="Script" uid="uid://b3watucd82slh" path="res://characters/enemy_template/enemy_state.gd" id="4_0jhtu"]
+[ext_resource type="PackedScene" uid="uid://21nxqb3lgoxh" path="res://characters/helper/hurtbox.tscn" id="4_gi5ef"]
+[ext_resource type="Script" uid="uid://byw5ubbb4vjkj" path="res://characters/enemy_template/enemy_state_machine.gd" id="4_y51k7"]
+[ext_resource type="Script" uid="uid://b8da5t11huhiu" path="res://characters/enemy_template/enemy_state_idle.gd" id="5_eujd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmgk6"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gi5ef"]
+radius = 8.0
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_wqjt8")
+
+[node name="CharacterSprite" parent="." instance=ExtResource("2_emraa")]
+modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dmgk6")
+
+[node name="Hurtbox" parent="." instance=ExtResource("4_gi5ef")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_gi5ef")
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_y51k7")
+
+[node name="Idle" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("5_eujd1")
+
+[node name="Chase" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("4_0jhtu")
+
+[node name="Attack" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("4_0jhtu")
+
+[node name="Dead" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("4_0jhtu")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

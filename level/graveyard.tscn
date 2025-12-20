@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dxwnxtp3cmvgj" path="res://level/template/level_template.tscn" id="1_ggvrn"]
 [ext_resource type="PackedScene" uid="uid://bmvw4pnmvyhoh" path="res://characters/player/player.tscn" id="2_ujcix"]
 [ext_resource type="PackedScene" uid="uid://c0xj1midoc787" path="res://level/deco/torch.tscn" id="3_v1x5o"]
-[ext_resource type="PackedScene" uid="uid://ymwlpt7cigxr" path="res://characters/enemies/template/enemy.tscn" id="4_wb1sq"]
+[ext_resource type="PackedScene" uid="uid://ymwlpt7cigxr" path="res://characters/enemy_template/enemy.tscn" id="4_wb1sq"]
 
 [node name="Graveyard" instance=ExtResource("1_ggvrn")]
 
@@ -32,4 +32,4 @@ position = Vector2(288, -17)
 position = Vector2(112, 47)
 
 [node name="Enemy" parent="." index="4" instance=ExtResource("4_wb1sq")]
-position = Vector2(288, 96)
+position = Vector2(296, 104)

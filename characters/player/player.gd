@@ -7,7 +7,7 @@ extends Node2D
 @onready var character_helper: Node2D = $CharacterHelper
 
 var path : Array[Vector2i]
-var visible_path = false
+@export var visible_path = true
 var movement_target: Vector2
 var speed := 80.0
 var moving := false
