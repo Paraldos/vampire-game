@@ -8,5 +8,3 @@ func exit() -> void:
 
 func physics_tick(delta: float) -> void:
 	super(delta)
-	if enemy.target != null:
-		state_machine.change_state("Chase")

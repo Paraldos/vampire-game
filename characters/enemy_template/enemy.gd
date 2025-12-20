@@ -2,13 +2,8 @@ extends Node2D
 class_name Enemy
 
 @onready var state_machine: EnemyStateMachine = %EnemyStateMachine
-
+@export var speed = 80
 var spawn_cell: Vector2i
-var target: Node2D = null
-
-var move_target_cell: Vector2i = Vector2i.ZERO
-var current_path: Array[Vector2i] = []
-var path_index: int = 0
 
 func _ready() -> void:
 	spawn_cell = Utils.pos_to_cell(global_position)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ymwlpt7cigxr"]
+[gd_scene load_steps=8 format=3 uid="uid://ymwlpt7cigxr"]
 
 [ext_resource type="Script" uid="uid://pkbjlgvwgg2c" path="res://characters/enemy_template/enemy.gd" id="1_wqjt8"]
 [ext_resource type="PackedScene" uid="uid://dlly4so1oej8g" path="res://characters/player/character_sprite.tscn" id="2_emraa"]
-[ext_resource type="Script" uid="uid://b3watucd82slh" path="res://characters/enemy_template/enemy_state.gd" id="4_0jhtu"]
 [ext_resource type="PackedScene" uid="uid://21nxqb3lgoxh" path="res://characters/helper/hurtbox.tscn" id="4_gi5ef"]
 [ext_resource type="Script" uid="uid://byw5ubbb4vjkj" path="res://characters/enemy_template/enemy_state_machine.gd" id="4_y51k7"]
 [ext_resource type="Script" uid="uid://b8da5t11huhiu" path="res://characters/enemy_template/enemy_state_idle.gd" id="5_eujd1"]
@@ -37,15 +36,6 @@ script = ExtResource("4_y51k7")
 
 [node name="Idle" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("5_eujd1")
-
-[node name="Chase" type="Node" parent="EnemyStateMachine"]
-script = ExtResource("4_0jhtu")
-
-[node name="Attack" type="Node" parent="EnemyStateMachine"]
-script = ExtResource("4_0jhtu")
-
-[node name="Dead" type="Node" parent="EnemyStateMachine"]
-script = ExtResource("4_0jhtu")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
