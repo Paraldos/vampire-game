@@ -3,7 +3,7 @@ extends EnemyState
 var timer :Timer
 @export var min_wait_time := 3.0
 @export var max_wait_time := 5.0
-@export var roam_radius := 5
+@export var roam_radius := 3
 
 func enter() -> void:
 	super()
