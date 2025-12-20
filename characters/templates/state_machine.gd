@@ -1,22 +1,22 @@
 extends Node
-class_name EnemyStateMachine
+class_name StateMachine
 
 @export var initial_state := "Idle"
 
 var character : CharacterTemplate
-var current_state: EnemyState
+var current_state: State
 var states: Dictionary = {}
 
 func setup(character_ref : CharacterTemplate) -> void:
 	character = character_ref
 	for child in get_children():
-		if child is EnemyState:
+		if child is State:
 			states[child.name] = child
 			child.setup(character, self)
 	change_state(initial_state)
 
 func change_state(state_name: StringName) -> void:
-	var new_state: EnemyState = states.get(state_name, null)
+	var new_state: State = states.get(state_name, null)
 	if new_state == null:
 		push_warning("State not found: %s" % String(state_name))
 		return

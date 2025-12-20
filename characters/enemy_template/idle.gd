@@ -1,4 +1,4 @@
-extends EnemyState
+extends State
 
 var timer :Timer
 @export var min_wait_time := 3.0

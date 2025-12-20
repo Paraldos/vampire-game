@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpi4iba0aorkw"]
 
-[ext_resource type="Script" uid="uid://b61wnhg8pfhx5" path="res://characters/helper/weapon_animation.gd" id="1_seh2i"]
+[ext_resource type="Script" uid="uid://b61wnhg8pfhx5" path="res://characters/templates/weapon_animation.gd" id="1_seh2i"]
 
 [node name="WeaponAnimation" type="Node2D"]
 script = ExtResource("1_seh2i")

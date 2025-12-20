@@ -1,6 +1,6 @@
 extends CharacterTemplate
 
-@onready var state_machine: EnemyStateMachine = %EnemyStateMachine
+@onready var state_machine: StateMachine = %StateMachine
 var spawn_cell: Vector2i
 var enemy_cell : Vector2i :
 	get: return Utils.pos_to_cell(global_position)

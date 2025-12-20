@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://tp2g70xhmiwh"]
 
-[ext_resource type="PackedScene" uid="uid://dpi4iba0aorkw" path="res://characters/helper/weapon_animation.tscn" id="1_q4eh2"]
+[ext_resource type="PackedScene" uid="uid://dpi4iba0aorkw" path="res://characters/templates/weapon_animation.tscn" id="1_q4eh2"]
 [ext_resource type="Texture2D" uid="uid://hgmm2ncokara" path="res://assets/images/attack_sword-Sheet.png" id="2_nk1dc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_msls6"]
