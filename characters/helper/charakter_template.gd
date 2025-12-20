@@ -3,7 +3,11 @@ class_name CharacterTemplate
 
 @export var visible_path: bool = true
 @export var speed: float = 60.0
-var path: Array[Vector2i] = []
+var path: Array[Vector2i] = []:
+	set(new_path):
+		path = new_path
+		if visible_path:
+			Utils.add_visible_path(path)
 var movement_target_pos: Vector2 = Vector2.ZERO
 var movement_target_cell: Vector2i = Vector2i(-9999, -9999)
 var moving: bool = false

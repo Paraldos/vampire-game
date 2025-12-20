@@ -28,15 +28,11 @@ func _on_left_clicked_floor(target_cell):
 	path = Utils.get_astar_path(occupied_cell, target_cell)
 	if moving: path.pop_front()
 	target_enemy = null
-	if visible_path:
-		Utils.add_visible_path(path)
 
 func _on_left_click_enemy(enemy):
 	if Input.is_action_pressed('shift'): return
 	if attacking: return
 	path = character_helper.get_path_to_target(enemy.global_position)
-	if visible_path:
-		Utils.add_visible_path(path)
 	target_enemy = enemy
 
 func _shift_click():
