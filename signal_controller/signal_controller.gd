@@ -5,4 +5,4 @@ signal end_dialog
 signal spawn_player(target_point)
 
 signal left_clicked_floor(cell)
-signal left_click_enemy(enemy : Enemy)
+signal left_click_enemy(enemy)

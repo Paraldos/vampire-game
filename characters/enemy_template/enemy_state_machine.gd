@@ -3,16 +3,16 @@ class_name EnemyStateMachine
 
 @export var initial_state := "Idle"
 
-var enemy: Enemy
+var character : CharacterTemplate
 var current_state: EnemyState
-var states: Dictionary = {} # StringName -> EnemyState
+var states: Dictionary = {}
 
-func setup(enemy_ref: Enemy) -> void:
-	enemy = enemy_ref
+func setup(character_ref : CharacterTemplate) -> void:
+	character = character_ref
 	for child in get_children():
 		if child is EnemyState:
 			states[child.name] = child
-			child.setup(enemy, self)
+			child.setup(character, self)
 	change_state(initial_state)
 
 func change_state(state_name: StringName) -> void:

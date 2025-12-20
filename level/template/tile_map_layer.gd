@@ -21,8 +21,8 @@ func _init_astar():
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = Rect2i(get_used_rect())
 	astar_grid.cell_size = Vector2i(16,16)
-	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
-	astar_grid.default_compute_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
+	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
+	astar_grid.default_compute_heuristic = AStarGrid2D.HEURISTIC_OCTILE
 	astar_grid.update()
 	for cell: Vector2i in get_used_cells():
 		var cell_source_id: int = get_cell_source_id(cell)

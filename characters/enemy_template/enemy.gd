@@ -1,16 +1,18 @@
-extends Node2D
-class_name Enemy
+extends CharacterTemplate
 
 @onready var state_machine: EnemyStateMachine = %EnemyStateMachine
-@export var speed = 80
 var spawn_cell: Vector2i
+var enemy_cell : Vector2i :
+	get: return Utils.pos_to_cell(global_position)
 
 func _ready() -> void:
+	super()
 	spawn_cell = Utils.pos_to_cell(global_position)
 	Utils.map.astar_grid.set_point_solid(spawn_cell, true)
 	state_machine.setup(self)
 
 func _physics_process(delta: float) -> void:
+	super(delta)
 	state_machine.physics_tick(delta)
 
 func _on_area_2d_mouse_entered() -> void:

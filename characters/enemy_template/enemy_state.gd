@@ -1,11 +1,11 @@
 extends Node
 class_name EnemyState
 
-var enemy: Enemy
+var character : CharacterTemplate
 var state_machine: EnemyStateMachine
 
-func setup(enemy_ref: Enemy, sm_ref: EnemyStateMachine) -> void:
-	enemy = enemy_ref
+func setup(character_ref : CharacterTemplate, sm_ref: EnemyStateMachine) -> void:
+	character = character_ref
 	state_machine = sm_ref
 
 func enter() -> void:
