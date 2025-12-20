@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cagqcctl84hi2"]
-
-[ext_resource type="Script" uid="uid://bgkaycplmi4lh" path="res://scene_loader/transition_point.gd" id="1_cjixl"]
-
-[node name="TransitionPoint" type="RayCast2D"]
-target_position = Vector2(0, 12)
-script = ExtResource("1_cjixl")

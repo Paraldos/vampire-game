@@ -3,8 +3,10 @@ class_name State
 
 var character : CharacterTemplate
 var state_machine: StateMachine
+var rng := RandomNumberGenerator.new()
 
 func setup(character_ref : CharacterTemplate, sm_ref: StateMachine) -> void:
+	rng.randomize()
 	character = character_ref
 	state_machine = sm_ref
 
