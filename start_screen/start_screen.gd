@@ -8,7 +8,7 @@ func _on_new_game_btn_pressed() -> void:
 	SceneManager.change_scene("res://level/graveyard.tscn")
 
 func _reset_inventory():
-	PlayerProfile._reset_backpack()
+	PlayerProfile.reset_backpack()
 	var sword = ItemInstance.new()
 	sword.item_id = "sword"
 	sword.quality = 0

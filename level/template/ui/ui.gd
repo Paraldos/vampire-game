@@ -12,5 +12,3 @@ func _physics_process(_delta: float) -> void:
 		character.visible = !character.visible
 	if Input.is_action_just_pressed('ui_inventory'):
 		inventory.visible = !inventory.visible
-		if inventory.visible:
-			inventory.update()
