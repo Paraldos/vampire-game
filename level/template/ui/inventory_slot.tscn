@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cky88dx2fbjos"]
 
-[ext_resource type="Texture2D" uid="uid://dh6iva8q4w1di" path="res://assets/images/inventory_item_box.png" id="1_jka3a"]
+[ext_resource type="Texture2D" uid="uid://cd4gowq1decwi" path="res://assets/images/slot.png" id="1_m2666"]
 [ext_resource type="Script" uid="uid://c6grwb2osjt81" path="res://level/template/ui/inventory_slot.gd" id="2_m2666"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7oas"]
 radius = 4.0
 
 [node name="InventorySlot" type="TextureRect"]
-texture = ExtResource("1_jka3a")
+texture = ExtResource("1_m2666")
 script = ExtResource("2_m2666")
 
 [node name="Area2D" type="Area2D" parent="."]
