@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 DialogController="*res://singeltons/dialog_controller/dialog_controller.tscn"
 Utils="*res://singeltons/utils/utils.tscn"
-PlayerProfile="*res://singeltons/player_profile/player_profile.tscn"
+PlayerProfile="*res://singeltons/player/player_profile.tscn"
 Signals="*res://singeltons/signals/signals.tscn"
 LootSystem="*res://singeltons/loot/loot_system.tscn"
 SceneManager="*res://singeltons/scene_manager/scene_manager.tscn"
@@ -112,6 +112,7 @@ ui_map={
 2d_physics/layer_2="player"
 2d_physics/layer_3="npcs"
 2d_physics/layer_4="enemy"
+2d_physics/layer_5="inventory_slot"
 
 [rendering]
 

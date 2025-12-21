@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ce5hl17gvhwcx"]
 
-[ext_resource type="Script" uid="uid://doyk8ii1f8j5c" path="res://singeltons/player_profile/player_profile.gd" id="1_2esan"]
+[ext_resource type="Script" uid="uid://doyk8ii1f8j5c" path="res://singeltons/player/player_profile.gd" id="1_2esan"]
 
 [node name="PlayerProfile" type="Node"]
 script = ExtResource("1_2esan")

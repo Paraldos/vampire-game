@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cky88dx2fbjos"]
+
+[ext_resource type="Texture2D" uid="uid://dh6iva8q4w1di" path="res://assets/images/inventory_item_box.png" id="1_jka3a"]
+[ext_resource type="Script" uid="uid://c6grwb2osjt81" path="res://level/template/ui/inventory_slot.gd" id="2_m2666"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7oas"]
+radius = 5.0
+
+[node name="InventorySlot" type="TextureRect"]
+texture = ExtResource("1_jka3a")
+script = ExtResource("2_m2666")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(10, 10)
+shape = SubResource("CircleShape2D_l7oas")

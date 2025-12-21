@@ -1,16 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://bgcpw627r6nak"]
 
 [ext_resource type="Script" uid="uid://tthae7xf5uxy" path="res://level/template/ui/ui.gd" id="1_ovhly"]
+[ext_resource type="PackedScene" uid="uid://b26q5oxd0wntn" path="res://level/template/ui/inventory.tscn" id="2_e2srb"]
 [ext_resource type="Texture2D" uid="uid://dd3cg20q3qj7o" path="res://assets/images/status_bubble-Sheet.png" id="2_vhc8j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fovfw"]
 bg_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
 border_width_right = 3
-border_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r22ur"]
-bg_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
-border_width_left = 3
 border_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhc8j"]
@@ -73,17 +69,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="Inventory" type="PanelContainer" parent="VBoxContainer/HBoxContainer/Right"]
+[node name="Inventory" parent="VBoxContainer/HBoxContainer/Right" instance=ExtResource("2_e2srb")]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_r22ur")
 
 [node name="Bottom" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
