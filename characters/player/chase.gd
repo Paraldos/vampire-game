@@ -1,5 +1,8 @@
 extends State
 
+@onready var range_checker: RayCast2D = %RangeChecker
+@onready var melee_checker: Area2D = %MeleeChecker
+
 var target_cell
 
 func _ready() -> void:
@@ -7,6 +10,10 @@ func _ready() -> void:
 
 func physics_tick(delta: float) -> void:
 	if not character.animating:
+		if melee_checker.has_overlapping_areas():
+			var target_pos = Utils.cell_to_pos(character.attack_target.occupied_cell)
+			SignalController.chase_attack.emit(target_pos)
+			return
 		if character.attack_target.occupied_cell != target_cell:
 			character.path = get_path_to_target()
 		if not character._is_next_step_valid():
@@ -18,7 +25,7 @@ func physics_tick(delta: float) -> void:
 	elif character.animating:
 		character.move(delta)
 
-func _on_left_click_enemy(target : Vector2i) -> void:
+func _on_left_click_enemy(target : CharacterTemplate) -> void:
 	if Input.is_action_pressed('shift'): return
 	character.attack_target = target
 	character.path = get_path_to_target()

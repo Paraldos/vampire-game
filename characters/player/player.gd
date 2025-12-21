@@ -14,18 +14,5 @@ func _physics_process(delta: float) -> void:
 	super(delta)
 	state_machine.physics_tick(delta)
 	if Input.is_action_pressed('left_click') and Input.is_action_pressed('shift'):
-		_shift_click()
-
-func _shift_click():
-	if animating: return
-	_attack(get_global_mouse_position())
-
-func _attack(target_position : Vector2):
-	animating = true
-	character_sprite.attack_animation(target_position)
-	hitbox.look_at(target_position)
-	hitbox.enable()
-	sword_animation.look_at(target_position)
-	sword_animation.play()
-	await sword_animation.finished
-	animating = false
+		if animating: return
+		SignalController.shift_click.emit(get_global_mouse_position())

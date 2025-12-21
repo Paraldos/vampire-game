@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmvw4pnmvyhoh"]
+[gd_scene load_steps=13 format=3 uid="uid://bmvw4pnmvyhoh"]
 
 [ext_resource type="Script" uid="uid://ctnu6tr34hsdb" path="res://characters/player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://dlly4so1oej8g" path="res://characters/player/character_sprite.tscn" id="3_dirf7"]
@@ -8,10 +8,14 @@
 [ext_resource type="Script" uid="uid://byw5ubbb4vjkj" path="res://characters/templates/state_machine.gd" id="7_rpf03"]
 [ext_resource type="Script" uid="uid://b3watucd82slh" path="res://characters/templates/state.gd" id="8_x5dtk"]
 [ext_resource type="Script" uid="uid://blhmh2honsrtj" path="res://characters/player/move.gd" id="9_rpf03"]
+[ext_resource type="Script" uid="uid://g6wba0mrwy2a" path="res://characters/player/attack.gd" id="10_3t07l"]
 [ext_resource type="Script" uid="uid://b6kpumq8t076s" path="res://characters/player/chase.gd" id="10_x5dtk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idpv6"]
 radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rpf03"]
+radius = 16.0
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_onrkg")
@@ -41,6 +45,17 @@ collision_mask = 2
 position = Vector2(16, 0)
 shape = SubResource("CircleShape2D_idpv6")
 
+[node name="RangeChecker" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+
+[node name="MeleeChecker" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeChecker"]
+shape = SubResource("CircleShape2D_rpf03")
+
 [node name="StateMachine" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_rpf03")
@@ -56,4 +71,8 @@ metadata/_custom_type_script = "uid://b3watucd82slh"
 
 [node name="Chase" type="Node" parent="StateMachine"]
 script = ExtResource("10_x5dtk")
+metadata/_custom_type_script = "uid://b3watucd82slh"
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("10_3t07l")
 metadata/_custom_type_script = "uid://b3watucd82slh"
