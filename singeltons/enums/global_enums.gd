@@ -1,4 +1,5 @@
 extends Node
+class_name GlobalEnums
 
 enum ItemSlots { MAINHAND, OFFHAND, HEAD, TORSO, TRINKET }
 enum ItemType { WEAPON, ARMOR, TRINKET, FOCUS }
