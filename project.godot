@@ -20,9 +20,10 @@ config/icon="res://icon.svg"
 DialogController="*res://singeltons/dialog_controller/dialog_controller.tscn"
 SceneLoader="*res://singeltons/scene_loader.tscn"
 Utils="*res://singeltons/utils.tscn"
-PlayerProfile="*res://data/player_profile.tscn"
-ItemDb="*res://data/item_db.tscn"
+PlayerProfile="*res://singeltons/player_profile.tscn"
 Signals="*res://singeltons/signals.tscn"
+GlobalEnums="*res://singeltons/global_enums.tscn"
+LootSystem="*res://singeltons/loot/loot_system.tscn"
 
 [display]
 

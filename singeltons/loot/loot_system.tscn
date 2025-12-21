@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://bihocg1cprmrg"]
+
+[ext_resource type="Script" uid="uid://j4e2n24sx3ty" path="res://singeltons/loot/loot_system.gd" id="1_a4ra7"]
+[ext_resource type="Script" uid="uid://85yvquxdnnf4" path="res://singeltons/loot/Item.gd" id="2_gtpna"]
+[ext_resource type="Script" uid="uid://bie4uj5djnli7" path="res://singeltons/loot/affix.gd" id="3_m3tey"]
+
+[node name="LootSystem" type="Node"]
+script = ExtResource("1_a4ra7")
+
+[node name="ItemDB" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="sword" type="Node" parent="ItemDB"]
+script = ExtResource("2_gtpna")
+metadata/_custom_type_script = "uid://85yvquxdnnf4"
+
+[node name="ring" type="Node" parent="ItemDB"]
+script = ExtResource("2_gtpna")
+metadata/_custom_type_script = "uid://85yvquxdnnf4"
+
+[node name="armor" type="Node" parent="ItemDB"]
+script = ExtResource("2_gtpna")
+metadata/_custom_type_script = "uid://85yvquxdnnf4"
+
+[node name="AffixDB" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="dmg" type="Node" parent="AffixDB"]
+script = ExtResource("3_m3tey")
+allowed_types = Array[int]([0, 2])
+
+[node name="armor" type="Node" parent="AffixDB"]
+script = ExtResource("3_m3tey")
+allowed_types = Array[int]([1, 2])
+stat_key = "armor"
+
+[node name="strength" type="Node" parent="AffixDB"]
+script = ExtResource("3_m3tey")
+allowed_types = Array[int]([0, 1, 2])
+stat_key = "strength"
+
+[node name="dexterity" type="Node" parent="AffixDB"]
+script = ExtResource("3_m3tey")
+allowed_types = Array[int]([0, 1, 2])
+stat_key = "dexterity"
+
+[node name="wisdom" type="Node" parent="AffixDB"]
+script = ExtResource("3_m3tey")
+allowed_types = Array[int]([0, 1, 2, 3])
+stat_key = "dexterity"
+
+[node name="vitality" type="Node" parent="AffixDB"]
+script = ExtResource("3_m3tey")
+allowed_types = Array[int]([0, 1, 2, 3])
+stat_key = "dexterity"
+
+[node name="mana" type="Node" parent="AffixDB"]
+script = ExtResource("3_m3tey")
+allowed_types = Array[int]([2, 3])
+stat_key = "dexterity"

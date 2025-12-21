@@ -27,6 +27,7 @@ position = Vector2(0, 1)
 metadata/_edit_lock_ = true
 
 [node name="Ui" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Ui"]
 anchors_preset = 15
