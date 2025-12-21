@@ -5,18 +5,16 @@
 [ext_resource type="Script" uid="uid://c3cgjqfe5hsnq" path="res://characters/player/player_camera.gd" id="4_yw30f"]
 [ext_resource type="PackedScene" uid="uid://tp2g70xhmiwh" path="res://characters/templates/sword_animation.tscn" id="6_c6leb"]
 [ext_resource type="PackedScene" uid="uid://bj1vb5v80ed7f" path="res://characters/templates/hitbox.tscn" id="7_dirf7"]
-[ext_resource type="PackedScene" uid="uid://h5g3vof4xi7f" path="res://characters/templates/character_helper.tscn" id="7_idpv6"]
 [ext_resource type="Script" uid="uid://byw5ubbb4vjkj" path="res://characters/templates/state_machine.gd" id="7_rpf03"]
 [ext_resource type="Script" uid="uid://b3watucd82slh" path="res://characters/templates/state.gd" id="8_x5dtk"]
 [ext_resource type="Script" uid="uid://blhmh2honsrtj" path="res://characters/player/move.gd" id="9_rpf03"]
+[ext_resource type="Script" uid="uid://b6kpumq8t076s" path="res://characters/player/chase.gd" id="10_x5dtk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idpv6"]
 radius = 4.0
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_onrkg")
-
-[node name="CharacterHelper" parent="." instance=ExtResource("7_idpv6")]
 
 [node name="CharacterSpriteContainer" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -54,4 +52,8 @@ metadata/_custom_type_script = "uid://b3watucd82slh"
 
 [node name="Move" type="Node" parent="StateMachine"]
 script = ExtResource("9_rpf03")
+metadata/_custom_type_script = "uid://b3watucd82slh"
+
+[node name="Chase" type="Node" parent="StateMachine"]
+script = ExtResource("10_x5dtk")
 metadata/_custom_type_script = "uid://b3watucd82slh"

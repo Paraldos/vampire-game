@@ -1,29 +1,29 @@
 extends State
 
-var timer :Timer
 @export var min_wait_time := 3.0
 @export var max_wait_time := 5.0
 @export var roam_radius := 3
+var target_cell : Vector2i
 
 func enter() -> void:
 	super()
-	if timer == null:
-		timer = Timer.new()
-		timer.one_shot = true
-		add_child(timer)
 	_start_timer()
 
-func exit() -> void:
-	if timer: timer.stop()
-
-func physics_tick(_delta: float) -> void:
-	if timer.time_left > 0: return
-	character.path = Utils.get_astar_path(character.occupied_cell, get_random_cell_in_circle())
-	_start_timer()
+func physics_tick(delta: float) -> void:
+	if not character.animating and character.path.size() > 0:
+		if not character._is_next_step_valid():
+			character.path = Utils.get_astar_path(character.occupied_cell, target_cell)
+		if character.path.size() > 0:
+			character._start_moving(character.path.pop_front())
+	elif character.animating:
+		character.move(delta)
 
 func _start_timer():
 	var wait_time := character.rng.randf_range(min_wait_time, max_wait_time)
-	timer.start(wait_time)
+	await get_tree().create_timer(wait_time).timeout
+	target_cell = get_random_cell_in_circle()
+	character.path = Utils.get_astar_path(character.occupied_cell, target_cell)
+	_start_timer()
 
 func get_random_cell_in_circle(radius: int = 5, max_tries: int = 30) -> Vector2i:
 	for i in max_tries:

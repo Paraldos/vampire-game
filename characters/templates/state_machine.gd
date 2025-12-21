@@ -15,10 +15,10 @@ func setup(character_ref : CharacterTemplate) -> void:
 			child.setup(character, self)
 	change_state(initial_state)
 
-func change_state(state_name: StringName) -> void:
-	var new_state: State = states.get(state_name, null)
+func change_state(new_state_name: StringName) -> void:
+	var new_state: State = states.get(new_state_name, null)
 	if new_state == null:
-		push_warning("State not found: %s" % String(state_name))
+		push_warning("State not found: %s" % String(new_state_name))
 		return
 	if current_state != null:
 		current_state.exit()

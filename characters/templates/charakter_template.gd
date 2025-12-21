@@ -2,7 +2,7 @@ extends Node2D
 class_name CharacterTemplate
 
 @export var visible_path: bool = true
-@export var speed: float = 60.0
+@export var speed: float = 40.0
 var path: Array[Vector2i] = []:
 	set(new_path):
 		path = new_path
@@ -10,9 +10,10 @@ var path: Array[Vector2i] = []:
 			Utils.add_visible_path(path)
 var movement_target_pos: Vector2 = Vector2.ZERO
 var movement_target_cell: Vector2i = Vector2i(-9999, -9999)
-var moving: bool = false
+var animating: bool = false
 var rng := RandomNumberGenerator.new()
 var occupied_cell: Vector2i
+var attack_target
 
 func _ready() -> void:
 	rng.randomize()
@@ -24,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 
 func _start_moving(target_cell: Vector2i) -> void:
 	if Utils.map.astar_grid.is_point_solid(target_cell): return
-	moving = true
+	animating = true
 	movement_target_pos = Utils.cell_to_pos(target_cell)
 	movement_target_cell = target_cell
 	Utils.map.astar_grid.set_point_solid(movement_target_cell, true)
@@ -33,7 +34,7 @@ func _end_moving() -> void:
 	Utils.map.astar_grid.set_point_solid(occupied_cell, false)
 	occupied_cell = Utils.pos_to_cell(global_position)
 	movement_target_cell = Vector2i(-9999, -9999)
-	moving = false
+	animating = false
 
 func cancel_move(teleport_back: bool = false) -> void:
 	if movement_target_cell != Vector2i(-9999, -9999):
@@ -41,8 +42,18 @@ func cancel_move(teleport_back: bool = false) -> void:
 		movement_target_cell = Vector2i(-9999, -9999)
 	if teleport_back:
 		global_position = Utils.cell_to_pos(occupied_cell)
-	moving = false
+	animating = false
 	path.clear()
+
+func _is_next_step_valid() -> bool:
+	if path.is_empty():
+		return false
+	var next_cell: Vector2i = path[0]
+	if not Utils.map.astar_grid.region.has_point(next_cell):
+		return false
+	if Utils.map.astar_grid.is_point_solid(next_cell):
+		return false
+	return true
 
 func move(delta: float) -> void:
 	global_position = global_position.move_toward(movement_target_pos, speed * delta)
