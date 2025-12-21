@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://rdrbasjoc2o"]
 
-[ext_resource type="Script" uid="uid://cjrwc5g6mob3m" path="res://singeltons/utils.gd" id="1_yog10"]
+[ext_resource type="Script" uid="uid://cjrwc5g6mob3m" path="res://singeltons/utils/utils.gd" id="1_yog10"]
 
 [node name="Utils" type="Node"]
 script = ExtResource("1_yog10")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuc04t68asjan"]
 
-[ext_resource type="Script" uid="uid://6lhy338toewp" path="res://singeltons/scene_loader.gd" id="1_wvau0"]
+[ext_resource type="Script" uid="uid://6lhy338toewp" path="res://singeltons/scene_manager/scene_manager.gd" id="1_wvau0"]
 
 [sub_resource type="Animation" id="Animation_u6vv5"]
 length = 0.001
@@ -39,7 +39,7 @@ _data = {
 &"fade_to_black": SubResource("Animation_x8sxc")
 }
 
-[node name="SceneLoader" type="CanvasLayer"]
+[node name="SceneManager" type="CanvasLayer"]
 script = ExtResource("1_wvau0")
 
 [node name="ColorRect" type="ColorRect" parent="."]

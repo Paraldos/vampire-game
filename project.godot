@@ -11,19 +11,19 @@ config_version=5
 [application]
 
 config/name="vampire-game"
-run/main_scene="uid://beas7opmmqyt1"
+run/main_scene="uid://bvibw17jjvm64"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogController="*res://singeltons/dialog_controller/dialog_controller.tscn"
-SceneLoader="*res://singeltons/scene_loader.tscn"
-Utils="*res://singeltons/utils.tscn"
-PlayerProfile="*res://singeltons/player_profile.tscn"
-Signals="*res://singeltons/signals.tscn"
-GlobalEnums="*res://singeltons/global_enums.tscn"
+Utils="*res://singeltons/utils/utils.tscn"
+PlayerProfile="*res://singeltons/player_profile/player_profile.tscn"
+Signals="*res://singeltons/signals/signals.tscn"
+GlobalEnums="*res://singeltons/enums/global_enums.tscn"
 LootSystem="*res://singeltons/loot/loot_system.tscn"
+SceneManager="*res://singeltons/scene_manager/scene_manager.tscn"
 
 [display]
 
