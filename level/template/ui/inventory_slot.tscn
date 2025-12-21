@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c6grwb2osjt81" path="res://level/template/ui/inventory_slot.gd" id="2_m2666"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7oas"]
-radius = 5.0
+radius = 4.0
 
 [node name="InventorySlot" type="TextureRect"]
 texture = ExtResource("1_jka3a")

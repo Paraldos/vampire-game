@@ -26,7 +26,7 @@ func physics_tick(delta: float) -> void:
 		character.move(delta)
 
 func _on_left_click_enemy(target : CharacterTemplate) -> void:
-	if Input.is_action_pressed('shift'): return
+	if Input.is_action_pressed('ui_shift'): return
 	character.attack_target = target
 	character.path = get_path_to_target()
 	state_machine.change_state('Chase')

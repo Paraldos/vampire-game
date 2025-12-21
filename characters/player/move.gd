@@ -19,7 +19,7 @@ func physics_tick(delta: float) -> void:
 		state_machine.change_state('Idle')
 
 func _on_left_clicked_floor(target : Vector2i) -> void:
-	if Input.is_action_pressed('shift'): return
+	if Input.is_action_pressed('ui_shift'): return
 	target_cell = target
 	character.attack_target = null
 	character.path = Utils.get_astar_path(character.occupied_cell, target_cell)

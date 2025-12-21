@@ -8,7 +8,7 @@ func _ready() -> void:
 	_init_astar()
 
 func _physics_process(_delta: float) -> void:
-	if Input.is_action_just_pressed('left_click'):
+	if Input.is_action_just_pressed('ui_left_click'):
 		var local_mouse := to_local(get_global_mouse_position())
 		var cell: Vector2i = local_to_map(local_mouse)
 		if not astar_grid.region.has_point(cell):
