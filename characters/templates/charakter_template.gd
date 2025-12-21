@@ -19,11 +19,8 @@ func _ready() -> void:
 	occupied_cell = Utils.pos_to_cell(global_position)
 	Utils.map.astar_grid.set_point_solid(occupied_cell, true)
 
-func _physics_process(delta: float) -> void:
-	if not moving and path.size() > 0:
-		_start_moving(path.pop_front())
-	if moving:
-		move(delta)
+func _physics_process(_delta: float) -> void:
+	pass
 
 func _start_moving(target_cell: Vector2i) -> void:
 	if Utils.map.astar_grid.is_point_solid(target_cell): return
@@ -38,12 +35,6 @@ func _end_moving() -> void:
 	movement_target_cell = Vector2i(-9999, -9999)
 	moving = false
 
-func move(delta: float) -> void:
-	global_position = global_position.move_toward(movement_target_pos, speed * delta)
-	if global_position.distance_to(movement_target_pos) <= 0.5:
-		global_position = movement_target_pos
-		_end_moving()
-
 func cancel_move(teleport_back: bool = false) -> void:
 	if movement_target_cell != Vector2i(-9999, -9999):
 		Utils.map.astar_grid.set_point_solid(movement_target_cell, false)
@@ -52,6 +43,12 @@ func cancel_move(teleport_back: bool = false) -> void:
 		global_position = Utils.cell_to_pos(occupied_cell)
 	moving = false
 	path.clear()
+
+func move(delta: float) -> void:
+	global_position = global_position.move_toward(movement_target_pos, speed * delta)
+	if global_position.distance_to(movement_target_pos) <= 0.5:
+		global_position = movement_target_pos
+		_end_moving()
 
 func _exit_tree() -> void:
 	cancel_move(false)

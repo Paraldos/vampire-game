@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmvw4pnmvyhoh"]
+[gd_scene load_steps=11 format=3 uid="uid://bmvw4pnmvyhoh"]
 
 [ext_resource type="Script" uid="uid://ctnu6tr34hsdb" path="res://characters/player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://dlly4so1oej8g" path="res://characters/player/character_sprite.tscn" id="3_dirf7"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://tp2g70xhmiwh" path="res://characters/templates/sword_animation.tscn" id="6_c6leb"]
 [ext_resource type="PackedScene" uid="uid://bj1vb5v80ed7f" path="res://characters/templates/hitbox.tscn" id="7_dirf7"]
 [ext_resource type="PackedScene" uid="uid://h5g3vof4xi7f" path="res://characters/templates/character_helper.tscn" id="7_idpv6"]
+[ext_resource type="Script" uid="uid://byw5ubbb4vjkj" path="res://characters/templates/state_machine.gd" id="7_rpf03"]
+[ext_resource type="Script" uid="uid://b3watucd82slh" path="res://characters/templates/state.gd" id="8_x5dtk"]
+[ext_resource type="Script" uid="uid://blhmh2honsrtj" path="res://characters/player/move.gd" id="9_rpf03"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idpv6"]
 radius = 4.0
@@ -39,3 +42,16 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(16, 0)
 shape = SubResource("CircleShape2D_idpv6")
+
+[node name="StateMachine" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_rpf03")
+metadata/_custom_type_script = "uid://byw5ubbb4vjkj"
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("8_x5dtk")
+metadata/_custom_type_script = "uid://b3watucd82slh"
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource("9_rpf03")
+metadata/_custom_type_script = "uid://b3watucd82slh"
