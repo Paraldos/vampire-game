@@ -6,13 +6,13 @@ extends State
 var target_cell
 
 func _ready() -> void:
-	SignalController.left_click_enemy.connect(_on_left_click_enemy)
+	Signals.left_click_enemy.connect(_on_left_click_enemy)
 
 func physics_tick(delta: float) -> void:
 	if not character.animating:
 		if melee_checker.has_overlapping_areas():
 			var target_pos = Utils.cell_to_pos(character.attack_target.occupied_cell)
-			SignalController.chase_attack.emit(target_pos)
+			Signals.chase_attack.emit(target_pos)
 			return
 		if character.attack_target.occupied_cell != target_cell:
 			character.path = get_path_to_target()

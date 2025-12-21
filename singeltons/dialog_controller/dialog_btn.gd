@@ -12,6 +12,6 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	if not option:
-		SignalController.end_dialog.emit()
+		Signals.end_dialog.emit()
 	else:
-		SignalController.change_dialog.emit(option)
+		Signals.change_dialog.emit(option)

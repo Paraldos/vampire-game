@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://bl1ddxsmfbys2"]
 
 [ext_resource type="PackedScene" uid="uid://dxwnxtp3cmvgj" path="res://level/template/level_template.tscn" id="1_qf2ih"]
-[ext_resource type="PackedScene" uid="uid://djhrq1blg40jy" path="res://scene_loader/scene_transition.tscn" id="2_6cfqp"]
+[ext_resource type="PackedScene" uid="uid://djhrq1blg40jy" path="res://singeltons/scene_transition.tscn" id="2_6cfqp"]
 
 [node name="OldForest" instance=ExtResource("1_qf2ih")]
 

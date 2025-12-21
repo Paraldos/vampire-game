@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bihocg1cprmrg"]
+
+[ext_resource type="Script" uid="uid://j4e2n24sx3ty" path="res://data/item_db.gd" id="1_438ej"]
+
+[node name="ItemDB" type="Node"]
+script = ExtResource("1_438ej")

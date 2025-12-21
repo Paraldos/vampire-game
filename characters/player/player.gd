@@ -15,4 +15,4 @@ func _physics_process(delta: float) -> void:
 	state_machine.physics_tick(delta)
 	if Input.is_action_pressed('left_click') and Input.is_action_pressed('shift'):
 		if animating: return
-		SignalController.shift_click.emit(get_global_mouse_position())
+		Signals.shift_click.emit(get_global_mouse_position())

@@ -25,3 +25,20 @@ metadata/_edit_lock_ = true
 [node name="Deco" type="Node2D" parent="."]
 position = Vector2(0, 1)
 metadata/_edit_lock_ = true
+
+[node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ui"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stats" type="PanelContainer" parent="Ui/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Inventory" type="PanelContainer" parent="Ui/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

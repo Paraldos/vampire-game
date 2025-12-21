@@ -15,7 +15,7 @@ func _physics_process(_delta: float) -> void:
 			return
 		if astar_grid.is_point_solid(cell):
 			return
-		SignalController.left_clicked_floor.emit(cell)
+		Signals.left_clicked_floor.emit(cell)
 
 func _init_astar():
 	astar_grid = AStarGrid2D.new()

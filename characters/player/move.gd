@@ -3,7 +3,7 @@ extends State
 var target_cell
 
 func _ready() -> void:
-	SignalController.left_clicked_floor.connect(_on_left_clicked_floor)
+	Signals.left_clicked_floor.connect(_on_left_clicked_floor)
 
 func physics_tick(delta: float) -> void:
 	if not character.animating:

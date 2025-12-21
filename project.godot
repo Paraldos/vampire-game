@@ -17,10 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogController="*res://dialog_controller/dialog_controller.tscn"
-SignalController="*res://signal_controller/signal_controller.tscn"
-SceneLoader="*res://scene_loader/scene_loader.tscn"
-Utils="*res://utils.tscn"
+DialogController="*res://singeltons/dialog_controller/dialog_controller.tscn"
+SceneLoader="*res://singeltons/scene_loader.tscn"
+Utils="*res://singeltons/utils.tscn"
+PlayerProfile="*res://data/player_profile.tscn"
+ItemDb="*res://data/item_db.tscn"
+Signals="*res://singeltons/signals.tscn"
 
 [display]
 

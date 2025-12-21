@@ -1,6 +1,6 @@
 extends Node
 
-var dialog_ui_bp = preload("res://dialog_controller/dialog_ui.tscn")
+var dialog_ui_bp = preload("res://singeltons/dialog_controller/dialog_ui.tscn")
 
 func start_dialog(dialog_id := ""):
 	var selected_dialog = get_node(dialog_id)

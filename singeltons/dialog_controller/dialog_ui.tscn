@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dx08tb7na0ym5"]
 
-[ext_resource type="Script" uid="uid://ecaqckrc07h8" path="res://dialog_controller/dialog_ui.gd" id="1_172wb"]
+[ext_resource type="Script" uid="uid://ecaqckrc07h8" path="res://singeltons/dialog_controller/dialog_ui.gd" id="1_172wb"]
 [ext_resource type="Theme" uid="uid://3ftmlmopt0i6" path="res://themes/main_theme.tres" id="2_rcocg"]
 
 [sub_resource type="Animation" id="Animation_rcocg"]

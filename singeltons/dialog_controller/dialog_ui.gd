@@ -3,11 +3,11 @@ extends CanvasLayer
 @onready var paragraph: Label = %paragraph
 @onready var option_btns: VBoxContainer = %option_btns
 var current_dialog
-var option_btn_bp = preload("res://dialog_controller/dialog_btn.tscn")
+var option_btn_bp = preload("res://singeltons/dialog_controller/dialog_btn.tscn")
 
 func _ready() -> void:
-	SignalController.change_dialog.connect(_on_change_dialog)
-	SignalController.end_dialog.connect(_on_end_dialog)
+	Signals.change_dialog.connect(_on_change_dialog)
+	Signals.end_dialog.connect(_on_end_dialog)
 	_update_text()
 	_update_btns()
 	get_tree().paused = true

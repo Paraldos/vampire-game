@@ -1,8 +1,8 @@
 extends State
 
 func _ready() -> void:
-	SignalController.shift_click.connect(_on_shift_click)
-	SignalController.chase_attack.connect(_on_chase_attack)
+	Signals.shift_click.connect(_on_shift_click)
+	Signals.chase_attack.connect(_on_chase_attack)
 
 func _on_chase_attack(target_pos : Vector2) -> void:
 	_sword_attack(target_pos)
