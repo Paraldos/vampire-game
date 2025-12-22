@@ -27,8 +27,7 @@ func end_item_hover():
 	_set_to_non_viable()
 	self_modulate = Color('819796')
 
-func start_item_hover(item_instance : ItemInstance):
-	var item = LootSystem.get_item(item_instance.item_id)
+func start_item_hover(item : ItemInstance):
 	if item.slot == slot_type:
 		_set_to_viable()
 	elif slot_type == GlobalEnums.ItemSlots.BACKPACK:
