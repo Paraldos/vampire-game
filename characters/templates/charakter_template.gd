@@ -33,7 +33,7 @@ func start_moving(target_cell: Vector2i) -> void:
 func stop_moving() -> void:
 	Utils.map.astar_grid.set_point_solid(occupied_cell, false)
 	occupied_cell = Utils.pos_to_cell(global_position)
-	if movement_target_cell != occupied_cell:
+	if movement_target_cell != Vector2i(-9999, -9999) and movement_target_cell != occupied_cell:
 		Utils.map.astar_grid.set_point_solid(movement_target_cell, false)
 	movement_target_cell = Vector2i(-9999, -9999)
 	animating = false
