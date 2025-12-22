@@ -12,6 +12,7 @@ func _reset_inventory():
 	var sword = ItemInstance.new()
 	sword.item_id = "sword"
 	sword.quality = 0
+	sword.texture_frame = 14
 	PlayerProfile.add_item(sword)
 	var armor = ItemInstance.new()
 	armor.item_id = "armor"

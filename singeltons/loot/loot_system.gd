@@ -34,6 +34,23 @@ func get_item(id: StringName) -> Item:
 func get_affix(id: StringName) -> Affix:
 	return affix_db.get_node_or_null(String(id)) as Affix
 
+func get_item_texture(id: StringName) -> Texture2D:
+	var item = get_item(id)
+	return item.texture
+
+func get_item_texture_size(id: StringName) -> Vector2:
+	var texture = get_item_texture(id)
+	return round(texture.get_size() / 16)
+
+func get_randome_texture_frame(id: StringName) -> int:
+	var texture_size = get_item_texture_size(id)
+	return rng.randi_range(0, texture_size.x + texture_size.y)
+
+func get_random_texture_frame(id: StringName) -> int:
+	var size := get_item_texture_size(id)
+	var frame_count :int = round(size.x * size.y)
+	return rng.randi_range(0, frame_count - 1)
+
 func _generat_randome_item() -> ItemInstance:
 	var item_id = _roll_random_item_id()
 	var item = get_item(item_id)
@@ -41,9 +58,11 @@ func _generat_randome_item() -> ItemInstance:
 	var amount_of_affixes = quality_to_amount_of_affixes[quality]
 	var affixes = _roll_random_affixes(amount_of_affixes, item)
 	var item_instance = ItemInstance.new()
+	var texture_frame = get_randome_texture_frame(item_id)
 	item_instance.item_id = item_id
 	item_instance.quality = quality
 	item_instance.affixes = affixes
+	item_instance.texture_frame = texture_frame
 	return item_instance
 
 func _roll_random_item_id() -> StringName:
