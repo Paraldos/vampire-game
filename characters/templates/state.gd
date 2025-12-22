@@ -4,6 +4,9 @@ class_name State
 var character : CharacterTemplate
 var state_machine: StateMachine
 var rng := RandomNumberGenerator.new()
+var occupied_cell:
+	get:
+		return character.occupied_cell
 
 func setup(character_ref : CharacterTemplate, sm_ref: StateMachine) -> void:
 	rng.randomize()

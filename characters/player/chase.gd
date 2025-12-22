@@ -40,7 +40,7 @@ func get_path_to_target() -> Array[Vector2i]:
 			continue
 		if Utils.map.astar_grid.is_point_solid(cell):
 			continue
-		var path: Array[Vector2i] = Utils.get_astar_path(character.occupied_cell, cell)
+		var path: Array[Vector2i] = Utils.get_astar_path(occupied_cell, cell)
 		if path.is_empty():
 			continue
 		if best_path.size() == 0 or path.size() < best_path.size():
