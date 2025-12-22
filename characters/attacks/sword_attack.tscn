@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://tp2g70xhmiwh"]
 
-[ext_resource type="PackedScene" uid="uid://dpi4iba0aorkw" path="res://characters/templates/weapon_animation.tscn" id="1_q4eh2"]
+[ext_resource type="PackedScene" uid="uid://dpi4iba0aorkw" path="res://characters/attacks/attack_template.tscn" id="1_q4eh2"]
 [ext_resource type="Texture2D" uid="uid://hgmm2ncokara" path="res://assets/images/characters/attack_sword-Sheet.png" id="2_nk1dc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_msls6"]
@@ -60,9 +60,10 @@ animations = [{
 "speed": 16.0
 }]
 
-[node name="SwordAnimation" instance=ExtResource("1_q4eh2")]
+[node name="SwordAttack" instance=ExtResource("1_q4eh2")]
 z_index = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_b85xf")
-frame_progress = 0.051035658
+frame = 6
+frame_progress = 1.0

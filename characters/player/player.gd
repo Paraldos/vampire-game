@@ -2,7 +2,6 @@ extends CharacterTemplate
 
 @onready var character_sprite_container: Node2D = %CharacterSpriteContainer
 @onready var character_sprite: Sprite2D = %CharacterSprite
-@onready var sword_animation: Node2D = %SwordAnimation
 @onready var hitbox: Hitbox = $Hitbox
 @onready var state_machine: StateMachine = %StateMachine
 

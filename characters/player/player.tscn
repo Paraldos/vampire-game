@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmvw4pnmvyhoh"]
+[gd_scene load_steps=14 format=3 uid="uid://bmvw4pnmvyhoh"]
 
 [ext_resource type="Script" uid="uid://ctnu6tr34hsdb" path="res://characters/player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://dlly4so1oej8g" path="res://characters/player/character_sprite.tscn" id="3_dirf7"]
 [ext_resource type="Script" uid="uid://c3cgjqfe5hsnq" path="res://characters/player/player_camera.gd" id="4_yw30f"]
-[ext_resource type="PackedScene" uid="uid://tp2g70xhmiwh" path="res://characters/templates/sword_animation.tscn" id="6_c6leb"]
+[ext_resource type="PackedScene" uid="uid://d2yixw1d0dieb" path="res://characters/attacks/bow_attack.tscn" id="5_3t07l"]
+[ext_resource type="PackedScene" uid="uid://tp2g70xhmiwh" path="res://characters/attacks/sword_attack.tscn" id="6_c6leb"]
 [ext_resource type="PackedScene" uid="uid://bj1vb5v80ed7f" path="res://characters/templates/hitbox.tscn" id="7_dirf7"]
 [ext_resource type="Script" uid="uid://byw5ubbb4vjkj" path="res://characters/templates/state_machine.gd" id="7_rpf03"]
 [ext_resource type="Script" uid="uid://b3watucd82slh" path="res://characters/templates/state.gd" id="8_x5dtk"]
@@ -26,14 +27,19 @@ unique_name_in_owner = true
 [node name="CharacterSprite" parent="CharacterSpriteContainer" instance=ExtResource("3_dirf7")]
 unique_name_in_owner = true
 modulate = Color(0.4509804, 0.74509805, 0.827451, 1)
-frame = 66
+frame = 3
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position_smoothing_enabled = true
 script = ExtResource("4_yw30f")
 
-[node name="SwordAnimation" parent="." instance=ExtResource("6_c6leb")]
+[node name="Attacks" type="Node2D" parent="."]
+
+[node name="SwordAttack" parent="Attacks" instance=ExtResource("6_c6leb")]
+unique_name_in_owner = true
+
+[node name="BowAttack" parent="Attacks" instance=ExtResource("5_3t07l")]
 unique_name_in_owner = true
 
 [node name="Hitbox" parent="." instance=ExtResource("7_dirf7")]
