@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://b61wnhg8pfhx5" path="res://characters/attacks/attack_template.gd" id="1_kvniu"]
 
 [node name="AttackTemplate" type="Node2D"]
+z_index = 15
 script = ExtResource("1_kvniu")
