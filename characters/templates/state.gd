@@ -7,6 +7,9 @@ var rng := RandomNumberGenerator.new()
 var occupied_cell:
 	get:
 		return character.occupied_cell
+var global_position:
+	get:
+		return character.global_position
 
 func setup(character_ref : CharacterTemplate, sm_ref: StateMachine) -> void:
 	rng.randomize()

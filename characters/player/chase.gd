@@ -19,7 +19,7 @@ func physics_tick(delta: float) -> void:
 		if not character._is_next_step_valid():
 			character.path = get_path_to_target()
 		if character.path.size() > 0:
-			character._start_moving(character.path.pop_front())
+			character.start_moving(character.path.pop_front())
 		else:
 			state_machine.change_state('Idle')
 	elif character.animating:

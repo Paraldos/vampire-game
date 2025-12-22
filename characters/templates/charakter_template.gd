@@ -23,16 +23,18 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	pass
 
-func _start_moving(target_cell: Vector2i) -> void:
+func start_moving(target_cell: Vector2i) -> void:
 	if Utils.map.astar_grid.is_point_solid(target_cell): return
 	animating = true
 	movement_target_pos = Utils.cell_to_pos(target_cell)
 	movement_target_cell = target_cell
 	Utils.map.astar_grid.set_point_solid(movement_target_cell, true)
 
-func _end_moving() -> void:
+func stop_moving() -> void:
 	Utils.map.astar_grid.set_point_solid(occupied_cell, false)
 	occupied_cell = Utils.pos_to_cell(global_position)
+	if movement_target_cell != occupied_cell:
+		Utils.map.astar_grid.set_point_solid(movement_target_cell, false)
 	movement_target_cell = Vector2i(-9999, -9999)
 	animating = false
 
@@ -59,7 +61,7 @@ func move(delta: float) -> void:
 	global_position = global_position.move_toward(movement_target_pos, speed * delta)
 	if global_position.distance_to(movement_target_pos) <= 0.5:
 		global_position = movement_target_pos
-		_end_moving()
+		stop_moving()
 
 func _exit_tree() -> void:
 	cancel_move(false)
