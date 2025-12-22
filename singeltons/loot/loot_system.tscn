@@ -18,13 +18,17 @@ script = ExtResource("2_gtpna")
 sprite = ExtResource("3_ygdxm")
 metadata/_custom_type_script = "uid://85yvquxdnnf4"
 
-[node name="ring" type="Node" parent="ItemDB"]
+[node name="trinket" type="Node" parent="ItemDB"]
 script = ExtResource("2_gtpna")
+slot = 4
+type = 2
 sprite = ExtResource("4_ygdxm")
 metadata/_custom_type_script = "uid://85yvquxdnnf4"
 
 [node name="armor" type="Node" parent="ItemDB"]
 script = ExtResource("2_gtpna")
+slot = 3
+type = 1
 sprite = ExtResource("3_1lmk5")
 metadata/_custom_type_script = "uid://85yvquxdnnf4"
 

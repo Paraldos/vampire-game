@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://tthae7xf5uxy" path="res://level/template/ui/ui.gd" id="1_ovhly"]
 [ext_resource type="PackedScene" uid="uid://b26q5oxd0wntn" path="res://level/template/ui/inventory.tscn" id="2_e2srb"]
-[ext_resource type="Texture2D" uid="uid://dd3cg20q3qj7o" path="res://assets/images/status_bubble-Sheet.png" id="2_vhc8j"]
+[ext_resource type="Texture2D" uid="uid://dd3cg20q3qj7o" path="res://assets/images/ui/status_bubble-Sheet.png" id="2_vhc8j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fovfw"]
 bg_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
