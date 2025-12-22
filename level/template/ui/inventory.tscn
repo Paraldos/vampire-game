@@ -1,12 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b26q5oxd0wntn"]
+[gd_scene load_steps=4 format=3 uid="uid://b26q5oxd0wntn"]
 
 [ext_resource type="Theme" uid="uid://3ftmlmopt0i6" path="res://themes/main_theme.tres" id="1_6f8ja"]
 [ext_resource type="PackedScene" uid="uid://cky88dx2fbjos" path="res://level/template/ui/inventory_slot.tscn" id="2_pogl6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r22ur"]
-bg_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
-border_width_left = 3
-border_color = Color(0.9098039, 0.75686276, 0.4392157, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65hdw"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -27,7 +22,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
 theme = ExtResource("1_6f8ja")
-theme_override_styles/panel = SubResource("StyleBoxFlat_r22ur")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
