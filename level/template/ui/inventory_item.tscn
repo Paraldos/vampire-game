@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c0jo8rmmt8eot" path="res://level/template/ui/inventory_item.gd" id="1_trxvr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcjmg"]
-radius = 4.0
+radius = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trxvr"]
 size = Vector2(18, 18)
