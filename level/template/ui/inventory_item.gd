@@ -5,21 +5,22 @@ extends Control
 @onready var collision_area: Area2D = %CollisionArea
 var mouse_hover = false
 var move = false
-var item : ItemInstance
+var item_instance : ItemInstance
 var index : int
 var is_ready = false
 var start_position : Vector2
 
 func _ready() -> void:
-	item = PlayerProfile.inventory[index]
+	item_instance = PlayerProfile.inventory[index]
 	_init_sprite()
 
 func _init_sprite():
-	sprite.texture = LootSystem.get_item_texture(item.item_id)
-	var texture_size = LootSystem.get_item_texture_size(item.item_id)
+	sprite.texture = LootSystem.get_item_texture(item_instance.item_id)
+	var texture_size = LootSystem.get_item_texture_size(item_instance.item_id)
 	sprite.hframes = texture_size.x
 	sprite.vframes = texture_size.y
-	sprite.frame = item.texture_frame
+	sprite.frame = item_instance.texture_frame
+	sprite.modulate = LootSystem.get_quality_color(item_instance.quality)
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed('ui_left_click') and mouse_hover:

@@ -16,6 +16,15 @@ const MAGIC_THRESHOLD := 40
 const RARE_THRESHOLD := 70
 const LEGENDARY_THRESHOLD := 90
 
+func get_quality_color(quality := 0):
+	var colors = [
+		Color("ebede9"),
+		Color("73bed3"),
+		Color("de9e41"),
+		Color("a53030")
+	]
+	return colors[quality]
+
 func _ready() -> void:
 	rng.randomize()
 	item_keys.clear()
