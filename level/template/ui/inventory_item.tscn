@@ -9,7 +9,8 @@ radius = 4.0
 size = Vector2(18, 18)
 
 [node name="InventoryItem" type="Control"]
-z_index = 15
+z_index = 5
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_trxvr")
@@ -35,5 +36,7 @@ collision_mask = 0
 position = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_trxvr")
 
+[connection signal="area_entered" from="CollisionArea" to="." method="_on_collision_area_area_entered"]
+[connection signal="area_exited" from="CollisionArea" to="." method="_on_collision_area_area_exited"]
 [connection signal="mouse_entered" from="MouseArea" to="." method="_on_mouse_area_mouse_entered"]
 [connection signal="mouse_exited" from="MouseArea" to="." method="_on_mouse_area_mouse_exited"]

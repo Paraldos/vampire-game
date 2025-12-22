@@ -9,6 +9,7 @@ var item_instance : ItemInstance
 var index : int
 var is_ready = false
 var start_position : Vector2
+var mouse_offset = Vector2(10,10)
 
 func _ready() -> void:
 	item_instance = PlayerProfile.inventory[index]
@@ -24,28 +25,44 @@ func _init_sprite():
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed('ui_left_click') and mouse_hover:
-		move = true
-		start_position = global_position
+		_start_movement()
 	if Input.is_action_just_released('ui_left_click') and move:
 		_end_movement()
+		_change_slot()
 	if move:
-		_move()
+		global_position = get_global_mouse_position() - mouse_offset
+
+func _start_movement():
+	z_index = 15
+	move = true
+	start_position = global_position
 
 func _end_movement():
+	z_index = 5
 	move = false
-	if collision_area.has_overlapping_areas():
-		var overlap = collision_area.get_overlapping_areas()[0]
-		if overlap.get_parent() is InventorySlot:
-			var target_index = overlap.get_parent().index
-			PlayerProfile.swap_items(index, target_index)
-			return
 	global_position = start_position
 
-func _move():
-	global_position = get_global_mouse_position() - Vector2(10,10)
+func _change_slot():
+	if not collision_area.has_overlapping_areas(): return
+	var overlap = collision_area.get_overlapping_areas()[0]
+	var overlapping_slot = overlap.get_parent()
+	if not overlapping_slot is InventorySlot: return
+	if not overlapping_slot.viable: return
+	var target_index = overlapping_slot.index
+	PlayerProfile.swap_items(index, target_index)
+	return
 
 func _on_mouse_area_mouse_entered() -> void:
 	mouse_hover = true
 
 func _on_mouse_area_mouse_exited() -> void:
 	mouse_hover = false
+
+func _on_collision_area_area_entered(area: Area2D) -> void:
+	if not move: return
+	var slot : InventorySlot = area.get_parent()
+	slot.start_item_hover(item_instance)
+
+func _on_collision_area_area_exited(area: Area2D) -> void:
+	var slot :InventorySlot = area.get_parent()
+	slot.end_item_hover()
