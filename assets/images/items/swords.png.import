@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d276weqmt6bwq"
-path="res://.godot/imported/items_trinkets.png-92aa3b802212b0e9a1358fb22a898b01.ctex"
+uid="uid://i8of5i101per"
+path="res://.godot/imported/swords.png-2cba4bde319d5abc54ba194c6391ac53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items_trinkets.png"
-dest_files=["res://.godot/imported/items_trinkets.png-92aa3b802212b0e9a1358fb22a898b01.ctex"]
+source_file="res://assets/images/items/swords.png"
+dest_files=["res://.godot/imported/swords.png-2cba4bde319d5abc54ba194c6391ac53.ctex"]
 
 [params]
 

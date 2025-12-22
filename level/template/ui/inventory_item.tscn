@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxijtgowgncw"]
+[gd_scene load_steps=5 format=3 uid="uid://cxijtgowgncw"]
 
-[ext_resource type="Texture2D" uid="uid://dh6iva8q4w1di" path="res://assets/images/inventory_item_box.png" id="1_21jun"]
 [ext_resource type="Script" uid="uid://c0jo8rmmt8eot" path="res://level/template/ui/inventory_item.gd" id="1_trxvr"]
-[ext_resource type="Texture2D" uid="uid://d276weqmt6bwq" path="res://assets/images/items_trinkets.png" id="2_vcjmg"]
+[ext_resource type="Texture2D" uid="uid://d276weqmt6bwq" path="res://assets/images/items/items_trinkets.png" id="2_vcjmg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcjmg"]
 radius = 4.0
@@ -15,11 +14,6 @@ z_index = 15
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_trxvr")
-
-[node name="Frame" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_21jun")
-centered = false
 
 [node name="Item" type="Sprite2D" parent="."]
 position = Vector2(10, 10)

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bihocg1cprmrg"]
+[gd_scene load_steps=7 format=3 uid="uid://bihocg1cprmrg"]
 
 [ext_resource type="Script" uid="uid://j4e2n24sx3ty" path="res://singeltons/loot/loot_system.gd" id="1_a4ra7"]
 [ext_resource type="Script" uid="uid://85yvquxdnnf4" path="res://singeltons/loot/Item.gd" id="2_gtpna"]
+[ext_resource type="Texture2D" uid="uid://b8g41tirxva2a" path="res://assets/images/items/armor.png" id="3_1lmk5"]
 [ext_resource type="Script" uid="uid://bie4uj5djnli7" path="res://singeltons/loot/affix.gd" id="3_m3tey"]
+[ext_resource type="Texture2D" uid="uid://i8of5i101per" path="res://assets/images/items/swords.png" id="3_ygdxm"]
+[ext_resource type="Texture2D" uid="uid://cub5f4qmlq4q6" path="res://assets/images/items/trinkets.png" id="4_ygdxm"]
 
 [node name="LootSystem" type="Node"]
 script = ExtResource("1_a4ra7")
@@ -12,14 +15,17 @@ unique_name_in_owner = true
 
 [node name="sword" type="Node" parent="ItemDB"]
 script = ExtResource("2_gtpna")
+sprite = ExtResource("3_ygdxm")
 metadata/_custom_type_script = "uid://85yvquxdnnf4"
 
 [node name="ring" type="Node" parent="ItemDB"]
 script = ExtResource("2_gtpna")
+sprite = ExtResource("4_ygdxm")
 metadata/_custom_type_script = "uid://85yvquxdnnf4"
 
 [node name="armor" type="Node" parent="ItemDB"]
 script = ExtResource("2_gtpna")
+sprite = ExtResource("3_1lmk5")
 metadata/_custom_type_script = "uid://85yvquxdnnf4"
 
 [node name="AffixDB" type="Node" parent="."]
