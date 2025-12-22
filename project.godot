@@ -113,6 +113,7 @@ ui_map={
 2d_physics/layer_3="npcs"
 2d_physics/layer_4="enemy"
 2d_physics/layer_5="inventory_slot"
+2d_physics/layer_6="mous"
 
 [rendering]
 

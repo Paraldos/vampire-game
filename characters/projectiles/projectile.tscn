@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://0um7xub7rlqg"]
+
+[ext_resource type="Script" uid="uid://do8s0w8tuf2q" path="res://characters/projectiles/projectile.gd" id="1_1s4f2"]
+[ext_resource type="PackedScene" uid="uid://bj1vb5v80ed7f" path="res://characters/templates/hitbox.tscn" id="2_gwhh3"]
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_1s4f2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource("2_gwhh3")]
+unique_name_in_owner = true
+
+[node name="LiftetimeTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="LiftetimeTimer" to="." method="_on_liftetime_timer_timeout"]

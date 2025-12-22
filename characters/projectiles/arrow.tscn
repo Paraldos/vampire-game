@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dintkxf4mpom3"]
+
+[ext_resource type="PackedScene" uid="uid://0um7xub7rlqg" path="res://characters/projectiles/projectile.tscn" id="1_y7e2h"]
+[ext_resource type="PackedScene" uid="uid://cacqfpub3d385" path="res://characters/projectiles/impact1.tscn" id="2_42h8q"]
+[ext_resource type="Texture2D" uid="uid://01eoly41urb4" path="res://assets/images/items/special.png" id="2_jhyb8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42h8q"]
+atlas = ExtResource("2_jhyb8")
+region = Rect2(16, 112, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhyb8"]
+size = Vector2(16, 4)
+
+[node name="Arrow" instance=ExtResource("1_y7e2h")]
+collision_mask = 8
+impact_bp = ExtResource("2_42h8q")
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 0.7853982
+texture = SubResource("AtlasTexture_42h8q")
+
+[node name="Hitbox" parent="." index="1"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("RectangleShape2D_jhyb8")

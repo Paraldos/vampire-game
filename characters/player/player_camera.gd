@@ -6,4 +6,4 @@ func _ready() -> void:
 	limit_left   = rect.position.x * tile_size
 	limit_top    = rect.position.y * tile_size
 	limit_right  = rect.end.x * tile_size
-	limit_bottom = rect.end.y * tile_size
+	limit_bottom = rect.end.y * tile_size + 40

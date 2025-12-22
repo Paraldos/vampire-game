@@ -40,20 +40,28 @@ script = ExtResource("4_yw30f")
 [node name="HitboxMelee" parent="Attacks" instance=ExtResource("7_dirf7")]
 unique_name_in_owner = true
 collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attacks/HitboxMelee"]
 position = Vector2(16, 0)
 shape = SubResource("CircleShape2D_idpv6")
 
+[node name="MuzzleContainer" type="Node2D" parent="Attacks"]
+unique_name_in_owner = true
+
+[node name="Muzzle" type="Marker2D" parent="Attacks/MuzzleContainer"]
+unique_name_in_owner = true
+position = Vector2(32, 0)
+
 [node name="BowAttack" parent="Attacks" instance=ExtResource("5_3t07l")]
 unique_name_in_owner = true
+z_index = 0
 
 [node name="SwordAttack" parent="Attacks" instance=ExtResource("6_c6leb")]
 unique_name_in_owner = true
 
 [node name="UnarmedAttack" parent="Attacks" instance=ExtResource("7_on558")]
 unique_name_in_owner = true
+z_index = 0
 
 [node name="RangeChecker" type="RayCast2D" parent="."]
 unique_name_in_owner = true

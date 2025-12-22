@@ -30,6 +30,7 @@ shape = SubResource("CircleShape2D_vcjmg")
 
 [node name="MouseArea" type="Area2D" parent="."]
 unique_name_in_owner = true
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
