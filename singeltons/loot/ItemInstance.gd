@@ -3,7 +3,9 @@ class_name ItemInstance
 
 var item_id: StringName
 var texture_frame: int
-
+var texture_size : Vector2:
+	get:
+		return LootSystem.get_item_texture_size(item_id)
 var display_name : String:
 	get:
 		return LootSystem.get_item(item_id).display_name

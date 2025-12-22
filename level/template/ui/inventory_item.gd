@@ -17,9 +17,8 @@ func _ready() -> void:
 
 func _init_sprite():
 	sprite.texture = item.texture
-	var texture_size = LootSystem.get_item_texture_size(item.item_id)
-	sprite.hframes = texture_size.x
-	sprite.vframes = texture_size.y
+	sprite.hframes = round(item.texture_size.x)
+	sprite.vframes = round(item.texture_size.y)
 	sprite.frame = item.texture_frame
 	sprite.modulate = LootSystem.get_quality_color(item.quality)
 
