@@ -36,20 +36,20 @@ script = ExtResource("4_yw30f")
 
 [node name="Attacks" type="Node2D" parent="."]
 
+[node name="HitboxSword" parent="Attacks" instance=ExtResource("7_dirf7")]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attacks/HitboxSword"]
+position = Vector2(16, 0)
+shape = SubResource("CircleShape2D_idpv6")
+
 [node name="SwordAttack" parent="Attacks" instance=ExtResource("6_c6leb")]
 unique_name_in_owner = true
 
 [node name="BowAttack" parent="Attacks" instance=ExtResource("5_3t07l")]
 unique_name_in_owner = true
-
-[node name="Hitbox" parent="." instance=ExtResource("7_dirf7")]
-unique_name_in_owner = true
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(16, 0)
-shape = SubResource("CircleShape2D_idpv6")
 
 [node name="RangeChecker" type="RayCast2D" parent="."]
 unique_name_in_owner = true

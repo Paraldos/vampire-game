@@ -1,5 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2yixw1d0dieb"]
+[gd_scene load_steps=9 format=3 uid="uid://d2yixw1d0dieb"]
 
 [ext_resource type="PackedScene" uid="uid://dpi4iba0aorkw" path="res://characters/attacks/attack_template.tscn" id="1_do7xv"]
+[ext_resource type="Texture2D" uid="uid://b2n3y83iikimy" path="res://assets/images/characters/attack_bow-Sheet.png" id="2_f6uxy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6uxy"]
+atlas = ExtResource("2_f6uxy")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrmaf"]
+atlas = ExtResource("2_f6uxy")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iufc1"]
+atlas = ExtResource("2_f6uxy")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf7n1"]
+atlas = ExtResource("2_f6uxy")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxt1b"]
+atlas = ExtResource("2_f6uxy")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oqb0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6uxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrmaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iufc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf7n1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxt1b")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
 
 [node name="BowAttack" instance=ExtResource("1_do7xv")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_oqb0r")
+frame = 4
+frame_progress = 1.0

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bihocg1cprmrg"]
+[gd_scene load_steps=8 format=3 uid="uid://bihocg1cprmrg"]
 
 [ext_resource type="Script" uid="uid://j4e2n24sx3ty" path="res://singeltons/loot/loot_system.gd" id="1_a4ra7"]
 [ext_resource type="Script" uid="uid://85yvquxdnnf4" path="res://singeltons/loot/Item.gd" id="2_gtpna"]
 [ext_resource type="Texture2D" uid="uid://b8g41tirxva2a" path="res://assets/images/items/armor.png" id="3_1lmk5"]
 [ext_resource type="Script" uid="uid://bie4uj5djnli7" path="res://singeltons/loot/affix.gd" id="3_m3tey"]
 [ext_resource type="Texture2D" uid="uid://i8of5i101per" path="res://assets/images/items/swords.png" id="3_ygdxm"]
+[ext_resource type="Texture2D" uid="uid://bt6pspxjg5l4d" path="res://assets/images/items/bows.png" id="4_rccf6"]
 [ext_resource type="Texture2D" uid="uid://cub5f4qmlq4q6" path="res://assets/images/items/trinkets.png" id="4_ygdxm"]
 
 [node name="LootSystem" type="Node"]
@@ -15,11 +16,20 @@ unique_name_in_owner = true
 
 [node name="sword" type="Node" parent="ItemDB"]
 script = ExtResource("2_gtpna")
+display_name = "Sword"
 texture = ExtResource("3_ygdxm")
+metadata/_custom_type_script = "uid://85yvquxdnnf4"
+
+[node name="bow" type="Node" parent="ItemDB"]
+script = ExtResource("2_gtpna")
+display_name = "Bow"
+attack_animation = 1
+texture = ExtResource("4_rccf6")
 metadata/_custom_type_script = "uid://85yvquxdnnf4"
 
 [node name="trinket" type="Node" parent="ItemDB"]
 script = ExtResource("2_gtpna")
+display_name = "Trinket"
 slot = 4
 type = 2
 texture = ExtResource("4_ygdxm")
@@ -27,6 +37,7 @@ metadata/_custom_type_script = "uid://85yvquxdnnf4"
 
 [node name="armor" type="Node" parent="ItemDB"]
 script = ExtResource("2_gtpna")
+display_name = "Armor"
 slot = 3
 type = 1
 texture = ExtResource("3_1lmk5")
