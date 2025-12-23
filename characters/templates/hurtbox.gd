@@ -3,7 +3,6 @@ class_name Hurtbox
 
 signal hit
 
-func _on_area_entered(area: Area2D) -> void:
-	if not area is Hitbox: return
-	print(area.dmg)
+func take_dmg(dmg : int):
+	print(dmg)
 	hit.emit()

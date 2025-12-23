@@ -10,6 +10,7 @@ script = ExtResource("1_1s4f2")
 
 [node name="Hitbox" parent="." instance=ExtResource("2_gwhh3")]
 unique_name_in_owner = true
+collision_mask = 9
 
 [node name="LiftetimeTimer" type="Timer" parent="."]
 unique_name_in_owner = true

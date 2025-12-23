@@ -46,15 +46,16 @@ func _end_attack() -> void:
 	state_machine.change_state('Idle')
 
 # ============================== helper
-func enable_melee_hitbox() -> void:
+func enable_melee_hitbox(dmg : int) -> void:
 	hitbox_melee.look_at(target_pos)
+	hitbox_melee.dmg = dmg
 	hitbox_melee.get_child(0).disabled = false
 	await get_tree().create_timer(0.1).timeout
 	hitbox_melee.get_child(0).disabled = true
 
 # ============================== attacks
 func _unarmed_attack():
-	enable_melee_hitbox()
+	enable_melee_hitbox(PlayerProfile.attack)
 	await unarmed_attack.play(target_pos)
 	return
 
@@ -62,15 +63,14 @@ func _bow_attack():
 	muzzle_container.look_at(target_pos)
 	var arrow :Projectile = arrow_bp.instantiate()
 	arrow.global_position = muzzle.global_position
-	arrow.collision_layer = 3
-	arrow.collision_mask = 3
-	arrow.pierce = 0
+	arrow.collision_mask = 9
+	arrow.dmg = PlayerProfile.attack
 	arrow.look_at(target_pos)
 	get_tree().current_scene.add_child(arrow)
 	await bow_attack.play(target_pos)
 	return
 
 func _sword_attack():
-	enable_melee_hitbox()
+	enable_melee_hitbox(PlayerProfile.attack)
 	await sword_attack.play(target_pos)
 	return

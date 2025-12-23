@@ -12,7 +12,6 @@ class_name Projectile
 @export var knockback: float = 0.0
 
 @export var pierce: int = 0
-@export_flags_2d_physics var collision_layer: int
 @export_flags_2d_physics var collision_mask: int
 @export var impact_bp : PackedScene
 
@@ -23,7 +22,6 @@ var source: Node = null
 var dying: bool = false
 
 func _ready() -> void:
-	hitbox.collision_layer = collision_layer
 	hitbox.collision_mask = collision_mask
 	hitbox.dmg = dmg
 	if lifetime:
@@ -43,10 +41,9 @@ func _update_range(step : float) -> void:
 func _on_liftetime_timer_timeout() -> void:
 	queue_free()
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
+func _on_hitbox_area_entered(_area: Area2D) -> void:
 	hits += 1
-	if pierce <= 0 or hits > pierce:
-		die()
+	if pierce <= 0 or hits > pierce: die()
 
 func _on_hitbox_body_entered(_body: Node2D) -> void:
 	die()

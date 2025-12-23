@@ -15,6 +15,10 @@ var trinket : ItemInstance
 var BACKPACK_SIZE := 18
 var inventory: Array = []
 
+var attack:int :
+	get:
+		return 15
+
 func reset_inventory():
 	inventory.clear()
 	inventory.resize(GlobalEnums.ItemSlots.BACKPACK + BACKPACK_SIZE)
