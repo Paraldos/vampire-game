@@ -24,6 +24,7 @@ metadata/_custom_type_script = "uid://85yvquxdnnf4"
 script = ExtResource("2_gtpna")
 display_name = "Bow"
 attack_animation = 1
+attack_range = 1
 texture = ExtResource("4_rccf6")
 metadata/_custom_type_script = "uid://85yvquxdnnf4"
 

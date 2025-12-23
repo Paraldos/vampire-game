@@ -9,7 +9,7 @@ atlas = ExtResource("2_jhyb8")
 region = Rect2(16, 112, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhyb8"]
-size = Vector2(16, 4)
+size = Vector2(14, 4)
 
 [node name="Arrow" instance=ExtResource("1_y7e2h")]
 collision_mask = 8

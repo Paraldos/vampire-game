@@ -4,7 +4,7 @@ class_name Projectile
 @onready var hitbox: Hitbox = %Hitbox
 @onready var liftetime_timer: Timer = %LiftetimeTimer
 
-@export var speed: float = 200.0
+@export var speed: float = 150.0
 @export var max_range: float = 300.0
 @export var lifetime: float = 0.0
 

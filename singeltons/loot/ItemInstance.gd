@@ -21,6 +21,10 @@ var attack_animation : GlobalEnums.AttackAnimation:
 var texture : Texture2D:
 	get:
 		return LootSystem.get_item(item_id).texture
+var attack_range : GlobalEnums.AttackRange:
+	get:
+		return LootSystem.get_item(item_id).attack_range
+
 
 var quality: int = GlobalEnums.ItemQuality.COMMON
 
