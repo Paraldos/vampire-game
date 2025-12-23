@@ -24,6 +24,7 @@ func physics_tick(delta: float) -> void:
 func _on_left_clicked_floor(target : Vector2i) -> void:
 	if not Utils.mouse_on_map: return
 	if Input.is_action_pressed('ui_shift'): return
+	if character.animating: return
 	target_cell = target
 	character.attack_target = null
 	character.path = Utils.get_astar_path(occupied_cell, target_cell)

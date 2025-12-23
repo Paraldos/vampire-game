@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cx76hu558fq88"]
+[gd_scene load_steps=10 format=3 uid="uid://cx76hu558fq88"]
 
 [ext_resource type="PackedScene" uid="uid://dpi4iba0aorkw" path="res://characters/attacks/attack_template.tscn" id="1_ykn1p"]
 [ext_resource type="Texture2D" uid="uid://dtifte1merup8" path="res://assets/images/characters/attack_unarmed-Sheet.png" id="2_8n8ih"]
@@ -27,10 +27,6 @@ region = Rect2(192, 0, 48, 48)
 atlas = ExtResource("2_8n8ih")
 region = Rect2(240, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wm5wt"]
-atlas = ExtResource("2_8n8ih")
-region = Rect2(288, 0, 48, 48)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_gu75d"]
 animations = [{
 "frames": [{
@@ -51,9 +47,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4y6l2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wm5wt")
 }],
 "loop": false,
 "name": &"default",
@@ -64,5 +57,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_gu75d")
-frame = 6
+frame = 5
 frame_progress = 1.0
