@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgcpw627r6nak"]
+[gd_scene load_steps=11 format=3 uid="uid://bgcpw627r6nak"]
 
 [ext_resource type="Script" uid="uid://tthae7xf5uxy" path="res://level/template/ui/ui.gd" id="1_ovhly"]
 [ext_resource type="PackedScene" uid="uid://b26q5oxd0wntn" path="res://level/template/ui/inventory.tscn" id="2_e2srb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dd3cg20q3qj7o" path="res://assets/images/ui/status_bubble-Sheet.png" id="2_vhc8j"]
 [ext_resource type="Script" uid="uid://cj1qundiqcghn" path="res://level/template/ui/hp_bubble.gd" id="5_cvca8"]
 [ext_resource type="Script" uid="uid://cpbouck8d732d" path="res://level/template/ui/mana_bubble.gd" id="6_mjf6u"]
+[ext_resource type="PackedScene" uid="uid://cky88dx2fbjos" path="res://level/template/ui/inventory_slot.tscn" id="6_n76he"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2srb"]
 atlas = ExtResource("2_vhc8j")
@@ -89,9 +90,80 @@ texture_under = SubResource("AtlasTexture_e2srb")
 texture_progress = SubResource("AtlasTexture_e4oby")
 script = ExtResource("5_cvca8")
 
-[node name="Control" type="Control" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Left"
+horizontal_alignment = 1
+
+[node name="InventorySlot" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_n76he")]
+layout_mode = 2
+slot_type = 0
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+text = "Right"
+horizontal_alignment = 1
+
+[node name="InventorySlot" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer5" instance=ExtResource("6_n76he")]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer6"]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+
+[node name="InventorySlot" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer6" instance=ExtResource("6_n76he")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "2"
+horizontal_alignment = 1
+
+[node name="InventorySlot" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("6_n76he")]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+
+[node name="InventorySlot" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("6_n76he")]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+
+[node name="InventorySlot" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("6_n76he")]
+layout_mode = 2
 
 [node name="ManaBubble" type="TextureProgressBar" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer"]
 layout_mode = 2
