@@ -14,7 +14,7 @@ func physics_tick(delta: float) -> void:
 		if not character._is_next_step_valid():
 			character.path = Utils.get_astar_path(occupied_cell, target_cell)
 		if character.path.size() > 0:
-			character.start_moving(character.path.pop_front())
+			character.start_moving()
 	elif character.animating:
 		character.move(delta)
 

@@ -23,11 +23,23 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	pass
 
-func start_moving(target_cell: Vector2i) -> void:
-	if Utils.map.astar_grid.is_point_solid(target_cell): return
+func start_moving() -> void:
+	while not path.is_empty():
+		var next_cell: Vector2i = path[0]
+		if next_cell == occupied_cell:
+			path.pop_front()
+			continue
+		if global_position.distance_to(Utils.cell_to_pos(next_cell)) <= 5.0:
+			path.pop_front()
+			continue
+		break
+	if path.is_empty(): return
+	var target_cell: Vector2i = path.pop_front()
+	if Utils.map.astar_grid.is_point_solid(target_cell):
+		return
 	animating = true
-	movement_target_pos = Utils.cell_to_pos(target_cell)
 	movement_target_cell = target_cell
+	movement_target_pos = Utils.cell_to_pos(target_cell)
 	Utils.map.astar_grid.set_point_solid(movement_target_cell, true)
 
 func stop_moving() -> void:

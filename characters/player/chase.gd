@@ -19,10 +19,12 @@ func physics_tick(delta: float) -> void:
 			Signals.chase_attack.emit(target_pos)
 			state_machine.change_state('Attack')
 			return
+		if not character.path:
+			character.path = get_path_to_target()
 		if not character._is_next_step_valid():
 			character.path = get_path_to_target()
 		if character.path.size() > 0:
-			character.start_moving(character.path.pop_front())
+			character.start_moving()
 		else:
 			state_machine.change_state('Idle')
 	elif character.animating:
@@ -40,7 +42,6 @@ func _on_left_click_enemy(target : CharacterTemplate) -> void:
 	if character.current_state == 'Attack' and character.attack_target == target: return
 	state_machine.change_state('Chase')
 	character.attack_target = target
-	character.path = get_path_to_target()
 
 func get_path_to_target() -> Array[Vector2i]:
 	var surronding_cells = Utils.map.get_surrounding_cells(target_cell)
