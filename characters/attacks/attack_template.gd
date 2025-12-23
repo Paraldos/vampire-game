@@ -1,8 +1,6 @@
 extends Node2D
 
 var rng = RandomNumberGenerator.new()
-var target_pos := Vector2(-9999, -9999)
-signal finished
 
 func _ready() -> void:
 	rng.randomize()
@@ -18,4 +16,4 @@ func play(target_pos):
 	# cleanup
 	await sprit.animation_finished
 	sprit.visible = false
-	finished.emit()
+	return

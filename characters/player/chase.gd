@@ -17,9 +17,8 @@ func physics_tick(delta: float) -> void:
 	if not character.animating:
 		if _check_if_enemy_is_in_range():
 			Signals.chase_attack.emit(target_pos)
+			state_machine.change_state('Attack')
 			return
-		if character.attack_target.occupied_cell != target_cell:
-			character.path = get_path_to_target()
 		if not character._is_next_step_valid():
 			character.path = get_path_to_target()
 		if character.path.size() > 0:

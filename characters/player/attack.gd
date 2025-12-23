@@ -12,20 +12,25 @@ var arrow_bp := preload("res://characters/projectiles/arrow.tscn")
 var wait_for_attack := false
 
 func _ready() -> void:
-	Signals.shift_click.connect(_attack)
-	Signals.chase_attack.connect(_attack)
+	Signals.shift_click.connect(_start_attack)
+	Signals.chase_attack.connect(_start_attack)
 	hitbox_melee.get_child(0).disabled = true
 
 func physics_tick(_delta: float) -> void:
 	if wait_for_attack and not character.animating:
-		_attack(character.attack_target.global_position)
+		_start_attack(character.attack_target.global_position)
 
-func _attack(new_target_pos : Vector2) -> void:
+func _start_attack(new_target_pos : Vector2):
 	state_machine.change_state('Attack')
 	if character.animating:
 		wait_for_attack = true
-		return
-	_start_attack_basics(new_target_pos)
+	else:
+		target_pos = new_target_pos
+		character.animating = true
+		character.character_sprite.attack_animation(target_pos)
+		_middle_attack()
+
+func _middle_attack():
 	var player_weapon :ItemInstance = PlayerProfile.inventory[GlobalEnums.ItemSlots.MAINHAND]
 	if player_weapon == null:
 		await _unarmed_attack()
@@ -35,17 +40,13 @@ func _attack(new_target_pos : Vector2) -> void:
 				await _bow_attack()
 			GlobalEnums.AttackAnimation.SWORD:
 				await _sword_attack()
-	_end_attack_basics()
+	_end_attack()
 
-func _start_attack_basics(new_target_pos : Vector2) -> void:
-	target_pos = new_target_pos
-	character.animating = true
-	character.character_sprite.attack_animation(target_pos)
-
-func _end_attack_basics() -> void:
+func _end_attack() -> void:
 	character.animating = false
 	state_machine.change_state('Idle')
 
+# ============================== helper
 func enable_melee_hitbox() -> void:
 	hitbox_melee.look_at(target_pos)
 	hitbox_melee.get_child(0).disabled = false
@@ -55,8 +56,7 @@ func enable_melee_hitbox() -> void:
 # ============================== attacks
 func _unarmed_attack():
 	enable_melee_hitbox()
-	unarmed_attack.play(target_pos)
-	await unarmed_attack.finished
+	await unarmed_attack.play(target_pos)
 	return
 
 func _bow_attack():
@@ -68,13 +68,10 @@ func _bow_attack():
 	arrow.pierce = 0
 	arrow.look_at(target_pos)
 	get_tree().current_scene.add_child(arrow)
-
-	bow_attack.play(target_pos)
-	await bow_attack.finished
+	await bow_attack.play(target_pos)
 	return
 
 func _sword_attack():
 	enable_melee_hitbox()
-	sword_attack.play(target_pos)
-	await sword_attack.finished
+	await sword_attack.play(target_pos)
 	return
