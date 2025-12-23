@@ -1,97 +1,94 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmvw4pnmvyhoh"]
+[gd_scene load_steps=16 format=3 uid="uid://bmvw4pnmvyhoh"]
 
+[ext_resource type="PackedScene" uid="uid://cowfiixeikwgc" path="res://characters/templates/character_template.tscn" id="1_3t07l"]
 [ext_resource type="Script" uid="uid://ctnu6tr34hsdb" path="res://characters/player/player.gd" id="1_onrkg"]
-[ext_resource type="PackedScene" uid="uid://dlly4so1oej8g" path="res://characters/player/character_sprite.tscn" id="3_dirf7"]
 [ext_resource type="Script" uid="uid://c3cgjqfe5hsnq" path="res://characters/player/player_camera.gd" id="4_yw30f"]
 [ext_resource type="PackedScene" uid="uid://d2yixw1d0dieb" path="res://characters/attacks/bow_attack.tscn" id="5_3t07l"]
 [ext_resource type="PackedScene" uid="uid://tp2g70xhmiwh" path="res://characters/attacks/sword_attack.tscn" id="6_c6leb"]
 [ext_resource type="PackedScene" uid="uid://bj1vb5v80ed7f" path="res://characters/templates/hitbox.tscn" id="7_dirf7"]
+[ext_resource type="Shader" uid="uid://83s7q3gacun4" path="res://characters/templates/hover.gdshader" id="7_gqopd"]
 [ext_resource type="PackedScene" uid="uid://cx76hu558fq88" path="res://characters/attacks/unarmed_attack.tscn" id="7_on558"]
-[ext_resource type="Script" uid="uid://byw5ubbb4vjkj" path="res://characters/templates/state_machine.gd" id="7_rpf03"]
 [ext_resource type="Script" uid="uid://b3watucd82slh" path="res://characters/templates/state.gd" id="8_x5dtk"]
 [ext_resource type="Script" uid="uid://blhmh2honsrtj" path="res://characters/player/move.gd" id="9_rpf03"]
 [ext_resource type="Script" uid="uid://g6wba0mrwy2a" path="res://characters/player/attack.gd" id="10_3t07l"]
 [ext_resource type="Script" uid="uid://b6kpumq8t076s" path="res://characters/player/chase.gd" id="10_x5dtk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_idpv6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icpky"]
+shader = ExtResource("7_gqopd")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+shader_parameter/new_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_on558"]
 radius = 4.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rpf03"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gqopd"]
 radius = 16.0
 
-[node name="Player" type="Node2D"]
+[node name="Player" instance=ExtResource("1_3t07l")]
 script = ExtResource("1_onrkg")
+color_default = Color(0.4509804, 0.74509805, 0.827451, 1)
 
-[node name="CharacterSpriteContainer" type="Node2D" parent="."]
-unique_name_in_owner = true
+[node name="Idle" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("8_x5dtk")
+metadata/_custom_type_script = "uid://b3watucd82slh"
 
-[node name="CharacterSprite" parent="CharacterSpriteContainer" instance=ExtResource("3_dirf7")]
-unique_name_in_owner = true
-modulate = Color(0.4509804, 0.74509805, 0.827451, 1)
-frame = 3
+[node name="Move" type="Node" parent="StateMachine" index="1"]
+script = ExtResource("9_rpf03")
+metadata/_custom_type_script = "uid://b3watucd82slh"
 
-[node name="PlayerCamera" type="Camera2D" parent="."]
+[node name="Chase" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("10_x5dtk")
+metadata/_custom_type_script = "uid://b3watucd82slh"
+
+[node name="Attack" type="Node" parent="StateMachine" index="3"]
+script = ExtResource("10_3t07l")
+metadata/_custom_type_script = "uid://b3watucd82slh"
+
+[node name="CharacterSprite" parent="CharacterSpriteContainer" index="0"]
+material = SubResource("ShaderMaterial_icpky")
+
+[node name="PlayerCamera" type="Camera2D" parent="." index="2"]
 unique_name_in_owner = true
 position_smoothing_enabled = true
 script = ExtResource("4_yw30f")
 
-[node name="Attacks" type="Node2D" parent="."]
+[node name="Attacks" type="Node2D" parent="." index="3"]
 
-[node name="HitboxMelee" parent="Attacks" instance=ExtResource("7_dirf7")]
+[node name="HitboxMelee" parent="Attacks" index="0" instance=ExtResource("7_dirf7")]
 unique_name_in_owner = true
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attacks/HitboxMelee"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attacks/HitboxMelee" index="0"]
 position = Vector2(16, 0)
-shape = SubResource("CircleShape2D_idpv6")
+shape = SubResource("CircleShape2D_on558")
 
-[node name="MuzzleContainer" type="Node2D" parent="Attacks"]
+[node name="MuzzleContainer" type="Node2D" parent="Attacks" index="1"]
 unique_name_in_owner = true
 
-[node name="Muzzle" type="Marker2D" parent="Attacks/MuzzleContainer"]
+[node name="Muzzle" type="Marker2D" parent="Attacks/MuzzleContainer" index="0"]
 unique_name_in_owner = true
 position = Vector2(16, 0)
 
-[node name="BowAttack" parent="Attacks" instance=ExtResource("5_3t07l")]
+[node name="BowAttack" parent="Attacks" index="2" instance=ExtResource("5_3t07l")]
 unique_name_in_owner = true
-z_index = 0
+z_index = 5
 
-[node name="SwordAttack" parent="Attacks" instance=ExtResource("6_c6leb")]
+[node name="SwordAttack" parent="Attacks" index="3" instance=ExtResource("6_c6leb")]
 unique_name_in_owner = true
 
-[node name="UnarmedAttack" parent="Attacks" instance=ExtResource("7_on558")]
+[node name="UnarmedAttack" parent="Attacks" index="4" instance=ExtResource("7_on558")]
 unique_name_in_owner = true
-z_index = 0
+z_index = 5
 
-[node name="RangeChecker" type="RayCast2D" parent="."]
+[node name="RangeChecker" type="RayCast2D" parent="." index="4"]
 unique_name_in_owner = true
 target_position = Vector2(0, 48)
 
-[node name="MeleeChecker" type="Area2D" parent="."]
+[node name="MeleeChecker" type="Area2D" parent="." index="5"]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeChecker"]
-shape = SubResource("CircleShape2D_rpf03")
-
-[node name="StateMachine" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("7_rpf03")
-metadata/_custom_type_script = "uid://byw5ubbb4vjkj"
-
-[node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("8_x5dtk")
-metadata/_custom_type_script = "uid://b3watucd82slh"
-
-[node name="Move" type="Node" parent="StateMachine"]
-script = ExtResource("9_rpf03")
-metadata/_custom_type_script = "uid://b3watucd82slh"
-
-[node name="Chase" type="Node" parent="StateMachine"]
-script = ExtResource("10_x5dtk")
-metadata/_custom_type_script = "uid://b3watucd82slh"
-
-[node name="Attack" type="Node" parent="StateMachine"]
-script = ExtResource("10_3t07l")
-metadata/_custom_type_script = "uid://b3watucd82slh"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeChecker" index="0"]
+shape = SubResource("CircleShape2D_gqopd")

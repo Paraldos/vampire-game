@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2yixw1d0dieb"]
+[gd_scene load_steps=10 format=3 uid="uid://d2yixw1d0dieb"]
 
 [ext_resource type="PackedScene" uid="uid://dpi4iba0aorkw" path="res://characters/attacks/attack_template.tscn" id="1_do7xv"]
 [ext_resource type="Texture2D" uid="uid://b2n3y83iikimy" path="res://assets/images/characters/attack_bow-Sheet.png" id="2_f6uxy"]
@@ -23,6 +23,10 @@ region = Rect2(144, 0, 48, 48)
 atlas = ExtResource("2_f6uxy")
 region = Rect2(192, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqb0r"]
+atlas = ExtResource("2_f6uxy")
+region = Rect2(240, 0, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_oqb0r"]
 animations = [{
 "frames": [{
@@ -40,15 +44,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wxt1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqb0r")
 }],
 "loop": false,
 "name": &"default",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [node name="BowAttack" instance=ExtResource("1_do7xv")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_oqb0r")
-frame = 4
+frame = 5
 frame_progress = 1.0

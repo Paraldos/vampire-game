@@ -1,7 +1,5 @@
 extends CharacterTemplate
 
-@onready var character_sprite: Sprite2D = %CharacterSprite
-@onready var state_machine: StateMachine = %StateMachine
 var spawn_cell: Vector2i
 var enemy_cell : Vector2i :
 	get: return Utils.pos_to_cell(global_position)
@@ -21,10 +19,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_mouse_area_mouse_entered() -> void:
 	hover = true
-	var mat := character_sprite.material as ShaderMaterial
-	mat.set_shader_parameter("new_color", Color("cf573c"))
+	_change_color(color_hover)
 
 func _on_mouse_area_mouse_exited() -> void:
 	hover = false
+	_change_color(color_default)
+
+func _change_color(new_color : Color):
 	var mat := character_sprite.material as ShaderMaterial
-	mat.set_shader_parameter("new_color", Color("090a14"))
+	mat.set_shader_parameter("new_color", new_color)

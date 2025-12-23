@@ -1,8 +1,15 @@
 extends Node2D
 class_name CharacterTemplate
 
+@onready var state_machine: StateMachine = %StateMachine
+@onready var character_sprite_container: Node2D = %CharacterSpriteContainer
+@onready var character_sprite: Sprite2D = %CharacterSprite
+
 @export var visible_path: bool = true
 @export var speed: float = 50.0
+@export var color_default = Color('a53030')
+@export var color_hover = Color('cf573c')
+
 var path: Array[Vector2i] = []:
 	set(new_path):
 		path = new_path
@@ -19,9 +26,14 @@ func _ready() -> void:
 	rng.randomize()
 	occupied_cell = Utils.pos_to_cell(global_position)
 	Utils.map.astar_grid.set_point_solid(occupied_cell, true)
+	_change_color(color_default)
 
 func _physics_process(_delta: float) -> void:
 	pass
+
+func _change_color(new_color : Color):
+	var mat := character_sprite.material as ShaderMaterial
+	mat.set_shader_parameter("new_color", new_color)
 
 func start_moving() -> void:
 	while not path.is_empty():

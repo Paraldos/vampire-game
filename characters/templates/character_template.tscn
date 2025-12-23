@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cowfiixeikwgc"]
+
+[ext_resource type="Script" uid="uid://c6slkq5hqscno" path="res://characters/templates/character_template.gd" id="1_jma8u"]
+[ext_resource type="Script" uid="uid://byw5ubbb4vjkj" path="res://characters/templates/state_machine.gd" id="2_4rqew"]
+[ext_resource type="PackedScene" uid="uid://dlly4so1oej8g" path="res://characters/player/character_sprite.tscn" id="3_7cvpj"]
+[ext_resource type="Shader" uid="uid://83s7q3gacun4" path="res://characters/templates/hover.gdshader" id="4_rywti"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lkkd0"]
+shader = ExtResource("4_rywti")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+shader_parameter/new_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+
+[node name="CharakterTemplate" type="Node2D"]
+script = ExtResource("1_jma8u")
+
+[node name="StateMachine" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_4rqew")
+metadata/_custom_type_script = "uid://byw5ubbb4vjkj"
+
+[node name="CharacterSpriteContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CharacterSprite" parent="CharacterSpriteContainer" instance=ExtResource("3_7cvpj")]
+unique_name_in_owner = true
+modulate = Color(0.4509804, 0.74509805, 0.827451, 1)
+material = SubResource("ShaderMaterial_lkkd0")
+frame = 3

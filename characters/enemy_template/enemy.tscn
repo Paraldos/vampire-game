@@ -1,53 +1,46 @@
-[gd_scene load_steps=10 format=3 uid="uid://ymwlpt7cigxr"]
+[gd_scene load_steps=9 format=3 uid="uid://ymwlpt7cigxr"]
 
 [ext_resource type="Script" uid="uid://pkbjlgvwgg2c" path="res://characters/enemy_template/enemy.gd" id="1_wqjt8"]
-[ext_resource type="PackedScene" uid="uid://dlly4so1oej8g" path="res://characters/player/character_sprite.tscn" id="2_emraa"]
-[ext_resource type="Shader" uid="uid://83s7q3gacun4" path="res://characters/enemy_template/hover.gdshader" id="3_eujd1"]
+[ext_resource type="PackedScene" uid="uid://cowfiixeikwgc" path="res://characters/templates/character_template.tscn" id="1_y51k7"]
 [ext_resource type="PackedScene" uid="uid://21nxqb3lgoxh" path="res://characters/templates/hurtbox.tscn" id="4_gi5ef"]
-[ext_resource type="Script" uid="uid://byw5ubbb4vjkj" path="res://characters/templates/state_machine.gd" id="4_y51k7"]
+[ext_resource type="Shader" uid="uid://83s7q3gacun4" path="res://characters/templates/hover.gdshader" id="4_y51k7"]
 [ext_resource type="Script" uid="uid://b8da5t11huhiu" path="res://characters/enemy_template/idle.gd" id="5_eujd1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_anbm0"]
-shader = ExtResource("3_eujd1")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y51k7"]
+shader = ExtResource("4_y51k7")
 shader_parameter/tolerance = 0.1
-shader_parameter/prev_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
-shader_parameter/new_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
+shader_parameter/prev_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+shader_parameter/new_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y51k7"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_anbm0"]
 radius = 8.062258
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gi5ef"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2fy7w"]
 radius = 8.0
 
-[node name="Enemy" type="Node2D"]
+[node name="Enemy" instance=ExtResource("1_y51k7")]
 script = ExtResource("1_wqjt8")
 
-[node name="CharacterSprite" parent="." instance=ExtResource("2_emraa")]
-unique_name_in_owner = true
-modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
-material = SubResource("ShaderMaterial_anbm0")
+[node name="Idle" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("5_eujd1")
+metadata/_custom_type_script = "uid://b3watucd82slh"
 
-[node name="MouseArea" type="Area2D" parent="."]
+[node name="CharacterSprite" parent="CharacterSpriteContainer" index="0"]
+material = SubResource("ShaderMaterial_y51k7")
+frame = 44
+
+[node name="MouseArea" type="Area2D" parent="." index="2"]
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
-shape = SubResource("CircleShape2D_y51k7")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea" index="0"]
+shape = SubResource("CircleShape2D_anbm0")
 
-[node name="Hurtbox" parent="." instance=ExtResource("4_gi5ef")]
+[node name="Hurtbox" parent="." index="3" instance=ExtResource("4_gi5ef")]
 collision_layer = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-shape = SubResource("CircleShape2D_gi5ef")
-
-[node name="StateMachine" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("4_y51k7")
-metadata/_custom_type_script = "uid://byw5ubbb4vjkj"
-
-[node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("5_eujd1")
-metadata/_custom_type_script = "uid://b3watucd82slh"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_2fy7w")
 
 [connection signal="mouse_entered" from="MouseArea" to="." method="_on_mouse_area_mouse_entered"]
 [connection signal="mouse_exited" from="MouseArea" to="." method="_on_mouse_area_mouse_exited"]
