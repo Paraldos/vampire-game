@@ -2,7 +2,7 @@ extends Node2D
 class_name CharacterTemplate
 
 @export var visible_path: bool = true
-@export var speed: float = 40.0
+@export var speed: float = 50.0
 var path: Array[Vector2i] = []:
 	set(new_path):
 		path = new_path
