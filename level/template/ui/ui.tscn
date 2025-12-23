@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgcpw627r6nak"]
+[gd_scene load_steps=10 format=3 uid="uid://bgcpw627r6nak"]
 
 [ext_resource type="Script" uid="uid://tthae7xf5uxy" path="res://level/template/ui/ui.gd" id="1_ovhly"]
 [ext_resource type="PackedScene" uid="uid://b26q5oxd0wntn" path="res://level/template/ui/inventory.tscn" id="2_e2srb"]
 [ext_resource type="Theme" uid="uid://3ftmlmopt0i6" path="res://themes/main_theme.tres" id="2_e4oby"]
 [ext_resource type="Texture2D" uid="uid://dd3cg20q3qj7o" path="res://assets/images/ui/status_bubble-Sheet.png" id="2_vhc8j"]
+[ext_resource type="Script" uid="uid://cj1qundiqcghn" path="res://level/template/ui/hp_bubble.gd" id="5_cvca8"]
+[ext_resource type="Script" uid="uid://cpbouck8d732d" path="res://level/template/ui/mana_bubble.gd" id="6_mjf6u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2srb"]
 atlas = ExtResource("2_vhc8j")
@@ -85,6 +87,7 @@ value = 50.0
 fill_mode = 3
 texture_under = SubResource("AtlasTexture_e2srb")
 texture_progress = SubResource("AtlasTexture_e4oby")
+script = ExtResource("5_cvca8")
 
 [node name="Control" type="Control" parent="VBoxContainer/Bottom/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -98,3 +101,4 @@ value = 50.0
 fill_mode = 3
 texture_under = SubResource("AtlasTexture_e2srb")
 texture_progress = SubResource("AtlasTexture_64776")
+script = ExtResource("6_mjf6u")

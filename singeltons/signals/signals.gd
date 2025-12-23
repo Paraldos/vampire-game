@@ -10,3 +10,5 @@ signal shift_click(target_pos : Vector2)
 signal chase_attack(target_pos : Vector2)
 
 signal update_inventory
+signal update_hp
+signal update_mp

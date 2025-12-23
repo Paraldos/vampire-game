@@ -4,8 +4,6 @@ var stats
 var gold := 0
 var xp := 0
 var lvl := 1
-var hp_max := 50
-var hp_current := 50
 
 var mainhand : ItemInstance
 var offhand : ItemInstance
@@ -15,9 +13,29 @@ var trinket : ItemInstance
 var BACKPACK_SIZE := 18
 var inventory: Array = []
 
+var strength = 5
+var dexterity = 5
+var wisdom = 5
+var vitality = 5
+var mana = 5
+
+var hp_max:
+	get: return vitality * 10
+var hp_current = 50:
+	set(new_value):
+		hp_current = new_value
+		Signals.update_hp.emit()
+
+var mp_max:
+	get: return mana * 10
+var mp_current = 50:
+	set(new_value):
+		mp_current = new_value
+		Signals.update_mp.emit()
+
 var attack:int :
 	get:
-		return 15
+		return strength
 
 func reset_inventory():
 	inventory.clear()
