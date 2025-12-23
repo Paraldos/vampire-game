@@ -5,6 +5,9 @@ var target_cell
 func _ready() -> void:
 	Signals.left_clicked_floor.connect(_on_left_clicked_floor)
 
+func exit():
+	character.stop_moving()
+
 func physics_tick(delta: float) -> void:
 	if not character.animating:
 		if not character._is_next_step_valid():

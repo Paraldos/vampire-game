@@ -19,9 +19,7 @@ func physics_tick(delta: float) -> void:
 			Signals.chase_attack.emit(target_pos)
 			state_machine.change_state('Attack')
 			return
-		if not character.path:
-			character.path = get_path_to_target()
-		if not character._is_next_step_valid():
+		else:
 			character.path = get_path_to_target()
 		if character.path.size() > 0:
 			character.start_moving()
