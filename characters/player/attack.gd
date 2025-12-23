@@ -3,10 +3,10 @@ extends State
 @onready var hitbox_melee: Hitbox = %HitboxMelee
 @onready var muzzle_container: Node2D = %MuzzleContainer
 @onready var muzzle: Marker2D = %Muzzle
-
 @onready var bow_attack: Node2D = %BowAttack
 @onready var sword_attack: Node2D = %SwordAttack
 @onready var unarmed_attack: Node2D = %UnarmedAttack
+
 var target_pos : Vector2
 var arrow_bp := preload("res://characters/projectiles/arrow.tscn")
 var wait_for_attack := false
@@ -47,11 +47,9 @@ func _end_attack() -> void:
 
 # ============================== helper
 func enable_melee_hitbox(dmg : int) -> void:
-	hitbox_melee.look_at(target_pos)
-	hitbox_melee.dmg = dmg
-	hitbox_melee.get_child(0).disabled = false
+	hitbox_melee.enable(target_pos, dmg)
 	await get_tree().create_timer(0.1).timeout
-	hitbox_melee.get_child(0).disabled = true
+	hitbox_melee.disable()
 
 # ============================== attacks
 func _unarmed_attack():

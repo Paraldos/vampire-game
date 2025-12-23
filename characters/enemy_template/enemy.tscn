@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ymwlpt7cigxr"]
+[gd_scene load_steps=14 format=3 uid="uid://ymwlpt7cigxr"]
 
 [ext_resource type="Script" uid="uid://pkbjlgvwgg2c" path="res://characters/enemy_template/enemy.gd" id="1_wqjt8"]
 [ext_resource type="PackedScene" uid="uid://cowfiixeikwgc" path="res://characters/templates/character_template.tscn" id="1_y51k7"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://d2ubfelfqy8mt" path="res://characters/enemy_template/chase.gd" id="4_eujd1"]
 [ext_resource type="Shader" uid="uid://83s7q3gacun4" path="res://characters/templates/hover.gdshader" id="4_y51k7"]
 [ext_resource type="Script" uid="uid://b8da5t11huhiu" path="res://characters/enemy_template/idle.gd" id="5_eujd1"]
+[ext_resource type="Script" uid="uid://catr0iookhrlx" path="res://characters/enemy_template/claw_attack.gd" id="6_anbm0"]
+[ext_resource type="PackedScene" uid="uid://bj1vb5v80ed7f" path="res://characters/templates/hitbox.tscn" id="8_3op6e"]
+[ext_resource type="PackedScene" uid="uid://cx76hu558fq88" path="res://characters/attacks/unarmed_attack.tscn" id="9_3op6e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y51k7"]
 shader = ExtResource("4_y51k7")
@@ -18,6 +21,9 @@ radius = 8.062258
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eujd1"]
 radius = 64.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3op6e"]
+radius = 4.0
 
 [node name="Enemy" instance=ExtResource("1_y51k7")]
 script = ExtResource("1_wqjt8")
@@ -32,6 +38,12 @@ metadata/_custom_type_script = "uid://b3watucd82slh"
 script = ExtResource("4_eujd1")
 metadata/_custom_type_script = "uid://b3watucd82slh"
 
+[node name="Attack" type="Node" parent="StateMachine" index="2" node_paths=PackedStringArray("hitbox", "animation")]
+script = ExtResource("6_anbm0")
+hitbox = NodePath("../../Attack/Hitbox")
+animation = NodePath("../../Attack/AttackAnimation")
+metadata/_custom_type_script = "uid://b3watucd82slh"
+
 [node name="CharacterSprite" parent="CharacterSpriteContainer" index="0"]
 material = SubResource("ShaderMaterial_y51k7")
 frame = 44
@@ -43,7 +55,7 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="MouseArea" type="Area2D" parent="." index="4"]
-collision_layer = 8
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea" index="0"]
@@ -67,6 +79,19 @@ collision_mask = 15
 autostart = true
 
 [node name="ChaseTimer" type="Timer" parent="." index="6"]
+unique_name_in_owner = true
+
+[node name="Attack" type="Node2D" parent="." index="7"]
+
+[node name="Hitbox" parent="Attack" index="0" instance=ExtResource("8_3op6e")]
+unique_name_in_owner = true
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Hitbox" index="0"]
+position = Vector2(16, 0)
+shape = SubResource("CircleShape2D_3op6e")
+
+[node name="AttackAnimation" parent="Attack" index="1" instance=ExtResource("9_3op6e")]
 unique_name_in_owner = true
 
 [connection signal="mouse_entered" from="MouseArea" to="." method="_on_mouse_area_mouse_entered"]
