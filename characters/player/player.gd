@@ -3,6 +3,10 @@ extends CharacterTemplate
 @onready var character_sprite_container: Node2D = %CharacterSpriteContainer
 @onready var character_sprite: Sprite2D = %CharacterSprite
 @onready var state_machine: StateMachine = %StateMachine
+var player_weapon : ItemInstance:
+	get: return PlayerProfile.inventory[GlobalEnums.ItemSlots.MAINHAND]
+var current_state :String :
+	get: return state_machine.current_state.name
 
 func _ready() -> void:
 	super()

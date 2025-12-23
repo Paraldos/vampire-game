@@ -27,15 +27,14 @@ func _start_attack(new_target_pos : Vector2):
 	else:
 		target_pos = new_target_pos
 		character.animating = true
-		character.character_sprite.attack_animation(target_pos)
 		_middle_attack()
 
 func _middle_attack():
-	var player_weapon :ItemInstance = PlayerProfile.inventory[GlobalEnums.ItemSlots.MAINHAND]
-	if player_weapon == null:
+	character.character_sprite.attack_animation(target_pos)
+	if character.player_weapon == null:
 		await _unarmed_attack()
 	else:
-		match player_weapon.attack_animation:
+		match character.player_weapon.attack_animation:
 			GlobalEnums.AttackAnimation.BOW:
 				await _bow_attack()
 			GlobalEnums.AttackAnimation.SWORD:

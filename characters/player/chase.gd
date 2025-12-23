@@ -29,8 +29,7 @@ func physics_tick(delta: float) -> void:
 		character.move(delta)
 
 func _check_if_enemy_is_in_range() -> bool:
-	var player_weapon : ItemInstance = PlayerProfile.inventory[GlobalEnums.ItemSlots.MAINHAND]
-	if player_weapon == null or player_weapon.attack_range == GlobalEnums.AttackRange.MELEE:
+	if character.player_weapon == null or character.player_weapon.attack_range == GlobalEnums.AttackRange.MELEE:
 		return melee_checker.has_overlapping_areas()
 	else:
 		range_checker.target_position = target_pos - global_position
@@ -38,9 +37,10 @@ func _check_if_enemy_is_in_range() -> bool:
 
 func _on_left_click_enemy(target : CharacterTemplate) -> void:
 	if Input.is_action_pressed('ui_shift'): return
+	if character.current_state == 'Attack' and character.attack_target == target: return
+	state_machine.change_state('Chase')
 	character.attack_target = target
 	character.path = get_path_to_target()
-	state_machine.change_state('Chase')
 
 func get_path_to_target() -> Array[Vector2i]:
 	var surronding_cells = Utils.map.get_surrounding_cells(target_cell)
