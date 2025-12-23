@@ -9,13 +9,22 @@ extends State
 @onready var unarmed_attack: Node2D = %UnarmedAttack
 var target_pos : Vector2
 var arrow_bp := preload("res://characters/projectiles/arrow.tscn")
+var wait_for_attack := false
 
 func _ready() -> void:
 	Signals.shift_click.connect(_attack)
 	Signals.chase_attack.connect(_attack)
 	hitbox_melee.get_child(0).disabled = true
 
+func physics_tick(_delta: float) -> void:
+	if wait_for_attack and not character.animating:
+		_attack(character.attack_target.global_position)
+
 func _attack(new_target_pos : Vector2) -> void:
+	state_machine.change_state('Attack')
+	if character.animating:
+		wait_for_attack = true
+		return
 	_start_attack_basics(new_target_pos)
 	var player_weapon :ItemInstance = PlayerProfile.inventory[GlobalEnums.ItemSlots.MAINHAND]
 	if player_weapon == null:
@@ -30,7 +39,6 @@ func _attack(new_target_pos : Vector2) -> void:
 
 func _start_attack_basics(new_target_pos : Vector2) -> void:
 	target_pos = new_target_pos
-	state_machine.change_state('Attack')
 	character.animating = true
 	character.character_sprite.attack_animation(target_pos)
 
