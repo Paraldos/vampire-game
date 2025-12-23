@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bmvw4pnmvyhoh"]
+[gd_scene load_steps=15 format=3 uid="uid://bmvw4pnmvyhoh"]
 
 [ext_resource type="PackedScene" uid="uid://cowfiixeikwgc" path="res://characters/templates/character_template.tscn" id="1_3t07l"]
 [ext_resource type="Script" uid="uid://ctnu6tr34hsdb" path="res://characters/player/player.gd" id="1_onrkg"]
@@ -21,9 +21,6 @@ shader_parameter/new_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_on558"]
 radius = 4.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_gqopd"]
-radius = 16.0
 
 [node name="Player" instance=ExtResource("1_3t07l")]
 script = ExtResource("1_onrkg")
@@ -48,12 +45,15 @@ metadata/_custom_type_script = "uid://b3watucd82slh"
 [node name="CharacterSprite" parent="CharacterSpriteContainer" index="0"]
 material = SubResource("ShaderMaterial_icpky")
 
-[node name="PlayerCamera" type="Camera2D" parent="." index="2"]
+[node name="Hurtbox" parent="." index="2"]
+collision_layer = 2
+
+[node name="PlayerCamera" type="Camera2D" parent="." index="3"]
 unique_name_in_owner = true
 position_smoothing_enabled = true
 script = ExtResource("4_yw30f")
 
-[node name="Attacks" type="Node2D" parent="." index="3"]
+[node name="Attacks" type="Node2D" parent="." index="4"]
 
 [node name="HitboxMelee" parent="Attacks" index="0" instance=ExtResource("7_dirf7")]
 unique_name_in_owner = true
@@ -81,14 +81,5 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 z_index = 5
 
-[node name="RangeChecker" type="RayCast2D" parent="." index="4"]
-unique_name_in_owner = true
-target_position = Vector2(0, 48)
-
-[node name="MeleeChecker" type="Area2D" parent="." index="5"]
-unique_name_in_owner = true
-collision_layer = 0
+[node name="MeleeRangeDetector" parent="RangeDetectors" index="1"]
 collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeChecker" index="0"]
-shape = SubResource("CircleShape2D_gqopd")

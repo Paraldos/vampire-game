@@ -1,12 +1,14 @@
 extends CharacterTemplate
+class_name Player
 
-var player_weapon : ItemInstance:
+var weapon : ItemInstance:
 	get: return PlayerProfile.inventory[GlobalEnums.ItemSlots.MAINHAND]
 var current_state :String :
 	get: return state_machine.current_state.name
 
 func _ready() -> void:
 	super()
+	Utils.player = self
 	state_machine.setup(self)
 
 func _physics_process(delta: float) -> void:

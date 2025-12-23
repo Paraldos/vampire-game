@@ -31,10 +31,10 @@ func _start_attack(new_target_pos : Vector2):
 
 func _middle_attack():
 	character.character_sprite.attack_animation(target_pos)
-	if character.player_weapon == null:
+	if character.weapon == null:
 		await _unarmed_attack()
 	else:
-		match character.player_weapon.attack_animation:
+		match character.weapon.attack_animation:
 			GlobalEnums.AttackAnimation.BOW:
 				await _bow_attack()
 			GlobalEnums.AttackAnimation.SWORD:

@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var inventory: PanelContainer = %Inventory
 
 func _ready() -> void:
+	visible = true
 	character.visible = false
 	inventory.visible = false
 

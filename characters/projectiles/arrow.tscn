@@ -19,9 +19,5 @@ impact_bp = ExtResource("2_42h8q")
 rotation = 0.7853982
 texture = SubResource("AtlasTexture_42h8q")
 
-[node name="Hitbox" parent="." index="1"]
-collision_layer = 2
-collision_mask = 2
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource("RectangleShape2D_jhyb8")

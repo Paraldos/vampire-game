@@ -3,6 +3,7 @@ extends Node
 var map : TileMapLayer
 var visible_path_bp = preload('res://level/template/visible_path.tscn')
 var mouse_on_map = false
+var player : Player
 
 func pos_to_cell(pos : Vector2) -> Vector2i:
 	return map.local_to_map(pos)

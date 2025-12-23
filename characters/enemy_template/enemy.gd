@@ -1,9 +1,12 @@
 extends CharacterTemplate
+class_name Enemy
 
 var spawn_cell: Vector2i
 var enemy_cell : Vector2i :
 	get: return Utils.pos_to_cell(global_position)
 var hover := false
+@export var attack_range := GlobalEnums.AttackRange.MELEE
+@export var attack_animation := preload("res://characters/attacks/sword_attack.tscn")
 
 func _ready() -> void:
 	super()

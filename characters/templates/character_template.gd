@@ -4,8 +4,9 @@ class_name CharacterTemplate
 @onready var state_machine: StateMachine = %StateMachine
 @onready var character_sprite_container: Node2D = %CharacterSpriteContainer
 @onready var character_sprite: Sprite2D = %CharacterSprite
+@onready var ranged_range_detector: RayCast2D = %RangedRangeDetector
+@onready var melee_range_detector: Area2D = %MeleeRangeDetector
 
-@export var visible_path: bool = true
 @export var speed: float = 50.0
 @export var color_default = Color('a53030')
 @export var color_hover = Color('cf573c')
@@ -13,8 +14,7 @@ class_name CharacterTemplate
 var path: Array[Vector2i] = []:
 	set(new_path):
 		path = new_path
-		if visible_path:
-			Utils.add_visible_path(path)
+		# Utils.add_visible_path(path)
 var movement_target_pos: Vector2 = Vector2.ZERO
 var movement_target_cell: Vector2i = Vector2i(-9999, -9999)
 var animating: bool = false

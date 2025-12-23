@@ -10,6 +10,9 @@ var occupied_cell:
 var global_position:
 	get:
 		return character.global_position
+var is_active:
+	get:
+		return state_machine.current_state == self
 
 func setup(character_ref : CharacterTemplate, sm_ref: StateMachine) -> void:
 	rng.randomize()
