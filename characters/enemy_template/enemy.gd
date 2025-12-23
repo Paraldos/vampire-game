@@ -1,9 +1,11 @@
 extends CharacterTemplate
 
+@onready var character_sprite: Sprite2D = %CharacterSprite
 @onready var state_machine: StateMachine = %StateMachine
 var spawn_cell: Vector2i
 var enemy_cell : Vector2i :
 	get: return Utils.pos_to_cell(global_position)
+var hover := false
 
 func _ready() -> void:
 	super()
@@ -14,17 +16,15 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	super(delta)
 	state_machine.physics_tick(delta)
-
-func _on_area_2d_mouse_entered() -> void:
-	return
-	# var mat := sprite_idle.material as ShaderMaterial
-	# mat.set_shader_parameter("outline_color", Color("ffffffff"))
-
-func _on_area_2d_mouse_exited() -> void:
-	return
-	# var mat := sprite_idle.material as ShaderMaterial
-	# mat.set_shader_parameter("outline_color", Color("ffffff00"))
-
-func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+	if hover and Input.is_action_pressed('ui_left_click'):
 		Signals.left_click_enemy.emit(self)
+
+func _on_mouse_area_mouse_entered() -> void:
+	hover = true
+	var mat := character_sprite.material as ShaderMaterial
+	mat.set_shader_parameter("new_color", Color("cf573c"))
+
+func _on_mouse_area_mouse_exited() -> void:
+	hover = false
+	var mat := character_sprite.material as ShaderMaterial
+	mat.set_shader_parameter("new_color", Color("090a14"))
