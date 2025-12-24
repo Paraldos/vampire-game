@@ -3,7 +3,9 @@ class_name CharacterTemplate
 
 @onready var state_machine: StateMachine = %StateMachine
 @onready var character_sprite_container: Node2D = %CharacterSpriteContainer
+@onready var hit_sprite: Sprite2D = $CharacterSpriteContainer/HitSprite
 @onready var character_sprite: Sprite2D = %CharacterSprite
+
 @onready var ranged_range_detector: RayCast2D = %RangedRangeDetector
 @onready var melee_range_detector: Area2D = %MeleeRangeDetector
 
@@ -22,19 +24,35 @@ var rng := RandomNumberGenerator.new()
 var occupied_cell: Vector2i
 var attack_target
 
+# =================================== ready
 func _ready() -> void:
 	rng.randomize()
 	occupied_cell = Utils.pos_to_cell(global_position)
 	Utils.map.astar_grid.set_point_solid(occupied_cell, true)
 	_change_color(color_default)
+	_init_sprites()
 
+func _init_sprites():
+	hit_sprite.visible = false
+	hit_sprite.hframes = character_sprite.hframes
+	hit_sprite.vframes = character_sprite.vframes
+	hit_sprite.frame = character_sprite.frame
+
+# =================================== physics
 func _physics_process(_delta: float) -> void:
 	pass
 
+# =================================== tree exit
+func _exit_tree() -> void:
+	cancel_move(false)
+	Utils.map.astar_grid.set_point_solid(occupied_cell, false)
+
+# =================================== helper
 func _change_color(new_color : Color):
 	var mat := character_sprite.material as ShaderMaterial
 	mat.set_shader_parameter("new_color", new_color)
 
+# =================================== movement
 func start_moving() -> void:
 	while not path.is_empty():
 		var next_cell: Vector2i = path[0]
@@ -86,7 +104,3 @@ func move(delta: float) -> void:
 	if global_position.distance_to(movement_target_pos) <= 0.5:
 		global_position = movement_target_pos
 		stop_moving()
-
-func _exit_tree() -> void:
-	cancel_move(false)
-	Utils.map.astar_grid.set_point_solid(occupied_cell, false)

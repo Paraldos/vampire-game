@@ -1,16 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://cowfiixeikwgc"]
+[gd_scene load_steps=13 format=3 uid="uid://cowfiixeikwgc"]
 
 [ext_resource type="Script" uid="uid://c6slkq5hqscno" path="res://characters/templates/character_template.gd" id="1_jma8u"]
 [ext_resource type="Script" uid="uid://byw5ubbb4vjkj" path="res://characters/templates/state_machine.gd" id="2_4rqew"]
 [ext_resource type="PackedScene" uid="uid://dlly4so1oej8g" path="res://characters/player/character_sprite.tscn" id="3_7cvpj"]
-[ext_resource type="Shader" uid="uid://83s7q3gacun4" path="res://characters/templates/hover.gdshader" id="4_rywti"]
+[ext_resource type="Shader" uid="uid://cqpu0ti8kx4m8" path="res://characters/templates/change_two_colors.gdshader" id="4_3usqr"]
+[ext_resource type="Shader" uid="uid://83s7q3gacun4" path="res://characters/templates/change_color.gdshader" id="4_rywti"]
+[ext_resource type="Texture2D" uid="uid://cyomkn8cqr3a2" path="res://assets/images/characters/character_hit.png" id="5_3usqr"]
 [ext_resource type="PackedScene" uid="uid://21nxqb3lgoxh" path="res://characters/templates/hurtbox.tscn" id="5_lkkd0"]
+[ext_resource type="Script" uid="uid://doo2qckd0a1cd" path="res://characters/templates/hit_sprite.gd" id="6_m6ccl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lkkd0"]
 shader = ExtResource("4_rywti")
 shader_parameter/tolerance = 0.1
 shader_parameter/prev_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 shader_parameter/new_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3usqr"]
+shader = ExtResource("4_3usqr")
+shader_parameter/tolerance_1 = 0.1
+shader_parameter/prev_color_1 = Color(0.92156863, 0.92941177, 0.9137255, 1)
+shader_parameter/new_color_1 = Color(0, 0, 0, 1)
+shader_parameter/tolerance_2 = 0.1
+shader_parameter/prev_color_2 = Color(0.03529412, 0.039215688, 0.078431375, 1)
+shader_parameter/new_color_2 = Color(1, 0, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3usqr"]
 radius = 8.0
@@ -35,6 +47,14 @@ modulate = Color(0.4509804, 0.74509805, 0.827451, 1)
 material = SubResource("ShaderMaterial_lkkd0")
 frame = 3
 
+[node name="HitSprite" type="Sprite2D" parent="CharacterSpriteContainer" node_paths=PackedStringArray("character")]
+material = SubResource("ShaderMaterial_3usqr")
+texture = ExtResource("5_3usqr")
+hframes = 8
+vframes = 10
+script = ExtResource("6_m6ccl")
+character = NodePath("../..")
+
 [node name="Hurtbox" parent="." instance=ExtResource("5_lkkd0")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
@@ -53,3 +73,5 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangeDetectors/MeleeRangeDetector"]
 shape = SubResource("CircleShape2D_lkkd0")
+
+[connection signal="hit" from="Hurtbox" to="CharacterSpriteContainer/HitSprite" method="_on_hurtbox_hit"]

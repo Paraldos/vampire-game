@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmvw4pnmvyhoh"]
+[gd_scene load_steps=14 format=3 uid="uid://bmvw4pnmvyhoh"]
 
 [ext_resource type="PackedScene" uid="uid://cowfiixeikwgc" path="res://characters/templates/character_template.tscn" id="1_3t07l"]
 [ext_resource type="Script" uid="uid://ctnu6tr34hsdb" path="res://characters/player/player.gd" id="1_onrkg"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://d2yixw1d0dieb" path="res://characters/attacks/bow_attack.tscn" id="5_3t07l"]
 [ext_resource type="PackedScene" uid="uid://tp2g70xhmiwh" path="res://characters/attacks/sword_attack.tscn" id="6_c6leb"]
 [ext_resource type="PackedScene" uid="uid://bj1vb5v80ed7f" path="res://characters/templates/hitbox.tscn" id="7_dirf7"]
-[ext_resource type="Shader" uid="uid://83s7q3gacun4" path="res://characters/templates/hover.gdshader" id="7_gqopd"]
 [ext_resource type="PackedScene" uid="uid://cx76hu558fq88" path="res://characters/attacks/unarmed_attack.tscn" id="7_on558"]
 [ext_resource type="Script" uid="uid://b3watucd82slh" path="res://characters/templates/state.gd" id="8_x5dtk"]
 [ext_resource type="Script" uid="uid://blhmh2honsrtj" path="res://characters/player/move.gd" id="9_rpf03"]
@@ -14,10 +13,6 @@
 [ext_resource type="Script" uid="uid://b6kpumq8t076s" path="res://characters/player/chase.gd" id="10_x5dtk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_icpky"]
-shader = ExtResource("7_gqopd")
-shader_parameter/tolerance = 0.1
-shader_parameter/prev_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
-shader_parameter/new_color = Color(0.92156863, 0.92941177, 0.9137255, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_on558"]
 radius = 4.0
