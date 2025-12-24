@@ -17,3 +17,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed('ui_left_click') and Input.is_action_pressed('ui_shift'):
 		if current_state == "Attack" and animating: return
 		Signals.shift_click.emit(get_global_mouse_position())
+
+func _on_hurtbox_hit(dmg: int) -> void:
+	PlayerProfile.hp_current -= dmg

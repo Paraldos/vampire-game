@@ -21,14 +21,16 @@ var mana = 5
 
 var hp_max:
 	get: return vitality * 10
-var hp_current = 50:
+var hp_current := 50:
 	set(new_value):
 		hp_current = new_value
+		if hp_current < 0:
+			hp_current = 0
 		Signals.update_hp.emit()
 
 var mp_max:
 	get: return mana * 10
-var mp_current = 50:
+var mp_current := 50:
 	set(new_value):
 		mp_current = new_value
 		Signals.update_mp.emit()
