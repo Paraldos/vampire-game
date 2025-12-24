@@ -48,6 +48,7 @@ material = SubResource("ShaderMaterial_lkkd0")
 frame = 3
 
 [node name="HitSprite" type="Sprite2D" parent="CharacterSpriteContainer" node_paths=PackedStringArray("character")]
+visible = false
 material = SubResource("ShaderMaterial_3usqr")
 texture = ExtResource("5_3usqr")
 hframes = 8

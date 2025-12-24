@@ -7,6 +7,7 @@ extends State
 @onready var sword_attack: Node2D = %SwordAttack
 @onready var unarmed_attack: Node2D = %UnarmedAttack
 
+var after_attack_wait_time := 0.2
 var target_pos : Vector2
 var arrow_bp := preload("res://characters/projectiles/arrow.tscn")
 var wait_for_attack := false
@@ -43,12 +44,13 @@ func _middle_attack():
 
 func _end_attack() -> void:
 	character.animating = false
+	await get_tree().create_timer(after_attack_wait_time).timeout
 	state_machine.change_state('Idle')
 
 # ============================== helper
 func enable_melee_hitbox(dmg : int) -> void:
 	hitbox_melee.enable(target_pos, dmg)
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.05).timeout
 	hitbox_melee.disable()
 
 # ============================== attacks
