@@ -22,7 +22,7 @@ var movement_target_cell: Vector2i = Vector2i(-9999, -9999)
 var animating: bool = false
 var rng := RandomNumberGenerator.new()
 var occupied_cell: Vector2i
-var attack_target
+var attack_target : Enemy
 
 # =================================== ready
 func _ready() -> void:
