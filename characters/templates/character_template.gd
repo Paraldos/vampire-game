@@ -38,10 +38,6 @@ func _init_sprites():
 	hit_sprite.vframes = character_sprite.vframes
 	hit_sprite.frame = character_sprite.frame
 
-# =================================== physics
-func _physics_process(_delta: float) -> void:
-	pass
-
 # =================================== tree exit
 func _exit_tree() -> void:
 	cancel_move(false)
