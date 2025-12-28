@@ -2,6 +2,7 @@ extends State
 
 @export var hitbox : Hitbox
 @export var animation : AttackAnimation
+var dmg = 15
 
 func _ready() -> void:
 	await get_tree().create_timer(0.1).timeout
@@ -16,6 +17,6 @@ func enter() -> void:
 	state_machine.change_state('Chase')
 
 func enable_hitbox():
-	hitbox.enable(Utils.player.global_position, 15)
+	hitbox.enable(Utils.player.global_position, dmg)
 	await get_tree().create_timer(0.1).timeout
 	hitbox.disable()
