@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if current_state:
-		current_state.run(delta)
+		current_state.physics_process(delta)
 
 func _find_states() -> void:
 	for child in get_children():
@@ -25,6 +25,7 @@ func _find_states() -> void:
 		states[state.name] = state
 		state.actor = actor
 		state.state_machine = self
+		state.transition_requested.connect(_change_state)
 
 func _change_state(state_name: StringName) -> void:
 	if not states.has(state_name):

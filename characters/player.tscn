@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://d2je51grv7w62" path="res://assets/images/characters-Sheet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dph1s3sbovvxt" path="res://characters/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://dubx0s3uf7qgt" path="res://state_machine/state_machine.gd" id="3_x0jl3"]
+[ext_resource type="Script" uid="uid://bdb12rgmtx0us" path="res://characters/idle.gd" id="4_h1q25"]
+[ext_resource type="Script" uid="uid://dsjtwreh5q4cd" path="res://characters/move.gd" id="5_h1q25"]
+[ext_resource type="Script" uid="uid://bnnwwt7oof2q6" path="res://characters/bump.gd" id="6_j31ep"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kc5u"]
 atlas = ExtResource("1_4flbx")
@@ -54,3 +58,21 @@ position = Vector2(-8, 0)
 target_position = Vector2(-8, 0)
 collision_mask = 3
 hit_from_inside = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=1749875605 node_paths=PackedStringArray("actor", "initial_state")]
+script = ExtResource("3_x0jl3")
+actor = NodePath("..")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://dubx0s3uf7qgt"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1350232116]
+script = ExtResource("4_h1q25")
+metadata/_custom_type_script = "uid://roxyw35tcv4j"
+
+[node name="Move" type="Node" parent="StateMachine" unique_id=889877354]
+script = ExtResource("5_h1q25")
+metadata/_custom_type_script = "uid://roxyw35tcv4j"
+
+[node name="Bump" type="Node" parent="StateMachine" unique_id=332241448]
+script = ExtResource("6_j31ep")
+metadata/_custom_type_script = "uid://roxyw35tcv4j"
