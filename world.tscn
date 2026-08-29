@@ -1,0 +1,37 @@
+[gd_scene format=4 uid="uid://h6t750kmppjs"]
+
+[ext_resource type="Texture2D" uid="uid://bwe47dn165wmc" path="res://assets/images/tiles-Sheet.png" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://uuu0f4178hm5" path="res://characters/player.tscn" id="2_fj7yv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
+texture = ExtResource("1_f3sb7")
+0:0/0 = 0
+0:0/0/probability = 0.5
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/probability = 0.5
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_0kc5u"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_fj7yv")
+
+[node name="World" type="Node2D" unique_id=39250889]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1069849025]
+layer = -50
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1902829503]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.023529412, 0.03137255, 0.039215688, 1)
+
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=1209957440]
+tile_map_data = PackedByteArray("AAAIAAwAAAABAAAAAAASAAoAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAARAAAAAAABAAAAAAASAAAAAAABAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAMAAAABAAAAAAASAAQAAAABAAAAAAASAAUAAAABAAAAAAASAAYAAAABAAAAAAASAAsAAAABAAAAAAASAAkAAAABAAAAAAASAAgAAAAAAAAAAAASAAcAAAABAAAAAAASAAwAAAAAAAAAAAARAAwAAAABAAAAAAAQAAwAAAABAAAAAAAPAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAANAAwAAAABAAAAAAAMAAwAAAABAAAAAAALAAwAAAABAAAAAAAKAAwAAAABAAAAAAAJAAwAAAABAAAAAAAHAAwAAAABAAAAAAAGAAwAAAABAAAAAAAFAAwAAAABAAAAAAAEAAwAAAABAAAAAAADAAwAAAABAAAAAAACAAwAAAAAAAAAAAABAAwAAAAAAAAAAAAAAAwAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAABAAAAAAAAAAQAAAABAAAAAAAAAAUAAAABAAAAAAAAAAYAAAABAAAAAAAAAAcAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAABAAAAAAAAAAkAAAAAAAAAAAAAAAgAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_0kc5u")
+
+[node name="Player" parent="." unique_id=1053692878 instance=ExtResource("2_fj7yv")]
+position = Vector2(24, 24)
