@@ -2,8 +2,10 @@ extends State
 
 const BUMP_DURATION := 0.3
 const BUMP_REACH := 3.0
+@onready var bumper_detector: BumperDetector = %BumperDetector
 
 func start() -> void:
+	bumper_detector.check_collisions()
 	await _animation_bump()
 	transition_to(&"Idle")
 

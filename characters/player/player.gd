@@ -8,6 +8,3 @@ extends CharacterBody2D
 @onready var left: RayCast2D = %Left
 
 var move_direction := Vector2.ZERO
-
-func _physics_process(_delta: float) -> void:
-	pass
