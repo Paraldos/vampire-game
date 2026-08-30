@@ -3,7 +3,36 @@
 [ext_resource type="Texture2D" uid="uid://4u5jrl8q7f52" path="res://assets/images/symbols.png" id="2_7x2a6"]
 [ext_resource type="Texture2D" uid="uid://ct7tdvbbxw1gt" path="res://assets/images/battle_characters.png" id="2_dkni4"]
 [ext_resource type="Script" uid="uid://dxny0h1x0hykx" path="res://combat/character_display.gd" id="2_ejsst"]
-[ext_resource type="Texture2D" uid="uid://d1htiryb0fd5i" path="res://assets/images/panel_btn.png" id="4_7x2a6"]
+[ext_resource type="Texture2D" uid="uid://drlbmgnvec3b8" path="res://assets/images/target_btn-Sheet.png" id="3_fra55"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fra55"]
+atlas = ExtResource("3_fra55")
+region = Rect2(96, 0, 48, 56)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7x2a6"]
+texture = SubResource("AtlasTexture_fra55")
+texture_margin_bottom = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjf7x"]
+atlas = ExtResource("3_fra55")
+region = Rect2(48, 0, 48, 56)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjf7x"]
+texture = SubResource("AtlasTexture_mjf7x")
+texture_margin_bottom = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbtqw"]
+atlas = ExtResource("3_fra55")
+region = Rect2(0, 0, 48, 56)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xstdr"]
+texture = SubResource("AtlasTexture_gbtqw")
+texture_margin_bottom = 16.0
+
+[sub_resource type="Theme" id="Theme_fra55"]
+Button/styles/disabled = SubResource("StyleBoxTexture_7x2a6")
+Button/styles/focus = SubResource("StyleBoxTexture_mjf7x")
+Button/styles/normal = SubResource("StyleBoxTexture_xstdr")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7x2a6"]
 atlas = ExtResource("2_7x2a6")
@@ -47,34 +76,17 @@ _data = {
 &"loop": SubResource("Animation_fra55")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_reu0v"]
-atlas = ExtResource("4_7x2a6")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjf7x"]
-texture = SubResource("AtlasTexture_reu0v")
-texture_margin_left = 3.0
-texture_margin_top = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8brfp"]
-atlas = ExtResource("4_7x2a6")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xstdr"]
-texture = SubResource("AtlasTexture_8brfp")
-texture_margin_left = 3.0
-texture_margin_top = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
-
-[sub_resource type="Theme" id="Theme_fra55"]
-Button/styles/focus = SubResource("StyleBoxTexture_mjf7x")
-Button/styles/normal = SubResource("StyleBoxTexture_xstdr")
-
 [node name="CharacterDisplay" type="Node2D" unique_id=747938848]
 script = ExtResource("2_ejsst")
+
+[node name="TargetBtn" type="Button" parent="." unique_id=1347865975]
+unique_name_in_owner = true
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 32.0
+theme = SubResource("Theme_fra55")
+disabled = true
 
 [node name="ActiveIndicator" type="Node2D" parent="." unique_id=462550968]
 unique_name_in_owner = true
@@ -90,11 +102,3 @@ autoplay = &"loop"
 
 [node name="MainSprite" type="Sprite2D" parent="." unique_id=260166518]
 texture = ExtResource("2_dkni4")
-
-[node name="TargetBtn" type="Button" parent="." unique_id=1347865975]
-unique_name_in_owner = true
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 32.0
-theme = SubResource("Theme_fra55")

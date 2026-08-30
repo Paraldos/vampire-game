@@ -1,11 +1,13 @@
 extends DefaultBtn
 
-@export var action : CombatAction
+@export var action : CombatAction:
+	set(value):
+		action = value
+		update()
 var had_focus = false
 
 func _ready() -> void:
 	GlobalSignals.action_selected.connect(_on_action_selected)
-	GlobalSignals.action_cancelled.connect(_on_action_cancelled)
 	update()
 
 func _on_pressed() -> void:
@@ -18,10 +20,4 @@ func update() -> void:
 	icon = action.img
 
 func _on_action_selected(_selected_action: CombatAction):
-	disabled = true
-
-func _on_action_cancelled() -> void:
-	update()
-	if had_focus:
-		grab_focus()
-	had_focus = false
+	pass

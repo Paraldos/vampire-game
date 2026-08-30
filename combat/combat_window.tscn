@@ -18,27 +18,27 @@ metadata/_edit_lock_ = true
 [node name="PlayerSlots" type="Node2D" parent="." unique_id=1841714408]
 
 [node name="HeroSlot1" type="Marker2D" parent="PlayerSlots" unique_id=841562566]
-position = Vector2(32, 48)
-
-[node name="HeroSlot2" type="Marker2D" parent="PlayerSlots" unique_id=666145081]
-position = Vector2(56, 112)
-
-[node name="HeroSlot3" type="Marker2D" parent="PlayerSlots" unique_id=344330036]
 position = Vector2(96, 48)
 
+[node name="HeroSlot2" type="Marker2D" parent="PlayerSlots" unique_id=666145081]
+position = Vector2(128, 112)
+
+[node name="HeroSlot3" type="Marker2D" parent="PlayerSlots" unique_id=344330036]
+position = Vector2(32, 48)
+
 [node name="HeroSlot4" type="Marker2D" parent="PlayerSlots" unique_id=503873283]
-position = Vector2(120, 112)
+position = Vector2(64, 112)
 
 [node name="EnemySlots" type="Node2D" parent="." unique_id=97245352]
 
 [node name="EnemySlot0" type="Marker2D" parent="EnemySlots" unique_id=2112788354]
-position = Vector2(184, 48)
+position = Vector2(176, 48)
 
 [node name="EnemySlot1" type="Marker2D" parent="EnemySlots" unique_id=1625402426]
 position = Vector2(208, 112)
 
 [node name="EnemySlot2" type="Marker2D" parent="EnemySlots" unique_id=852865614]
-position = Vector2(248, 48)
+position = Vector2(240, 48)
 
 [node name="EnemySlot3" type="Marker2D" parent="EnemySlots" unique_id=959659981]
 position = Vector2(272, 112)

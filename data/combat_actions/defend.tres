@@ -11,4 +11,5 @@ region = Rect2(16, 0, 16, 16)
 script = ExtResource("1_maj3s")
 title = "Defend"
 img = SubResource("AtlasTexture_mvehk")
+enemy_targets = 0
 metadata/_custom_type_script = "uid://dmyvvs8hheiig"

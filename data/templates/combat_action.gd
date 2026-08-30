@@ -18,10 +18,17 @@ var enemy_targets := FRONTLINE | BACKLINE
 func select() -> void:
 	CombatManager.select_action(self)
 
-func can_target(target_is_hero: bool, frontline: bool) -> bool:
-	var valid_targets := hero_targets if target_is_hero else enemy_targets
-	var target_line := FRONTLINE if frontline else BACKLINE
-	return valid_targets & target_line != 0
+func can_target(target_is_hero: bool, target_is_frontline: bool) -> bool:
+	if target_is_hero:
+		if target_is_frontline:
+			return hero_targets & FRONTLINE != 0
+		else:
+			return hero_targets & BACKLINE != 0
+	else:
+		if target_is_frontline:
+			return enemy_targets & FRONTLINE != 0
+		else:
+			return enemy_targets & BACKLINE != 0
 
 func can_use(target: Character) -> bool:
 	return target != null

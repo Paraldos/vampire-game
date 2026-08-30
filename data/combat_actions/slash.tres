@@ -11,4 +11,6 @@ region = Rect2(0, 0, 16, 16)
 script = ExtResource("2_7rrv7")
 title = "Slash"
 img = SubResource("AtlasTexture_h7ycu")
+hero_targets = 0
+enemy_targets = 1
 metadata/_custom_type_script = "uid://dmyvvs8hheiig"

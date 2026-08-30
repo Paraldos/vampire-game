@@ -9,7 +9,6 @@ var is_hero := false
 var character: Character
 
 func _ready() -> void:
-	target_btn.visible = false
 	if slot == -1:
 		queue_free()
 		return
@@ -22,7 +21,7 @@ func _ready() -> void:
 
 func _on_action_selected(selected_action: CombatAction) -> void:
 	var frontline := Combat.FRONTLINE_SLOTS.has(slot)
-	target_btn.visible = selected_action.can_target(is_hero, frontline)
+	target_btn.disabled = !selected_action.can_target(is_hero, frontline)
 
 func _on_activate_character(activted_character : Character):
 	active_indicator.visible = activted_character == character
