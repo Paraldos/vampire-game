@@ -1,10 +1,13 @@
 [gd_resource type="Resource" script_class="Hero" format=3 uid="uid://0ip0g2i4llr8"]
 
 [ext_resource type="Script" uid="uid://cf0h8ob5vp2j" path="res://data/templates/hero.gd" id="1_740cv"]
+[ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://data/templates/ability.gd" id="1_cwiep"]
 [ext_resource type="Texture2D" uid="uid://ct7tdvbbxw1gt" path="res://assets/images/battle_characters.png" id="1_dgo5v"]
+[ext_resource type="Resource" uid="uid://cwdjg35nwpxj4" path="res://data/abilities/Slash.tres" id="2_s6xrq"]
 
 [resource]
 script = ExtResource("1_740cv")
 combat_sprite = ExtResource("1_dgo5v")
 current_hp = null
+abilities = Array[ExtResource("1_cwiep")]([ExtResource("2_s6xrq")])
 metadata/_custom_type_script = "uid://cf0h8ob5vp2j"

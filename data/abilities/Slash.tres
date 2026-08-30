@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://cwdjg35nwpxj4"]
+
+[ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://data/templates/ability.gd" id="1_h7ycu"]
+[ext_resource type="Texture2D" uid="uid://cws35ufllilh5" path="res://assets/images/abilities.png" id="1_ys47l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7ycu"]
+atlas = ExtResource("1_ys47l")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_h7ycu")
+title = "Slash"
+img = SubResource("AtlasTexture_h7ycu")
+metadata/_custom_type_script = "uid://dmyvvs8hheiig"

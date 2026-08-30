@@ -19,10 +19,11 @@ config/icon="res://icon.svg"
 
 GameData="*uid://c48hcse740orb"
 SceneManager="*uid://cx6di0n4v1oml"
+GlobalSignals="*uid://dqvsj5tgbkeqe"
 
 [display]
 
-window/size/viewport_width=300
+window/size/viewport_width=304
 window/size/viewport_height=200
 window/size/window_width_override=1200
 window/size/window_height_override=800

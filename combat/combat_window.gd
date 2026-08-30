@@ -16,7 +16,6 @@ func _create_displays(formation : Array, is_hero_display := false):
 		var character := formation[i] as Character
 		if character == null:
 			continue
-
 		var display = CHARACTER_DISPLAY.instantiate()
 		display.slot = i
 		display.character = character

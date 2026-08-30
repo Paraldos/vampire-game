@@ -3,10 +3,10 @@ class_name PlayerManager
 
 # ======================================== export function
 @export var _hero_formation: Array[Hero] = [
-	load("res://data/heros/test_hero.tres"),
-	null,
-	null,
-	null,
+	load("res://data/heros/test_hero.tres").duplicate(),
+	load("res://data/heros/test_hero.tres").duplicate(),
+	load("res://data/heros/test_hero.tres").duplicate(),
+	load("res://data/heros/test_hero.tres").duplicate(),
 ]
 
 # ======================================== setter/getter

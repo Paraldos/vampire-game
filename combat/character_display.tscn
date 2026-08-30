@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://5ahfy3gthgwu"]
 
+[ext_resource type="Texture2D" uid="uid://ct7tdvbbxw1gt" path="res://assets/images/battle_characters.png" id="2_dkni4"]
 [ext_resource type="Script" uid="uid://dxny0h1x0hykx" path="res://combat/character_display.gd" id="2_ejsst"]
+[ext_resource type="Texture2D" uid="uid://dkogmrsgiqmkd" path="res://assets/images/character_selector.png" id="3_dkni4"]
 
 [node name="CharacterDisplay" type="Node2D" unique_id=747938848]
 script = ExtResource("2_ejsst")
 
+[node name="ActiveIndicator" type="Sprite2D" parent="." unique_id=809665801]
+unique_name_in_owner = true
+position = Vector2(0, 24)
+texture = ExtResource("3_dkni4")
+
 [node name="MainSprite" type="Sprite2D" parent="." unique_id=260166518]
+texture = ExtResource("2_dkni4")

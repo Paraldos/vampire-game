@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dqqin61d3ow2p"]
 
 [ext_resource type="Script" uid="uid://3eqtw7nl6s51" path="res://combat/combat_window.gd" id="1_w54px"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://main_theme.tres" id="2_gbtqw"]
 
 [node name="Combat" type="CanvasLayer" unique_id=941987718]
 script = ExtResource("1_w54px")
@@ -15,31 +16,71 @@ color = Color(0.023529412, 0.03137255, 0.039215688, 1)
 metadata/_edit_lock_ = true
 
 [node name="PlayerSlots" type="Node2D" parent="." unique_id=1841714408]
-position = Vector2(88, 112)
 
 [node name="HeroSlot1" type="Marker2D" parent="PlayerSlots" unique_id=841562566]
-position = Vector2(-56, 0)
+position = Vector2(48, 32)
 
 [node name="HeroSlot2" type="Marker2D" parent="PlayerSlots" unique_id=666145081]
-position = Vector2(-16, 0)
+position = Vector2(32, 96)
 
 [node name="HeroSlot3" type="Marker2D" parent="PlayerSlots" unique_id=344330036]
-position = Vector2(24, 0)
+position = Vector2(112, 48)
 
-[node name="HeroSlot4" type="Marker2D" parent="PlayerSlots" unique_id=1460218337]
-position = Vector2(64, 0)
+[node name="HeroSlot4" type="Marker2D" parent="PlayerSlots" unique_id=503873283]
+position = Vector2(96, 112)
 
 [node name="EnemySlots" type="Node2D" parent="." unique_id=97245352]
-position = Vector2(208, 48)
 
 [node name="EnemySlot0" type="Marker2D" parent="EnemySlots" unique_id=2112788354]
-position = Vector2(-56, 0)
+position = Vector2(208, 32)
 
 [node name="EnemySlot1" type="Marker2D" parent="EnemySlots" unique_id=1625402426]
-position = Vector2(-16, 0)
+position = Vector2(192, 96)
 
 [node name="EnemySlot2" type="Marker2D" parent="EnemySlots" unique_id=852865614]
-position = Vector2(24, 0)
+position = Vector2(272, 48)
 
-[node name="EnemySlot3" type="Marker2D" parent="EnemySlots" unique_id=1610788340]
-position = Vector2(64, 0)
+[node name="EnemySlot3" type="Marker2D" parent="EnemySlots" unique_id=959659981]
+position = Vector2(256, 112)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=551488470]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_gbtqw")
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=50635133]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1054737291]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=397299404]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" unique_id=70729058]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" unique_id=1921954470]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" unique_id=3614719]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" unique_id=1317625949]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=873965249]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=148570506]
+layout_mode = 2
+size_flags_horizontal = 3
