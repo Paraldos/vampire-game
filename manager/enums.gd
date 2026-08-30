@@ -1,0 +1,9 @@
+extends Node
+class_name Enums
+
+enum GAME_STATES{
+	START_MENU,
+	MAIN,
+	COMBAT,
+	CHANGE_SCENE,
+}

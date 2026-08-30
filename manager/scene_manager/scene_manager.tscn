@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cx6di0n4v1oml"]
+
+[ext_resource type="Script" uid="uid://dlwj0qn4lfacp" path="res://manager/scene_manager/scene_manager.gd" id="1_6w36t"]
+
+[node name="SceneManager" type="CanvasLayer" unique_id=1165676797]
+process_mode = 3
+script = ExtResource("1_6w36t")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2092053226]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.023529412, 0.03137255, 0.039215688, 1)
