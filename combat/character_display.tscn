@@ -13,6 +13,7 @@ region = Rect2(96, 0, 48, 56)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7x2a6"]
 texture = SubResource("AtlasTexture_fra55")
 texture_margin_bottom = 16.0
+expand_margin_bottom = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjf7x"]
 atlas = ExtResource("3_fra55")
@@ -21,6 +22,7 @@ region = Rect2(48, 0, 48, 56)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjf7x"]
 texture = SubResource("AtlasTexture_mjf7x")
 texture_margin_bottom = 16.0
+expand_margin_bottom = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbtqw"]
 atlas = ExtResource("3_fra55")
@@ -29,11 +31,15 @@ region = Rect2(0, 0, 48, 56)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xstdr"]
 texture = SubResource("AtlasTexture_gbtqw")
 texture_margin_bottom = 16.0
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wcbwo"]
 
 [sub_resource type="Theme" id="Theme_fra55"]
 Button/styles/disabled = SubResource("StyleBoxTexture_7x2a6")
 Button/styles/focus = SubResource("StyleBoxTexture_mjf7x")
 Button/styles/normal = SubResource("StyleBoxTexture_xstdr")
+Button/styles/pressed = SubResource("StyleBoxEmpty_wcbwo")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7x2a6"]
 atlas = ExtResource("2_7x2a6")
@@ -83,11 +89,10 @@ script = ExtResource("2_ejsst")
 [node name="TargetBtn" type="Button" parent="." unique_id=1550870138]
 unique_name_in_owner = true
 offset_left = -24.0
-offset_top = -24.0
+offset_top = -8.0
 offset_right = 24.0
-offset_bottom = 32.0
+offset_bottom = 8.0
 theme = SubResource("Theme_fra55")
-disabled = true
 script = ExtResource("3_mjf7x")
 metadata/_custom_type_script = "uid://cdtalwuv8lr8f"
 

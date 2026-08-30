@@ -15,8 +15,8 @@ func _on_pressed() -> void:
 	had_focus = true
 
 func update() -> void:
-	disabled = action == null
-	if disabled: return
+	button_disabled = action == null
+	if button_disabled: return
 	icon = action.img
 
 func _on_action_selected(_selected_action: CombatAction):
