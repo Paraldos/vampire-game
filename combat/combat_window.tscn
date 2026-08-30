@@ -15,32 +15,42 @@ grow_vertical = 2
 color = Color(0.023529412, 0.03137255, 0.039215688, 1)
 metadata/_edit_lock_ = true
 
-[node name="PlayerSlots" type="Node2D" parent="." unique_id=1841714408]
+[node name="Control" type="Control" parent="." unique_id=1507578053]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="HeroSlot1" type="Marker2D" parent="PlayerSlots" unique_id=841562566]
+[node name="PlayerSlots" type="Node2D" parent="Control" unique_id=1841714408]
+unique_name_in_owner = true
+
+[node name="HeroSlot1" type="Marker2D" parent="Control/PlayerSlots" unique_id=841562566]
 position = Vector2(96, 48)
 
-[node name="HeroSlot2" type="Marker2D" parent="PlayerSlots" unique_id=666145081]
+[node name="HeroSlot2" type="Marker2D" parent="Control/PlayerSlots" unique_id=666145081]
 position = Vector2(128, 112)
 
-[node name="HeroSlot3" type="Marker2D" parent="PlayerSlots" unique_id=344330036]
+[node name="HeroSlot3" type="Marker2D" parent="Control/PlayerSlots" unique_id=344330036]
 position = Vector2(32, 48)
 
-[node name="HeroSlot4" type="Marker2D" parent="PlayerSlots" unique_id=503873283]
+[node name="HeroSlot4" type="Marker2D" parent="Control/PlayerSlots" unique_id=503873283]
 position = Vector2(64, 112)
 
-[node name="EnemySlots" type="Node2D" parent="." unique_id=97245352]
+[node name="EnemySlots" type="Node2D" parent="Control" unique_id=97245352]
+unique_name_in_owner = true
 
-[node name="EnemySlot0" type="Marker2D" parent="EnemySlots" unique_id=2112788354]
+[node name="EnemySlot0" type="Marker2D" parent="Control/EnemySlots" unique_id=2112788354]
 position = Vector2(176, 48)
 
-[node name="EnemySlot1" type="Marker2D" parent="EnemySlots" unique_id=1625402426]
+[node name="EnemySlot1" type="Marker2D" parent="Control/EnemySlots" unique_id=1625402426]
 position = Vector2(208, 112)
 
-[node name="EnemySlot2" type="Marker2D" parent="EnemySlots" unique_id=852865614]
+[node name="EnemySlot2" type="Marker2D" parent="Control/EnemySlots" unique_id=852865614]
 position = Vector2(240, 48)
 
-[node name="EnemySlot3" type="Marker2D" parent="EnemySlots" unique_id=959659981]
+[node name="EnemySlot3" type="Marker2D" parent="Control/EnemySlots" unique_id=959659981]
 position = Vector2(272, 112)
 
 [node name="CombatControlls" parent="." unique_id=120188225 instance=ExtResource("2_gbtqw")]

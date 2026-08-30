@@ -22,6 +22,7 @@ func _ready() -> void:
 func _on_action_selected(selected_action: CombatAction) -> void:
 	var frontline := Combat.FRONTLINE_SLOTS.has(slot)
 	target_btn.disabled = !selected_action.can_target(is_hero, frontline)
+	target_btn.grab_focus()
 
 func _on_activate_character(activted_character : Character):
 	active_indicator.visible = activted_character == character
