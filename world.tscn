@@ -12,15 +12,21 @@ texture = ExtResource("1_aqk2v")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:0/0 = 0
+0:0/0/y_sort_origin = -99
 1:0/0 = 0
+1:0/0/y_sort_origin = -99
 1:0/0/probability = 0.01
 2:0/0 = 0
+2:0/0/y_sort_origin = -99
 2:0/0/probability = 0.01
 3:0/0 = 0
+3:0/0/y_sort_origin = -99
 3:0/0/probability = 0.01
 4:0/0 = 0
+4:0/0/y_sort_origin = -99
 4:0/0/probability = 0.01
 5:0/0 = 0
+5:0/0/y_sort_origin = -99
 5:0/0/probability = 0.01
 
 [sub_resource type="TileSet" id="TileSet_0kc5u"]
