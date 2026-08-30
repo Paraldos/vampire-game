@@ -6,7 +6,6 @@
 
 [resource]
 script = ExtResource("2_ktco2")
-frontline = false
 name = "Skeleton Archer"
 combat_sprite = ExtResource("2_4p81i")
 current_hp = null

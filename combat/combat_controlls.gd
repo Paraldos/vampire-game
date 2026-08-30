@@ -16,3 +16,4 @@ func _on_activate_character(activated_character: Character) -> void:
 			btn.update()
 		else:
 			btn.action = null
+	actions_container.get_child(0).grab_focus()
