@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bgaxwo36tpkjn"]
+
+[ext_resource type="Texture2D" uid="uid://s2xebhigljv4" path="res://assets/images/actions.png" id="1_eflnu"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://main_theme.tres" id="1_ffen4"]
+[ext_resource type="Script" uid="uid://db2jhne6av8k4" path="res://combat/action_btn.gd" id="3_ffen4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yvgj"]
+atlas = ExtResource("1_eflnu")
+region = Rect2(16, 16, 16, 16)
+
+[node name="InfoBtn" type="Button" unique_id=1104357048]
+custom_minimum_size = Vector2(22, 22)
+offset_right = 24.0
+offset_bottom = 24.0
+theme = ExtResource("1_ffen4")
+icon = SubResource("AtlasTexture_6yvgj")
+script = ExtResource("3_ffen4")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://cus46mt8c5el0"]
 
-[ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://data/templates/ability.gd" id="1_7y81l"]
+[ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://data/templates/combat_action.gd" id="1_7y81l"]
 [ext_resource type="Texture2D" uid="uid://brdulnl5nd3fp" path="res://assets/images/skeleton_archer.png" id="2_4p81i"]
 [ext_resource type="Script" uid="uid://cxjxss65t8lqy" path="res://data/templates/enemy.gd" id="2_ktco2"]
 

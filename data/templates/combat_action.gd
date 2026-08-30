@@ -1,5 +1,5 @@
 extends Resource
-class_name Ability
+class_name CombatAction
 
 @export var title := ""
 @export var img :Texture2D
