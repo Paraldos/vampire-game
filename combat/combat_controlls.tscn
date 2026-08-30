@@ -4,8 +4,14 @@
 [ext_resource type="Script" uid="uid://c7qro5mi67wjj" path="res://combat/combat_controlls.gd" id="2_gbx52"]
 [ext_resource type="Texture2D" uid="uid://s2xebhigljv4" path="res://assets/images/actions.png" id="3_6yvgj"]
 [ext_resource type="PackedScene" uid="uid://bgaxwo36tpkjn" path="res://combat/action_btn.tscn" id="3_dl3kb"]
+[ext_resource type="Resource" uid="uid://dnfjg6swtrc6j" path="res://data/combat_actions/info.tres" id="5_h4c1n"]
+[ext_resource type="Resource" uid="uid://cw20rruuk1qco" path="res://data/combat_actions/pass.tres" id="5_ugdga"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gbx52"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcbwo"]
+atlas = ExtResource("3_6yvgj")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl3kb"]
 atlas = ExtResource("3_6yvgj")
 region = Rect2(0, 16, 16, 16)
 
@@ -31,20 +37,39 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1038966100]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="ActionsContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=2116276628]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ActionBtn" parent="PanelContainer/HBoxContainer/VBoxContainer/ActionsContainer" unique_id=1104357048 instance=ExtResource("3_dl3kb")]
+layout_mode = 2
+
+[node name="ActionBtn2" parent="PanelContainer/HBoxContainer/VBoxContainer/ActionsContainer" unique_id=101176969 instance=ExtResource("3_dl3kb")]
+layout_mode = 2
+
+[node name="ActionBtn3" parent="PanelContainer/HBoxContainer/VBoxContainer/ActionsContainer" unique_id=2025896194 instance=ExtResource("3_dl3kb")]
+layout_mode = 2
+
+[node name="ActionBtn4" parent="PanelContainer/HBoxContainer/VBoxContainer/ActionsContainer" unique_id=1813503052 instance=ExtResource("3_dl3kb")]
 layout_mode = 2
 
 [node name="DefaultContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1749815136]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="InfoBtn" parent="PanelContainer/HBoxContainer/VBoxContainer/DefaultContainer" unique_id=1832906205 instance=ExtResource("3_dl3kb")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_wcbwo")
+action = ExtResource("5_h4c1n")
 
-[node name="PassBtn" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer/DefaultContainer" unique_id=633417442]
-custom_minimum_size = Vector2(22, 22)
+[node name="PassBtn" parent="PanelContainer/HBoxContainer/VBoxContainer/DefaultContainer" unique_id=1810952220 instance=ExtResource("3_dl3kb")]
 layout_mode = 2
-icon = SubResource("AtlasTexture_gbx52")
+icon = SubResource("AtlasTexture_dl3kb")
+action = ExtResource("5_ugdga")
 
 [node name="VSeparator" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=944197015]
 layout_mode = 2

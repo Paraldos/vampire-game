@@ -8,14 +8,12 @@ var is_hero := false
 var character: Character
 
 func _ready() -> void:
-	GlobalSignals.activate_character.connect(_on_activate_character)
-	if is_hero:
-		scale *= 1.2
-	else:
-		main_sprite.flip_h = true
 	if slot == -1:
 		queue_free()
 		return
+	GlobalSignals.activate_character.connect(_on_activate_character)
+	if !is_hero:
+		main_sprite.flip_h = true
 	main_sprite.texture = character.combat_sprite
 	active_indicator.visible = CombatManager.get_active_character() == character
 
