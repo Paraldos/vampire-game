@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dmyikyfplkj8r"]
+
+[ext_resource type="Texture2D" uid="uid://d2je51grv7w62" path="res://assets/images/characters-Sheet.png" id="1_k66xw"]
+[ext_resource type="Script" uid="uid://ursicnfiipil" path="res://characters/test_dummy/test_dummy.gd" id="1_yhjn5"]
+[ext_resource type="Script" uid="uid://deavujqc1odno" path="res://templates/bumper.gd" id="2_yhjn5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50yph"]
+atlas = ExtResource("1_k66xw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kc5u"]
+size = Vector2(8, 8)
+
+[node name="TestDummy" type="Node2D" unique_id=1650732549]
+script = ExtResource("1_yhjn5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=964044943]
+texture = SubResource("AtlasTexture_50yph")
+
+[node name="Bumper" type="StaticBody2D" parent="." unique_id=49011905]
+collision_layer = 5
+collision_mask = 0
+input_pickable = true
+script = ExtResource("2_yhjn5")
+metadata/_custom_type_script = "uid://deavujqc1odno"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper" unique_id=580406369]
+shape = SubResource("RectangleShape2D_0kc5u")
+
+[connection signal="bumped" from="Bumper" to="." method="_on_bumper_bumped"]

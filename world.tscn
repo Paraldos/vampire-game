@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bwe47dn165wmc" path="res://assets/images/tiles-Sheet.png" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://uuu0f4178hm5" path="res://characters/player.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://dmyikyfplkj8r" path="res://characters/test_dummy/test_dummy.tscn" id="3_tlwt5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -35,3 +36,6 @@ tile_set = SubResource("TileSet_0kc5u")
 
 [node name="Player" parent="." unique_id=1053692878 instance=ExtResource("2_fj7yv")]
 position = Vector2(24, 24)
+
+[node name="TestDummy" parent="." unique_id=1650732549 instance=ExtResource("3_tlwt5")]
+position = Vector2(56, 40)
