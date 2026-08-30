@@ -23,7 +23,8 @@ func create_enemy_formation() -> void:
 func _get_randome_enemy(position := Enums.COMBAT_POSITION.FRONTLINE) -> Enemy:
 	potential_enemies.shuffle()
 	for enemy in potential_enemies:
-		if enemy == null: continue
+		if enemy == null:
+			continue
 		if enemy.prefered_position == position:
 			return enemy.duplicate(true)
 	return null

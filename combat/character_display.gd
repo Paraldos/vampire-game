@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var main_sprite: Sprite2D = $MainSprite
-@onready var active_indicator: Sprite2D = %ActiveIndicator
+@onready var active_indicator: Node2D = %ActiveIndicator
 @onready var target_btn: Button = %TargetBtn
 
 var slot := -1

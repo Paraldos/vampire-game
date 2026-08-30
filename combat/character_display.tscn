@@ -1,9 +1,51 @@
 [gd_scene format=3 uid="uid://5ahfy3gthgwu"]
 
+[ext_resource type="Texture2D" uid="uid://4u5jrl8q7f52" path="res://assets/images/symbols.png" id="2_7x2a6"]
 [ext_resource type="Texture2D" uid="uid://ct7tdvbbxw1gt" path="res://assets/images/battle_characters.png" id="2_dkni4"]
 [ext_resource type="Script" uid="uid://dxny0h1x0hykx" path="res://combat/character_display.gd" id="2_ejsst"]
-[ext_resource type="Texture2D" uid="uid://dkogmrsgiqmkd" path="res://assets/images/character_selector.png" id="3_dkni4"]
 [ext_resource type="Texture2D" uid="uid://d1htiryb0fd5i" path="res://assets/images/panel_btn.png" id="4_7x2a6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x2a6"]
+atlas = ExtResource("2_7x2a6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Animation" id="Animation_7x2a6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fra55"]
+resource_name = "loop"
+length = 0.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, -4), Vector2(0, 4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjf7x"]
+_data = {
+&"RESET": SubResource("Animation_7x2a6"),
+&"loop": SubResource("Animation_fra55")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_reu0v"]
 atlas = ExtResource("4_7x2a6")
@@ -34,10 +76,17 @@ Button/styles/normal = SubResource("StyleBoxTexture_xstdr")
 [node name="CharacterDisplay" type="Node2D" unique_id=747938848]
 script = ExtResource("2_ejsst")
 
-[node name="ActiveIndicator" type="Sprite2D" parent="." unique_id=809665801]
+[node name="ActiveIndicator" type="Node2D" parent="." unique_id=462550968]
 unique_name_in_owner = true
-position = Vector2(0, 24)
-texture = ExtResource("3_dkni4")
+modulate = Color(0.30588236, 0.44313726, 0.37254903, 1)
+position = Vector2(0, -32)
+
+[node name="Sprite" type="Sprite2D" parent="ActiveIndicator" unique_id=809665801]
+texture = SubResource("AtlasTexture_7x2a6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ActiveIndicator" unique_id=1432640028]
+libraries/ = SubResource("AnimationLibrary_mjf7x")
+autoplay = &"loop"
 
 [node name="MainSprite" type="Sprite2D" parent="." unique_id=260166518]
 texture = ExtResource("2_dkni4")
