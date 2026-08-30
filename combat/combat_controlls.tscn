@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bj5y4sdb7wwnn"]
+
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://main_theme.tres" id="1_65ica"]
+[ext_resource type="Script" uid="uid://c7qro5mi67wjj" path="res://combat/combat_controlls.gd" id="2_gbx52"]
+
+[node name="CombatControlls" type="MarginContainer" unique_id=120188225]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 151.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_65ica")
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("2_gbx52")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=790606261]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=885427634]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer" unique_id=1497421392]
+layout_mode = 2
+columns = 4
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer/GridContainer" unique_id=1306738341]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="PanelContainer/HBoxContainer/GridContainer" unique_id=1781957914]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="PanelContainer/HBoxContainer/GridContainer" unique_id=693810090]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="PanelContainer/HBoxContainer/GridContainer" unique_id=1864741402]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="PanelContainer/HBoxContainer/GridContainer" unique_id=1551707438]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="PanelContainer/HBoxContainer/GridContainer" unique_id=413500767]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="PanelContainer/HBoxContainer/GridContainer" unique_id=1996741043]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="PanelContainer/HBoxContainer/GridContainer" unique_id=1443351740]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=944197015]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1994581842]
+layout_mode = 2
+size_flags_horizontal = 3

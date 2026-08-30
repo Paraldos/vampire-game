@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqqin61d3ow2p"]
 
 [ext_resource type="Script" uid="uid://3eqtw7nl6s51" path="res://combat/combat_window.gd" id="1_w54px"]
-[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://main_theme.tres" id="2_gbtqw"]
+[ext_resource type="PackedScene" uid="uid://bj5y4sdb7wwnn" path="res://combat/combat_controlls.tscn" id="2_gbtqw"]
 
 [node name="Combat" type="CanvasLayer" unique_id=941987718]
 script = ExtResource("1_w54px")
@@ -43,44 +43,4 @@ position = Vector2(272, 48)
 [node name="EnemySlot3" type="Marker2D" parent="EnemySlots" unique_id=959659981]
 position = Vector2(256, 112)
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=551488470]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 152.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_gbtqw")
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=50635133]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1054737291]
-layout_mode = 2
-
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=397299404]
-layout_mode = 2
-size_flags_horizontal = 3
-columns = 4
-
-[node name="Button" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" unique_id=70729058]
-layout_mode = 2
-
-[node name="Button2" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" unique_id=1921954470]
-layout_mode = 2
-
-[node name="Button3" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" unique_id=3614719]
-layout_mode = 2
-
-[node name="Button4" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" unique_id=1317625949]
-layout_mode = 2
-
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=873965249]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=148570506]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="CombatControlls" parent="." unique_id=120188225 instance=ExtResource("2_gbtqw")]
