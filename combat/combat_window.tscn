@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dqqin61d3ow2p"]
 
-[ext_resource type="Script" uid="uid://3eqtw7nl6s51" path="res://combat/combat.gd" id="1_puw3m"]
+[ext_resource type="Script" uid="uid://3eqtw7nl6s51" path="res://combat/combat_window.gd" id="1_w54px"]
 
 [node name="Combat" type="CanvasLayer" unique_id=941987718]
-script = ExtResource("1_puw3m")
+script = ExtResource("1_w54px")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2103391695]
 anchors_preset = 15

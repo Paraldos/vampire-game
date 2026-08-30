@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var background: ColorRect = %Background
 
-const COMBAT = preload("uid://dqqin61d3ow2p")
+const COMBAT_WINDOW = preload("uid://dqqin61d3ow2p")
 
 var fade_time := 0.2
 var fade_color := Color("06080a")

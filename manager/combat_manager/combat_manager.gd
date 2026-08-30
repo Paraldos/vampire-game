@@ -13,10 +13,10 @@ static var current_combat: Combat:
 
 # ======================================== helper
 static func get_enemy_formation() -> Array[Enemy]:
-	return current_combat.enemies
+	return current_combat.enemy_formation
 
 static func get_enemy(position: int) -> Enemy:
-	return current_combat.enemies[position]
+	return current_combat.enemy_formation[position]
 
 static func get_hero(position: int) -> Hero:
 	return current_combat.heroes[position]
@@ -24,7 +24,7 @@ static func get_hero(position: int) -> Hero:
 static func start_combat(new_combat: Combat) -> void:
 	current_combat = new_combat
 	current_combat.start()
-	SceneManager.change_scene(SceneManager.COMBAT)
+	SceneManager.change_scene(SceneManager.COMBAT_WINDOW)
 
 static func end_combat() -> void:
 	current_combat = null

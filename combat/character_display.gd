@@ -7,7 +7,10 @@ var is_hero := false
 var character: Character
 
 func _ready() -> void:
-	main_sprite.flip_h = !is_hero
+	if is_hero:
+		scale *= 1.2
+	else:
+		main_sprite.flip_h = true
 	if slot == -1:
 		queue_free()
 		return
