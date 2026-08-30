@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Combat" format=3 uid="uid://44lbikfxg1sm"]
+
+[ext_resource type="Script" uid="uid://cxjxss65t8lqy" path="res://data/templates/enemy.gd" id="1_ete86"]
+[ext_resource type="Script" uid="uid://cf0h8ob5vp2j" path="res://data/templates/hero.gd" id="2_ftnrw"]
+[ext_resource type="Resource" uid="uid://c1hlbq8ugbb3c" path="res://data/enemies/skeleton.tres" id="3_lh7rl"]
+[ext_resource type="Script" uid="uid://c1m4pqc2p76kc" path="res://data/templates/combat.gd" id="4_163j2"]
+
+[resource]
+script = ExtResource("4_163j2")
+potential_enemies = Array[ExtResource("1_ete86")]([ExtResource("3_lh7rl")])
+metadata/_custom_type_script = "uid://c1m4pqc2p76kc"

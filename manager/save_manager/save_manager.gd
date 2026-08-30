@@ -4,13 +4,13 @@ class_name SaveManager
 const SAVE_GAME_PATH := "user://save_%s.tres"
 const SAVE_INFO_PATH := "user://save_%s_info.tres"
 
-func new_game() -> void:
+static func new_game() -> void:
 	GameData.save_game = SaveGame.new()
 
-func save_game(slot_number: int = 0) -> Error:
+static func save_game(slot_number: int = 0) -> Error:
 	return ResourceSaver.save(GameData.save_game, get_save_path(slot_number))
 
-func load_game(slot_number: int = 0) -> Error:
+static func load_game(slot_number: int = 0) -> Error:
 	if not save_exists(slot_number):
 		push_error("Save slot %s does not exist." % slot_number)
 		return ERR_FILE_NOT_FOUND

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://5ahfy3gthgwu"]
+
+[ext_resource type="Script" uid="uid://dxny0h1x0hykx" path="res://combat/character_display.gd" id="2_ejsst"]
+
+[node name="CharacterDisplay" type="Node2D" unique_id=747938848]
+script = ExtResource("2_ejsst")
+
+[node name="MainSprite" type="Sprite2D" parent="." unique_id=260166518]

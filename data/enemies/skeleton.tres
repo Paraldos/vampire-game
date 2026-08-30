@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://c1hlbq8ugbb3c"]
+
+[ext_resource type="Texture2D" uid="uid://ksrab7agc3ge" path="res://assets/images/skeleton.png" id="1_0ypgr"]
+[ext_resource type="Script" uid="uid://cxjxss65t8lqy" path="res://data/templates/enemy.gd" id="1_k7ddm"]
+
+[resource]
+script = ExtResource("1_k7ddm")
+name = "Skeleton"
+combat_sprite = ExtResource("1_0ypgr")
+metadata/_custom_type_script = "uid://cxjxss65t8lqy"
