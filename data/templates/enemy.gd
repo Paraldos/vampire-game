@@ -9,7 +9,7 @@ class_name Enemy
 @export var sprites : Array[Texture2D]
 
 @export_group('stats')
-@export var max_hp := 10
+@export var max_hp := 30
 @export_storage var current_hp := max_hp
 @export var attack = 5
 @export var defense = 5

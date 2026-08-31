@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dy74dyvv52wmc" path="res://combat/player_display.gd" id="1_26an5"]
 [ext_resource type="PackedScene" uid="uid://cxr3onoqs1ysy" path="res://combat/combat_sprite.tscn" id="2_26an5"]
-[ext_resource type="Texture2D" uid="uid://c4vsv68n7dr0r" path="res://assets/images/player-big.png" id="3_knpgo"]
+[ext_resource type="Texture2D" uid="uid://dqyjfdp2ibtxv" path="res://assets/images/vampire-Sheet.png" id="3_knpgo"]
 
 [sub_resource type="Animation" id="Animation_26an5"]
 length = 0.001

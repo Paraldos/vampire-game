@@ -43,11 +43,11 @@ func _slash(user_is_player: bool) -> void:
 		Enums.COMBAT_ANIMATIONS.HIT
 	)
 	if user_is_player:
-		var dmg = PlayerManager.attack
+		var dmg = PlayerManager.attack + Utils.roll_dice()
 		var defense = CombatManager.enemy.defense
 		CombatManager.enemy.current_hp -= maxi(dmg - defense, 0)
 	else:
-		var dmg = CombatManager.enemy.attack
+		var dmg = CombatManager.enemy.attack + Utils.roll_dice()
 		var defense = PlayerManager.defense
 		PlayerManager.current_hp -= maxi(dmg - defense, 0)
 	await Utils.get_tree().create_timer(ACTION_DURATION).timeout

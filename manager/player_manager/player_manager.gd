@@ -2,7 +2,7 @@ extends Resource
 class_name PlayerManager
 
 # ======================================== export function
-@export var _max_hp := 10
+@export var _max_hp := 30
 @export var _current_hp := _max_hp
 @export var actions :Array[Action] = [
 	load("res://data/actions/slash.tres"),
