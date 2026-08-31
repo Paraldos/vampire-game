@@ -1,14 +1,13 @@
 extends State
 
-const TILE_SIZE := Vector2(16, 16)
 const MOVEMENT_DURATION := 0.3
 const JUMP_HEIGHT := 1.5
 
 func start() -> void:
 	var direction: Vector2 = actor.move_direction
 
-	actor.global_position += direction * TILE_SIZE
-	actor.sprite_parent.position -= direction * TILE_SIZE
+	actor.global_position += direction * LevelManager.TILE_SIZE
+	actor.sprite_parent.position -= direction * LevelManager.TILE_SIZE
 
 	_animation_hop()
 	await _animation_move()
