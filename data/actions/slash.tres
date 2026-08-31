@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="Action" format=3 uid="uid://cwdjg35nwpxj4"]
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://hjdega387jrv"]
 
 [ext_resource type="Texture2D" uid="uid://s2xebhigljv4" path="res://assets/images/actions.png" id="1_3tice"]
 [ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://data/templates/action.gd" id="2_7rrv7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h7ycu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_miamk"]
 atlas = ExtResource("1_3tice")
 region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_7rrv7")
-title = "Slash"
-img = SubResource("AtlasTexture_h7ycu")
+type = 1
+img = SubResource("AtlasTexture_miamk")
 metadata/_custom_type_script = "uid://dmyvvs8hheiig"

@@ -15,11 +15,15 @@ enum SIDE {
 var char
 
 func _ready() -> void:
+	GlobalSignals.update_combat_stats.connect(_update)
 	if side == SIDE.PLAYER:
 		char = PlayerManager
 	else:
 		char = CombatManager.enemy
+	_update()
+
+func _update():
 	hp_label.text = "%s/%s" % [
 		char.current_hp, char.max_hp]
-	attack_label.text = "%s" % char.get_attack()
-	defense_label.text = "%s" % char.get_defense()
+	attack_label.text = "%s" % char.attack
+	defense_label.text = "%s" % char.defense

@@ -8,15 +8,8 @@ class_name PlayerManager
 	load("res://data/actions/slash.tres"),
 	load("res://data/actions/defend.tres")
 ]
-
-static func get_actions():
-	return _get_instance().actions
-
-static func get_attack():
-	return 5
-
-static func get_defense():
-	return 5
+@export var _attack := 10
+@export var _defense := 5
 
 # ======================================== setter/getter
 static var max_hp: int:
@@ -31,6 +24,21 @@ static var current_hp: int:
 	set(value):
 		_get_instance()._current_hp = value
 
+static var attack: int:
+	get:
+		return _get_instance()._attack
+	set(value):
+		_get_instance()._attack = value
+
+static var defense: int:
+	get:
+		return _get_instance()._defense
+	set(value):
+		_get_instance()._defense = value
+
 # ======================================== helper
+static func get_actions():
+	return _get_instance().actions
+
 static func _get_instance() -> PlayerManager:
 	return GameData.save_game.player_manager

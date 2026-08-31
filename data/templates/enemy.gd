@@ -24,3 +24,10 @@ func get_attack():
 
 func get_defense():
 	return defense
+
+func use_randome_action():
+	actions.shuffle()
+	for action in actions:
+		if action.can_be_used(false):
+			action.use(false)
+			return

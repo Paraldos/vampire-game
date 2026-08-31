@@ -22,6 +22,10 @@ static func start_combat(new_enemy: Enemy) -> void:
 static func end_combat() -> void:
 	enemy = null
 
+static func enemy_turn() -> void:
+	await Utils.get_tree().create_timer(0.5).timeout
+	enemy.use_randome_action()
+
 # ======================================== helper
 static func _get_instance() -> CombatManager:
 	return GameData.save_game.combat_manager
