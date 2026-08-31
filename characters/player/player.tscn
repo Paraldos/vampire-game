@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://uuu0f4178hm5"]
 
-[ext_resource type="Texture2D" uid="uid://d2je51grv7w62" path="res://assets/images/player-small.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dph1s3sbovvxt" path="res://characters/player/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://1xuiitqltmym" path="res://assets/images/small_characters.png" id="2_dirf7"]
 [ext_resource type="Script" uid="uid://dubx0s3uf7qgt" path="res://templates/state_machine.gd" id="3_x0jl3"]
 [ext_resource type="Script" uid="uid://bdb12rgmtx0us" path="res://characters/player/idle.gd" id="4_h1q25"]
 [ext_resource type="Script" uid="uid://dsjtwreh5q4cd" path="res://characters/player/move.gd" id="5_h1q25"]
@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://dkc2dfpq78y2p" path="res://templates/bumper_detector.gd" id="7_j31ep"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kc5u"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(0, 0, 16, 16)
+atlas = ExtResource("2_dirf7")
+region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kc5u"]
 size = Vector2(8, 8)
