@@ -9,9 +9,9 @@ atlas = ExtResource("1_vhku8")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a2l2q"]
-content_margin_left = 3.0
+content_margin_left = 6.0
 content_margin_top = 3.0
-content_margin_right = 3.0
+content_margin_right = 6.0
 content_margin_bottom = 3.0
 texture = SubResource("AtlasTexture_0omi4")
 texture_margin_left = 3.0
@@ -24,9 +24,9 @@ atlas = ExtResource("1_vhku8")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0omi4"]
-content_margin_left = 3.0
+content_margin_left = 6.0
 content_margin_top = 3.0
-content_margin_right = 3.0
+content_margin_right = 6.0
 content_margin_bottom = 3.0
 texture = SubResource("AtlasTexture_a2l2q")
 texture_margin_left = 3.0
@@ -39,9 +39,9 @@ atlas = ExtResource("1_vhku8")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_466ly"]
-content_margin_left = 3.0
+content_margin_left = 6.0
 content_margin_top = 3.0
-content_margin_right = 3.0
+content_margin_right = 6.0
 content_margin_bottom = 3.0
 texture = SubResource("AtlasTexture_58jnp")
 texture_margin_left = 3.0
@@ -54,9 +54,9 @@ atlas = ExtResource("1_vhku8")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0kc5u"]
-content_margin_left = 3.0
+content_margin_left = 6.0
 content_margin_top = 3.0
-content_margin_right = 3.0
+content_margin_right = 6.0
 content_margin_bottom = 3.0
 texture = SubResource("AtlasTexture_50yph")
 texture_margin_left = 3.0
@@ -69,9 +69,9 @@ atlas = ExtResource("1_vhku8")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58jnp"]
-content_margin_left = 3.0
+content_margin_left = 6.0
 content_margin_top = 3.0
-content_margin_right = 3.0
+content_margin_right = 6.0
 content_margin_bottom = 3.0
 texture = SubResource("AtlasTexture_466ly")
 texture_margin_left = 3.0
@@ -93,6 +93,10 @@ vertical = true
 [resource]
 default_font = ExtResource("3_axncs")
 default_font_size = 7
+Button/colors/font_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
+Button/colors/font_disabled_color = Color(0.03529412, 0.039215688, 0.078431375, 0.7019608)
+Button/colors/font_focus_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
+Button/colors/font_pressed_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_a2l2q")
 Button/styles/focus = SubResource("StyleBoxTexture_0omi4")
 Button/styles/hover = SubResource("StyleBoxTexture_466ly")

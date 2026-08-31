@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dao4mat0yimv"]
+
+[ext_resource type="Script" uid="uid://7rpx4q5tnosj" path="res://manager/modal_manager/modal_template.gd" id="1_s4v13"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="2_5snw8"]
+
+[node name="ModalTemplate" type="CanvasLayer" unique_id=1120063405]
+process_mode = 3
+layer = 51
+script = ExtResource("1_s4v13")
+
+[node name="ContentContainer" type="Control" parent="." unique_id=532912909]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_5snw8")

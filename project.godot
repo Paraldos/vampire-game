@@ -21,6 +21,7 @@ GameData="*uid://c48hcse740orb"
 SceneManager="*uid://cx6di0n4v1oml"
 GlobalSignals="*uid://dqvsj5tgbkeqe"
 Utils="*uid://b8g7vu5kip8tx"
+ModalManager="*uid://ckfrq0t0mj170"
 
 [display]
 

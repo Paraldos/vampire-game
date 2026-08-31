@@ -1,6 +1,9 @@
 extends Resource
 class_name CombatManager
 
+const VICTORY_MODAL = preload("uid://dyjcj21csd2cj")
+const DEFEAT_MODAL = preload("uid://byeowkfa6q0er")
+
 @export_storage var enemy: Enemy
 @export_storage var player_turn := true
 
@@ -32,10 +35,10 @@ func next_turn() -> void:
 		enemy.use_randome_action()
 
 func _defeat():
-	print('defeat')
+	ModalManager.open_modal(DEFEAT_MODAL)
 
 func _victory():
-	print('victory')
+	ModalManager.open_modal(VICTORY_MODAL)
 
 # ======================================== helper
 func _get_instance() -> CombatManager:
