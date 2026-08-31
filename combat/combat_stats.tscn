@@ -11,13 +11,13 @@ load_path = "res://.godot/imported/icons.png-c94cfcbcfb14d55ce62faf7c1b93c35f.ct
 atlas = SubResource("CompressedTexture2D_dhcnt")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0kc5u"]
-atlas = ExtResource("3_3ana7")
-region = Rect2(16, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhcnt"]
 atlas = ExtResource("3_3ana7")
 region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kc5u"]
+atlas = ExtResource("3_3ana7")
+region = Rect2(16, 0, 16, 16)
 
 [node name="CombatStats" type="PanelContainer" unique_id=978464238]
 z_index = 1
@@ -51,6 +51,19 @@ modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
 layout_mode = 2
 text = "5/10"
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1805769801]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1606459601]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dhcnt")
+
+[node name="ArmorLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1044662127]
+unique_name_in_owner = true
+modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
+layout_mode = 2
+text = "5/10"
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=454557815]
 layout_mode = 2
 
@@ -61,18 +74,5 @@ texture = SubResource("AtlasTexture_0kc5u")
 [node name="AttackLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1007712452]
 unique_name_in_owner = true
 modulate = Color(0.5058824, 0.5921569, 0.5882353, 1)
-layout_mode = 2
-text = "5/10"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1805769801]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1606459601]
-layout_mode = 2
-texture = SubResource("AtlasTexture_dhcnt")
-
-[node name="DefenseLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1044662127]
-unique_name_in_owner = true
-modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
 layout_mode = 2
 text = "5/10"

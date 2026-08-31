@@ -7,8 +7,8 @@ enum SIDE {
 }
 
 @onready var hp_label: Label = %HPLabel
+@onready var armor_label: Label = %ArmorLabel
 @onready var attack_label: Label = %AttackLabel
-@onready var defense_label: Label = %DefenseLabel
 
 @export var side = SIDE.PLAYER
 
@@ -25,5 +25,6 @@ func _ready() -> void:
 func _update():
 	hp_label.text = "%s/%s" % [
 		char.current_hp, char.max_hp]
+	armor_label.text = "%s/%s" % [
+		char.current_armor, char.max_armor]
 	attack_label.text = "%s" % char.attack
-	defense_label.text = "%s" % char.defense

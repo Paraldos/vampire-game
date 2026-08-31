@@ -44,10 +44,8 @@ func _slash(user_is_player: bool) -> void:
 	)
 	if user_is_player:
 		var dmg = PlayerManager.attack + Utils.roll_dice()
-		var defense = CombatManager.enemy.defense
-		CombatManager.enemy.current_hp -= maxi(dmg - defense, 0)
+		CombatManager.enemy.deal_damage(dmg)
 	else:
 		var dmg = CombatManager.enemy.attack + Utils.roll_dice()
-		var defense = PlayerManager.defense
-		PlayerManager.current_hp -= maxi(dmg - defense, 0)
+		PlayerManager.deal_damage(dmg)
 	await Utils.get_tree().create_timer(ACTION_DURATION).timeout
