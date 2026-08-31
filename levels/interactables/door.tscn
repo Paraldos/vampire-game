@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btd1mto33oj8i"]
 
-[ext_resource type="PackedScene" uid="uid://bjjsmg4jdfe52" path="res://interactables/interactable.tscn" id="1_8rerx"]
+[ext_resource type="PackedScene" uid="uid://bjjsmg4jdfe52" path="res://levels/interactable.tscn" id="1_8rerx"]
 [ext_resource type="Texture2D" uid="uid://bew4feorh8k4t" path="res://assets/images/interactables.png" id="2_yney3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdhm5"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://fur7eenip4yv" path="res://assets/images/skeleton_empty.png" id="1_0jk8g"]
 [ext_resource type="Texture2D" uid="uid://c43dl7hig8vt" path="res://assets/images/skeleton_bow.png" id="1_6cqo1"]
-[ext_resource type="Script" uid="uid://skqulcgp5he2" path="res://combat/enemy_display.gd" id="1_l8knb"]
-[ext_resource type="PackedScene" uid="uid://cxr3onoqs1ysy" path="res://combat/combat_sprite.tscn" id="2_6cqo1"]
+[ext_resource type="Script" uid="uid://skqulcgp5he2" path="res://combats/enemy_display.gd" id="1_l8knb"]
+[ext_resource type="PackedScene" uid="uid://cxr3onoqs1ysy" path="res://combats/combat_sprite.tscn" id="2_6cqo1"]
 
 [node name="EnemyDisplay" type="Node2D" unique_id=247224497]
 script = ExtResource("1_l8knb")
