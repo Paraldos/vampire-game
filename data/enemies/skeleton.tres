@@ -11,7 +11,6 @@
 script = ExtResource("1_k7ddm")
 name = "Skeleton"
 actions = Array[ExtResource("1_wrqo5")]([ExtResource("2_s7qy5")])
-group = true
 sprites = Array[Texture2D]([ExtResource("3_6xmi0"), ExtResource("2_6e0iy"), ExtResource("5_s7qy5")])
 current_hp = null
 metadata/_custom_type_script = "uid://cxjxss65t8lqy"
