@@ -15,10 +15,11 @@ func start_combat(new_enemy: Enemy) -> void:
 	player_turn = true
 	enemy = new_enemy.duplicate(true) as Enemy
 	enemy.current_hp = enemy.max_hp
-	SceneManager.change_scene(SceneManager.COMBAT_WINDOW)
+	SceneManager.push_overlay_scene(SceneManager.COMBAT_WINDOW)
 
 func end_combat() -> void:
 	enemy = null
+	SceneManager.pop_overlay_scene()
 
 func next_turn() -> void:
 	GlobalSignals.update_combat_stats.emit()

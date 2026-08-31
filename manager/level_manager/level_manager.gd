@@ -2,10 +2,10 @@ extends Resource
 class_name LevelManager
 
 @export_storage var level : PackedScene = load("uid://h6t750kmppjs")
-@export_storage var player_position : Vector2
 
-func change_level():
-	pass
+func change_level(new_level : PackedScene) -> void:
+	level = new_level
+	SceneManager.change_scene(level)
 
-func load_level():
-	pass
+func reload_level():
+	SceneManager.change_scene(level)

@@ -1,4 +1,5 @@
 extends Modal
 
 func _on_default_btn_pressed() -> void:
-	pass # Replace with function body.
+	close()
+	GameData.combat_manager.end_combat()
