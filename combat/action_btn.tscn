@@ -3,11 +3,88 @@
 [ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="1_ffen4"]
 [ext_resource type="Script" uid="uid://db2jhne6av8k4" path="res://combat/action_btn.gd" id="3_ffen4"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wcbwo"]
+load_path = "res://.godot/imported/button.png-7ad2fecf8e41de8db458bf41ec642058.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffen4"]
+atlas = SubResource("CompressedTexture2D_wcbwo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ssn2a"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+texture = SubResource("AtlasTexture_ffen4")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ffen4"]
+load_path = "res://.godot/imported/button.png-7ad2fecf8e41de8db458bf41ec642058.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssn2a"]
+atlas = SubResource("CompressedTexture2D_ffen4")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uy7e5"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+texture = SubResource("AtlasTexture_ssn2a")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y2gyt"]
+load_path = "res://.godot/imported/button.png-7ad2fecf8e41de8db458bf41ec642058.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33miw"]
+atlas = SubResource("CompressedTexture2D_y2gyt")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrq6r"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+texture = SubResource("AtlasTexture_33miw")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ly6cj"]
+load_path = "res://.godot/imported/button.png-7ad2fecf8e41de8db458bf41ec642058.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7hwy"]
+atlas = SubResource("CompressedTexture2D_ly6cj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glk6c"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+texture = SubResource("AtlasTexture_s7hwy")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
 [node name="ActionBtn" type="Button" unique_id=1104357048]
 custom_minimum_size = Vector2(22, 22)
 offset_right = 24.0
 offset_bottom = 24.0
 theme = ExtResource("1_ffen4")
+theme_type_variation = &"icon_btn"
+theme_override_styles/normal = SubResource("StyleBoxTexture_ssn2a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uy7e5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vrq6r")
+theme_override_styles/focus = SubResource("StyleBoxTexture_glk6c")
 script = ExtResource("3_ffen4")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
