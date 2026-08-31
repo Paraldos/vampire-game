@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CombatAction" format=3 uid="uid://dnfjg6swtrc6j"]
+
+[ext_resource type="Texture2D" uid="uid://s2xebhigljv4" path="res://assets/images/actions.png" id="1_17o0s"]
+[ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://data/templates/action.gd" id="2_aibor"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyte5"]
+atlas = ExtResource("1_17o0s")
+region = Rect2(16, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_aibor")
+title = "Info"
+img = SubResource("AtlasTexture_hyte5")
+metadata/_custom_type_script = "uid://dmyvvs8hheiig"

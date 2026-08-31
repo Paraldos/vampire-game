@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bekqeam2og4cq"]
+
+[ext_resource type="Texture2D" uid="uid://fur7eenip4yv" path="res://assets/images/skeleton_empty.png" id="1_0jk8g"]
+[ext_resource type="Texture2D" uid="uid://c43dl7hig8vt" path="res://assets/images/skeleton_bow.png" id="1_6cqo1"]
+[ext_resource type="Script" uid="uid://skqulcgp5he2" path="res://combat/enemy_display.gd" id="1_l8knb"]
+[ext_resource type="Texture2D" uid="uid://b3e1d8jj3f46t" path="res://assets/images/skeleton_sword.png" id="3_l8knb"]
+
+[node name="EnemyDisplay" type="Node2D" unique_id=247224497]
+script = ExtResource("1_l8knb")
+
+[node name="SingleSprite" type="Sprite2D" parent="." unique_id=788025991]
+unique_name_in_owner = true
+texture = ExtResource("1_6cqo1")
+flip_h = true
+
+[node name="GroupSprite1" type="Sprite2D" parent="." unique_id=1358542423]
+unique_name_in_owner = true
+position = Vector2(-32, 0)
+texture = ExtResource("1_6cqo1")
+flip_h = true
+
+[node name="GroupSprite2" type="Sprite2D" parent="." unique_id=914859720]
+unique_name_in_owner = true
+position = Vector2(-8, -24)
+texture = ExtResource("1_0jk8g")
+flip_h = true
+
+[node name="GroupSprite3" type="Sprite2D" parent="." unique_id=1245784265]
+unique_name_in_owner = true
+position = Vector2(8, 16)
+texture = ExtResource("3_l8knb")
+flip_h = true

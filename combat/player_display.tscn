@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://i3f18rkgtvih"]
+
+[ext_resource type="Script" uid="uid://dy74dyvv52wmc" path="res://combat/player_display.gd" id="1_26an5"]
+[ext_resource type="Texture2D" uid="uid://c4vsv68n7dr0r" path="res://assets/images/player-big.png" id="2_26an5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3arh"]
+atlas = ExtResource("2_26an5")
+
+[node name="PlayerDisplay" type="Node2D" unique_id=1255162580]
+script = ExtResource("1_26an5")
+
+[node name="MainSprite" type="Sprite2D" parent="." unique_id=1095827242]
+texture = SubResource("AtlasTexture_d3arh")

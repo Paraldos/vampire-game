@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c0p8m82pwlwxj" path="res://assets/images/tiles.png" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://uuu0f4178hm5" path="res://characters/player/player.tscn" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://dmyikyfplkj8r" path="res://characters/test_dummy/test_dummy.tscn" id="3_tlwt5"]
-[ext_resource type="Resource" uid="uid://44lbikfxg1sm" path="res://data/combats/test_combat.tres" id="4_036b0"]
+[ext_resource type="Resource" uid="uid://c1hlbq8ugbb3c" path="res://data/enemies/skeleton.tres" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://btd1mto33oj8i" path="res://interactables/door.tscn" id="4_aqk2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_036b0"]

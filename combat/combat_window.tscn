@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dqqin61d3ow2p"]
 
 [ext_resource type="Script" uid="uid://3eqtw7nl6s51" path="res://combat/combat_window.gd" id="1_w54px"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="2_diee0"]
 [ext_resource type="PackedScene" uid="uid://bj5y4sdb7wwnn" path="res://combat/combat_controlls.tscn" id="2_gbtqw"]
+[ext_resource type="PackedScene" uid="uid://i3f18rkgtvih" path="res://combat/player_display.tscn" id="3_x48uq"]
+[ext_resource type="PackedScene" uid="uid://bekqeam2og4cq" path="res://combat/enemy_display.tscn" id="4_diee0"]
+[ext_resource type="PackedScene" uid="uid://b651g6cpgp6ia" path="res://combat/combat_stats.tscn" id="5_d3arh"]
 
 [node name="Combat" type="CanvasLayer" unique_id=941987718]
 script = ExtResource("1_w54px")
@@ -12,45 +16,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_diee0")
 color = Color(0.023529412, 0.03137255, 0.039215688, 1)
 metadata/_edit_lock_ = true
 
-[node name="HeroSlot0" type="Marker2D" parent="ColorRect" unique_id=344330036]
-unique_name_in_owner = true
-position = Vector2(48, 48)
-
-[node name="HeroSlot1" type="Marker2D" parent="ColorRect" unique_id=841562566]
-unique_name_in_owner = true
-position = Vector2(112, 48)
-
-[node name="EnemySlot0" type="Marker2D" parent="ColorRect" unique_id=2112788354]
-unique_name_in_owner = true
-position = Vector2(192, 48)
-
-[node name="EnemySlot2" type="Marker2D" parent="ColorRect" unique_id=852865614]
-unique_name_in_owner = true
-position = Vector2(256, 48)
-
-[node name="HeroSlot2" type="Marker2D" parent="ColorRect" unique_id=503873283]
-unique_name_in_owner = true
-position = Vector2(32, 112)
-
-[node name="HeroSlot3" type="Marker2D" parent="ColorRect" unique_id=666145081]
-unique_name_in_owner = true
-position = Vector2(96, 112)
-
-[node name="EnemySlot1" type="Marker2D" parent="ColorRect" unique_id=1625402426]
-unique_name_in_owner = true
-position = Vector2(176, 112)
-
-[node name="EnemySlot3" type="Marker2D" parent="ColorRect" unique_id=959659981]
-unique_name_in_owner = true
-position = Vector2(240, 112)
-
-[node name="CombatControlls" parent="ColorRect" unique_id=120188225 instance=ExtResource("2_gbtqw")]
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect" unique_id=1227853229]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-offset_top = -57.0
-offset_bottom = 0.0
-grow_vertical = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_diee0")
+
+[node name="PlayerDisplay" parent="ColorRect" unique_id=1255162580 instance=ExtResource("3_x48uq")]
+position = Vector2(96, 80)
+
+[node name="EnemyDisplay" parent="ColorRect" unique_id=247224497 instance=ExtResource("4_diee0")]
+position = Vector2(208, 80)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1281510426]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -6
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=2013464239]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CombatStats" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=978464238 instance=ExtResource("5_d3arh")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1876003150]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CombatStats2" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1807604405 instance=ExtResource("5_d3arh")]
+layout_mode = 2
+side = 1
+
+[node name="CombatControlls" parent="ColorRect/VBoxContainer" unique_id=120188225 instance=ExtResource("2_gbtqw")]
+layout_mode = 2

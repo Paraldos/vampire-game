@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://r40naacjekcn"]
+
+[ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://data/templates/action.gd" id="1_ljy70"]
+[ext_resource type="Script" uid="uid://cxjxss65t8lqy" path="res://data/templates/enemy.gd" id="2_2xahy"]
+[ext_resource type="Texture2D" uid="uid://c43dl7hig8vt" path="res://assets/images/skeleton_bow.png" id="3_1pst8"]
+[ext_resource type="Texture2D" uid="uid://fur7eenip4yv" path="res://assets/images/skeleton_empty.png" id="4_pbsdx"]
+[ext_resource type="Texture2D" uid="uid://b3e1d8jj3f46t" path="res://assets/images/skeleton_sword.png" id="5_fjlwe"]
+
+[resource]
+script = ExtResource("2_2xahy")
+name = "Skeleton"
+sprites = Array[Texture2D]([ExtResource("3_1pst8"), ExtResource("4_pbsdx"), ExtResource("5_fjlwe")])
+current_hp = null
+attack = 8
+defense = 2
+metadata/_custom_type_script = "uid://cxjxss65t8lqy"

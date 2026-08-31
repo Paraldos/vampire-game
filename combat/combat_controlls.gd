@@ -1,23 +1,16 @@
-extends MarginContainer
+extends PanelContainer
 
-@onready var actions_container: HBoxContainer = %ActionsContainer
-@onready var default_container: HBoxContainer = %DefaultContainer
+@onready var actions_container: GridContainer = %ActionsContainer
 const ACTION_BTN = preload("uid://bgaxwo36tpkjn")
 
 func _ready() -> void:
-	_on_activate_character(CombatManager.get_active_character())
-	GlobalSignals.activate_character.connect(_on_activate_character)
-	GlobalSignals.action_selected.connect(_on_action_selected)
-
-func _on_activate_character(activated_character: Character) -> void:
-	for i in actions_container.get_child_count():
-		var btn :DefaultBtn = actions_container.get_child(i)
-		if i < activated_character.actions.size():
-			btn.action = activated_character.actions[i]
-			btn.update()
-		else:
-			btn.action = null
+	Utils.clear_container(actions_container)
+	for action in PlayerManager.get_actions():
+		_add_action_btn(action)
+	_add_action_btn(load("res://data/actions/pass.tres"))
 	actions_container.get_child(0).grab_focus()
 
-func _on_action_selected(_selected_action: CombatAction):
-	await get_tree().physics_frame
+func _add_action_btn(action : Action):
+	var btn := ACTION_BTN.instantiate()
+	btn.action = action
+	actions_container.add_child(btn)

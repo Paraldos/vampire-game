@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgaxwo36tpkjn"]
 
-[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://main_theme.tres" id="1_ffen4"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="1_ffen4"]
 [ext_resource type="Script" uid="uid://db2jhne6av8k4" path="res://combat/action_btn.gd" id="3_ffen4"]
 
 [node name="ActionBtn" type="Button" unique_id=1104357048]

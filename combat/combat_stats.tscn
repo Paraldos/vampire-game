@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b651g6cpgp6ia"]
+
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="1_dpxyo"]
+[ext_resource type="Script" uid="uid://bj1djq7ffhlri" path="res://combat/combat_stats.gd" id="2_dpxyo"]
+[ext_resource type="Texture2D" uid="uid://7vwcdvp686ux" path="res://assets/images/icons.png" id="3_3ana7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dhcnt"]
+load_path = "res://.godot/imported/icons.png-c94cfcbcfb14d55ce62faf7c1b93c35f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w5ia"]
+atlas = SubResource("CompressedTexture2D_dhcnt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kc5u"]
+atlas = ExtResource("3_3ana7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhcnt"]
+atlas = ExtResource("3_3ana7")
+region = Rect2(0, 16, 16, 16)
+
+[node name="CombatStats" type="PanelContainer" unique_id=978464238]
+z_index = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 45.0
+grow_vertical = 2
+theme = ExtResource("1_dpxyo")
+script = ExtResource("2_dpxyo")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1536596751]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1007197856]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1193766351]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1279141466]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0w5ia")
+
+[node name="HPLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=896635307]
+unique_name_in_owner = true
+modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
+layout_mode = 2
+text = "5/10"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=454557815]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1245355849]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0kc5u")
+
+[node name="AttackLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1007712452]
+unique_name_in_owner = true
+modulate = Color(0.5058824, 0.5921569, 0.5882353, 1)
+layout_mode = 2
+text = "5/10"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1805769801]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1606459601]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dhcnt")
+
+[node name="DefenseLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1044662127]
+unique_name_in_owner = true
+modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
+layout_mode = 2
+text = "5/10"
