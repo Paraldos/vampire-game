@@ -27,11 +27,7 @@ func use(user_is_player : bool) -> void:
 			await _slash(user_is_player)
 		_:
 			pass
-	GlobalSignals.update_combat_stats.emit()
-	if user_is_player:
-		CombatManager.enemy_turn()
-	else:
-		GlobalSignals.enable_action_btns.emit()
+	GameData.combat_manager.next_turn()
 
 func _slash(user_is_player: bool) -> void:
 	GlobalSignals.play_combat_animation.emit(
@@ -43,9 +39,9 @@ func _slash(user_is_player: bool) -> void:
 		Enums.COMBAT_ANIMATIONS.HIT
 	)
 	if user_is_player:
-		var dmg = PlayerManager.attack + Utils.roll_dice()
-		CombatManager.enemy.deal_damage(dmg)
+		var dmg = GameData.player_manager.attack + Utils.roll_dice()
+		GameData.combat_manager.enemy.deal_damage(dmg)
 	else:
-		var dmg = CombatManager.enemy.attack + Utils.roll_dice()
-		PlayerManager.deal_damage(dmg)
+		var dmg = GameData.combat_manager.enemy.attack + Utils.roll_dice()
+		GameData.player_manager.deal_damage(dmg)
 	await Utils.get_tree().create_timer(ACTION_DURATION).timeout

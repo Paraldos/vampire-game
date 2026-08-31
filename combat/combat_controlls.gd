@@ -6,7 +6,7 @@ const ACTION_BTN = preload("uid://bgaxwo36tpkjn")
 func _ready() -> void:
 	GlobalSignals.enable_action_btns.connect(grab_first_valid_btn)
 	Utils.clear_container(actions_container)
-	for action in PlayerManager.get_actions():
+	for action in GameData.player_manager.get_actions():
 		_add_action_btn(action)
 	_add_action_btn(load("res://data/actions/pass.tres"))
 	grab_first_valid_btn()

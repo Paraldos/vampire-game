@@ -1,11 +1,24 @@
 extends Resource
-class_name CombatManager
+class_name CombatManager2
 
-@export_storage var enemy: Enemy
-@export_storage var player_turn := true
+@export_storage var _enemy: Enemy
+@export_storage var _player_turn := true
+
+# ======================================== setter/getter
+static var enemy: Enemy:
+	get:
+		return _get_instance()._enemy
+	set(value):
+		_get_instance()._enemy = value
+
+static var player_turn: bool:
+	get:
+		return _get_instance()._player_turn
+	set(value):
+		_get_instance()._player_turn = value
 
 # ======================================== controlls
-func start_combat(new_enemy: Enemy) -> void:
+static func start_combat(new_enemy: Enemy) -> void:
 	if new_enemy == null:
 		push_error("Cannot start combat without an enemy.")
 		return
@@ -14,10 +27,10 @@ func start_combat(new_enemy: Enemy) -> void:
 	enemy.current_hp = enemy.max_hp
 	SceneManager.change_scene(SceneManager.COMBAT_WINDOW)
 
-func end_combat() -> void:
+static func end_combat() -> void:
 	enemy = null
 
-func next_turn() -> void:
+static func next_turn() -> void:
 	GlobalSignals.update_combat_stats.emit()
 	player_turn = !player_turn
 
@@ -31,12 +44,12 @@ func next_turn() -> void:
 		await Utils.get_tree().create_timer(0.5).timeout
 		enemy.use_randome_action()
 
-func _defeat():
+static func _defeat():
 	print('defeat')
 
-func _victory():
+static func _victory():
 	print('victory')
 
 # ======================================== helper
-func _get_instance() -> CombatManager:
+static func _get_instance() -> CombatManager:
 	return GameData.save_game.combat_manager

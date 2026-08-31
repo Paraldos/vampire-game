@@ -16,9 +16,9 @@ class_name CombatSprite
 var duration := Action.ACTION_DURATION
 
 func _ready() -> void:
+	GlobalSignals.play_combat_animation.connect(_on_play_attack_animation)
 	sprite.flip_h = !player_display
 	sprite.texture = texture
-	GlobalSignals.play_combat_animation.connect(_on_play_attack_animation)
 
 func _on_play_attack_animation(animate_player: bool, animation_name : Enums.COMBAT_ANIMATIONS):
 	if animate_player != player_display: return
