@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cyebgor0m0ncj"]
+
+[ext_resource type="Script" uid="uid://dfywu7cf2ek6v" path="res://conversation/conversation_window.gd" id="1_eo638"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="2_a0seo"]
+
+[node name="ConversationWindow" type="CanvasLayer" unique_id=2002008773]
+script = ExtResource("1_eo638")
+
+[node name="Control" type="Control" parent="." unique_id=430119075]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=647473739]
+custom_minimum_size = Vector2(192, 65)
+custom_maximum_size = Vector2(192, 65)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -92.0
+offset_right = 96.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -6
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/VBoxContainer" unique_id=1738173774]
+layout_mode = 2
+theme = ExtResource("2_a0seo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/PanelContainer" unique_id=1176453514]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Control/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1759559467]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Test NPC: Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text "
+autowrap_mode = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control/VBoxContainer" unique_id=1280465379]
+layout_mode = 2
+theme = ExtResource("2_a0seo")
+
+[node name="PlayerInput" type="LineEdit" parent="Control/VBoxContainer/PanelContainer2" unique_id=1860217522]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="text_submitted" from="Control/VBoxContainer/PanelContainer2/PlayerInput" to="." method="_on_player_input_text_submitted"]
