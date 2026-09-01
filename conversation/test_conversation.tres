@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Conversation" format=3 uid="uid://ku0owym1v6jf"]
+
+[ext_resource type="Script" uid="uid://cjdth0xnwcu8k" path="res://conversation/conversation.gd" id="1_uaxgk"]
+[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversation_topic.gd" id="2_ly56s"]
+
+[sub_resource type="Resource" id="Resource_uaxgk"]
+script = ExtResource("2_ly56s")
+key = "test1"
+response = "111111111111111111111 11111111111"
+metadata/_custom_type_script = "uid://dcmppcvsfqoed"
+
+[sub_resource type="Resource" id="Resource_ly56s"]
+script = ExtResource("2_ly56s")
+key = "test2"
+response = "2222222222222222222222 222222222222"
+metadata/_custom_type_script = "uid://dcmppcvsfqoed"
+
+[resource]
+script = ExtResource("1_uaxgk")
+character_name = "Test"
+topics = Array[ExtResource("2_ly56s")]([SubResource("Resource_uaxgk"), SubResource("Resource_ly56s")])
+metadata/_custom_type_script = "uid://cjdth0xnwcu8k"

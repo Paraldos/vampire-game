@@ -2,11 +2,13 @@ extends Node
 class_name Enums
 
 enum GAME_STATES {
-	START_MENU,
-	MAIN,
+	EXPLORE,
 	COMBAT,
-	MODAL,
+	CONVERSATION,
+	#######
+	START_MENU,
 	CHANGE_SCENE,
+	MODAL,
 }
 enum COMBAT_ANIMATIONS {
 	ATTACK,
