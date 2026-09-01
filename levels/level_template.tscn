@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://xokhntdjbva3" path="res://levels/level_template.gd" id="1_yglgk"]
 [ext_resource type="PackedScene" uid="uid://d2nukwjiluchk" path="res://levels/tile_map.tscn" id="2_glpk1"]
 [ext_resource type="PackedScene" uid="uid://dmyikyfplkj8r" path="res://levels/characters/test_dummy/test_dummy.tscn" id="4_8urs1"]
+[ext_resource type="PackedScene" uid="uid://btd1mto33oj8i" path="res://levels/interactables/door.tscn" id="5_8xmsw"]
 [ext_resource type="Resource" uid="uid://c1hlbq8ugbb3c" path="res://data/enemies/skeleton.tres" id="5_64qpc"]
-[ext_resource type="PackedScene" uid="uid://btd1mto33oj8i" path="res://levels/interactables/door.tscn" id="6_2ip8h"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=39250889]
 z_as_relative = false
@@ -44,7 +44,7 @@ metadata/_edit_lock_ = true
 position = Vector2(40, 72)
 test_combat = ExtResource("5_64qpc")
 
-[node name="Door" parent="Interactables" unique_id=1969461338 instance=ExtResource("6_2ip8h")]
+[node name="Door" parent="Interactables" unique_id=1969461338 instance=ExtResource("5_8xmsw")]
 position = Vector2(120, 56)
 
 [node name="StartPoints" type="Node2D" parent="." unique_id=578543551]

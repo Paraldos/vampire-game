@@ -1,7 +1,7 @@
 extends State
 
-const MOVEMENT_DURATION := 0.3
-const JUMP_HEIGHT := 1.5
+const MOVEMENT_DURATION := 0.4
+const JUMP_HEIGHT := 1.0
 
 func start() -> void:
 	var direction: Vector2 = actor.move_direction
