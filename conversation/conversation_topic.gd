@@ -1,10 +1,8 @@
 extends Resource
 class_name ConversationTopic
 
-@export var key := "":
-	get:
-		return _normalize(key)
-@export_multiline var response := ""
+@export var key := ""
+@export_multiline var output := ""
 
-func _normalize(text: String) -> String:
-	return text.strip_edges().to_lower()
+func get_normalized_key():
+	return key.strip_edges().to_lower()

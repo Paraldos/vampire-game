@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d2nukwjiluchk" path="res://levels/tile_map.tscn" id="2_glpk1"]
 [ext_resource type="PackedScene" uid="uid://dmyikyfplkj8r" path="res://levels/characters/test_dummy/test_dummy.tscn" id="4_8urs1"]
 [ext_resource type="PackedScene" uid="uid://btd1mto33oj8i" path="res://levels/interactables/door.tscn" id="5_8xmsw"]
-[ext_resource type="Resource" uid="uid://ku0owym1v6jf" path="res://conversation/test_conversation.tres" id="5_yglgk"]
+[ext_resource type="Resource" uid="uid://ku0owym1v6jf" path="res://conversation/test/test_conversation.tres" id="5_yglgk"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=39250889]
 z_as_relative = false

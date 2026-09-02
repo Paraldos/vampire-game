@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmyikyfplkj8r"]
 
 [ext_resource type="Script" uid="uid://ursicnfiipil" path="res://levels/characters/test_dummy/test_dummy.gd" id="1_yhjn5"]
-[ext_resource type="Resource" uid="uid://ku0owym1v6jf" path="res://conversation/test_conversation.tres" id="2_nlvyd"]
+[ext_resource type="Resource" uid="uid://ku0owym1v6jf" path="res://conversation/test/test_conversation.tres" id="2_nlvyd"]
 [ext_resource type="Texture2D" uid="uid://1xuiitqltmym" path="res://assets/images/small_characters.png" id="2_pwr5c"]
 [ext_resource type="Script" uid="uid://deavujqc1odno" path="res://templates/bumper.gd" id="2_yhjn5"]
 

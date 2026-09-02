@@ -18,20 +18,22 @@ static var known_conversations: Array[Conversation]:
 		_get_instance()._known_conversations = value
 
 # ======================================== check for keyword
-static func submit_keyword(keyword: String) -> String:
+static func submit_keyword(normalized_submited_keyword: String) -> void:
 	for topic in current_conversation.topics:
-		if topic.key == keyword:
-			current_conversation.suggestions.push_back(keyword)
-			return topic.response
-	return "I don't know anything about that."
+		if topic.get_normalized_key() == normalized_submited_keyword:
+			current_conversation.current_output = topic.output
+			return
+	current_conversation.current_output = "I don't know anything about that."
 
 # ======================================== start / stop
 static func start_conversation(new_conversation: Conversation) -> void:
 	var saved_conversation := get_known_conversation(new_conversation)
 	if saved_conversation:
 		current_conversation = saved_conversation
+		current_conversation.current_output = current_conversation.greeting
 	else:
 		current_conversation = new_conversation
+		current_conversation.init()
 		known_conversations.append(new_conversation)
 	SceneManager.push_overlay_scene(CONVERSATION_WINDOW)
 
@@ -46,5 +48,11 @@ static func end_conversation() -> void:
 	SceneManager.pop_overlay_scene()
 
 # ======================================== helper
+static func get_character_name():
+	return current_conversation.character_name
+
+static func get_current_output():
+	return current_conversation.current_output
+
 static func _get_instance() -> ConversationManager:
 	return GameData.save_game.conversation_manager
