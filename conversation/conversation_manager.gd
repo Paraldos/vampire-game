@@ -17,13 +17,15 @@ static var saved_conversations: Array[Conversation]:
 	set(value):
 		_get_instance()._saved_conversations = value
 
-# ======================================== check for keyword
-static func submit_keyword(normalized_submited_keyword: String) -> void:
-	for topic in current_conversation.topics:
-		if topic.get_normalized_key() == normalized_submited_keyword:
-			current_conversation.current_output = topic.output
-			return
-	current_conversation.current_output = "I don't know anything about that."
+# ======================================== submit
+static func submit_keyword(key: String) -> void:
+	var topic = current_conversation.get_topic_by_key(key)
+	if topic:
+		current_conversation.current_output = topic.output
+		current_conversation.add_key_to_used(topic.key)
+		current_conversation.check_text_for_keys()
+	else:
+		current_conversation.current_output = "I don't know anything about that."
 
 # ======================================== start / stop
 static func start_conversation(new_conversation: Conversation) -> void:
@@ -32,9 +34,9 @@ static func start_conversation(new_conversation: Conversation) -> void:
 		current_conversation = saved_conversation
 		current_conversation.current_output = current_conversation.greeting
 	else:
-		current_conversation = new_conversation
+		current_conversation = new_conversation.duplicate(true)
 		current_conversation.init()
-		saved_conversations.append(new_conversation)
+		saved_conversations.append(current_conversation)
 	SceneManager.push_overlay_scene(CONVERSATION_WINDOW)
 
 static func get_known_conversation(new_conversation: Conversation) -> Conversation:

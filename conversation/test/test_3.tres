@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_x480h")
-key = "Test 3"
-output = "333 4"
+key = "Test Three"
+output = "333 test ones"
 metadata/_custom_type_script = "uid://dcmppcvsfqoed"

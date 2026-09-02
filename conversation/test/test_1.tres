@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_pexvf")
-key = "Test 1"
-output = "111 2"
+key = "Test One"
+output = "111 Test Two"
 metadata/_custom_type_script = "uid://dcmppcvsfqoed"

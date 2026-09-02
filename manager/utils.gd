@@ -12,3 +12,6 @@ func clear_container(container : Control):
 func roll_dice(sides := 6) -> int:
 	var dice = rng.randi_range(1, sides)
 	return dice
+
+func normalize_txt(text: String) -> String:
+	return text.strip_edges().to_lower()

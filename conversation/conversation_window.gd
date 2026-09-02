@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-@onready var suggestions: Label = %Suggestions
+@onready var suggested_keys: RichTextLabel = %SuggestedKeys
+
 @onready var conversation_output: Label = %ConversationOutput
 @onready var player_input: LineEdit = %PlayerInput
 
@@ -12,11 +13,8 @@ func _ready() -> void:
 	_update_suggestions()
 
 func _on_player_input_text_submitted(input: String) -> void:
-	var normalized_input := _normalize(input)
-	if normalized_input.is_empty(): return
-
-	ConversationManager.submit_keyword(normalized_input)
-
+	if input.is_empty(): return
+	ConversationManager.submit_keyword(input)
 	_update_conversation()
 	_update_suggestions()
 
@@ -29,8 +27,20 @@ func _update_conversation():
 
 func _update_suggestions() -> void:
 	var conversation := ConversationManager.current_conversation
-	suggestions.text = "Suggestions: %s" % [
-		", ".join(PackedStringArray(conversation.suggestions))]
+	suggested_keys.text = ""
+
+	if !conversation.suggested_keys.is_empty():
+		suggested_keys.text = "Suggestions: "
+		suggested_keys.text += ", ".join(
+			PackedStringArray(conversation.suggested_keys))
+		suggested_keys.text += "\n"
+
+	if !conversation.used_keys.is_empty():
+		suggested_keys.text += "Discussed: "
+		suggested_keys.text += "[color=#577277]"
+		suggested_keys.text += ", ".join(
+			PackedStringArray(conversation.used_keys))
+		suggested_keys.text += "[/color]"
 
 func _normalize(text: String) -> String:
 	return text.strip_edges().to_lower()
