@@ -7,9 +7,11 @@ class_name Conversation
 @export var topics: Array[ConversationTopic] = []
 @export_storage var suggested_keys: Array[String] = []
 @export_storage var used_keys: Array[String] = []
+@export_storage var list_of_keys: Array[String] = []
 
 func init() -> void:
 	current_output = greeting
+	list_of_keys = get_all_keys()
 
 func get_id() -> StringName:
 	return StringName(resource_path)
@@ -32,11 +34,10 @@ func add_key_to_used(key: String) -> void:
 			break
 
 func check_text_for_keys() -> void:
-	var keys = get_all_keys()
 	var normalize_txt = Utils.normalize_txt(current_output)
 	var words = normalize_txt.split(" ", false)
 
-	for key in keys:
+	for key in list_of_keys:
 		if used_keys.has(key) or suggested_keys.has(key):
 			continue
 		var normalized_key = Utils.normalize_txt(key)
