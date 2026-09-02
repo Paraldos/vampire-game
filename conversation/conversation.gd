@@ -3,9 +3,9 @@ class_name Conversation
 
 @export var character_name := ""
 @export_multiline var greeting := ""
-@export var topics: Array[ConversationTopic] = []
-
 @export_storage var current_output := ""
+
+@export var topics: Array[ConversationTopic] = []
 @export_storage var suggestions: Array[String] = []
 
 func init() -> void:

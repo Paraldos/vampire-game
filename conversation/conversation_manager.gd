@@ -10,12 +10,12 @@ static var current_conversation : Conversation:
 	set(value):
 		_get_instance()._current_conversation = value
 
-@export_storage var _known_conversations: Array[Conversation]
-static var known_conversations: Array[Conversation]:
+@export_storage var _saved_conversations: Array[Conversation]
+static var saved_conversations: Array[Conversation]:
 	get:
-		return _get_instance()._known_conversations
+		return _get_instance()._saved_conversations
 	set(value):
-		_get_instance()._known_conversations = value
+		_get_instance()._saved_conversations = value
 
 # ======================================== check for keyword
 static func submit_keyword(normalized_submited_keyword: String) -> void:
@@ -34,11 +34,11 @@ static func start_conversation(new_conversation: Conversation) -> void:
 	else:
 		current_conversation = new_conversation
 		current_conversation.init()
-		known_conversations.append(new_conversation)
+		saved_conversations.append(new_conversation)
 	SceneManager.push_overlay_scene(CONVERSATION_WINDOW)
 
 static func get_known_conversation(new_conversation: Conversation) -> Conversation:
-	for conversation in known_conversations:
+	for conversation in saved_conversations:
 		if conversation.get_id() == new_conversation.get_id():
 			return conversation
 	return null
@@ -48,10 +48,10 @@ static func end_conversation() -> void:
 	SceneManager.pop_overlay_scene()
 
 # ======================================== helper
-static func get_character_name():
+static func get_character_name() -> String:
 	return current_conversation.character_name
 
-static func get_current_output():
+static func get_current_output() -> String:
 	return current_conversation.current_output
 
 static func _get_instance() -> ConversationManager:
