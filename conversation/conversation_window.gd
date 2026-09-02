@@ -1,8 +1,7 @@
 extends CanvasLayer
 
 @onready var suggested_keys: RichTextLabel = %SuggestedKeys
-
-@onready var conversation_output: Label = %ConversationOutput
+@onready var conversation_output: RichTextLabel = %ConversationOutput
 @onready var player_input: LineEdit = %PlayerInput
 
 func _ready() -> void:
