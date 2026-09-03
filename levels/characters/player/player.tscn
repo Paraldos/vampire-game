@@ -257,7 +257,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
 "values": [Vector2(72, 24), Vector2(0, 0)]
 }
@@ -269,7 +269,7 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
 "values": [Vector2(-64, -64), Vector2(0, 0)]
 }
@@ -281,7 +281,7 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
 "values": [Vector2(72, -16), Vector2(0, 0)]
 }
@@ -293,7 +293,7 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
 "values": [Vector2(-56, 0), Vector2(0, 0)]
 }
@@ -305,7 +305,7 @@ tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
 "values": [Vector2(-8, -72), Vector2(0, 0)]
 }
@@ -329,7 +329,7 @@ tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.9, 1, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"transitions": PackedFloat32Array(1, 1, 2, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
@@ -341,7 +341,7 @@ tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.9, 1, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"transitions": PackedFloat32Array(1, 1, 2, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
@@ -353,7 +353,7 @@ tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.9, 1, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"transitions": PackedFloat32Array(1, 1, 2, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
@@ -365,7 +365,7 @@ tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.9, 1, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"transitions": PackedFloat32Array(1, 1, 2, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
@@ -400,31 +400,31 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(72, 24)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
-frame_progress = 0.6706972
+frame_progress = 0.64684135
 
 [node name="Bat2" type="AnimatedSprite2D" parent="Node2D" unique_id=271128706]
 position = Vector2(-64, -64)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
-frame_progress = 0.031138148
+frame_progress = 0.0072837737
 
 [node name="Bat3" type="AnimatedSprite2D" parent="Node2D" unique_id=45647769]
 position = Vector2(72, -16)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
-frame_progress = 0.807347
+frame_progress = 0.78349304
 
 [node name="Bat4" type="AnimatedSprite2D" parent="Node2D" unique_id=918479373]
 position = Vector2(-56, 0)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
-frame_progress = 0.06400946
+frame_progress = 0.040155854
 
 [node name="Bat5" type="AnimatedSprite2D" parent="Node2D" unique_id=2070700038]
 position = Vector2(-8, -72)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
-frame_progress = 0.7113065
+frame_progress = 0.6874508
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=1133752735]
 libraries/ = SubResource("AnimationLibrary_60ue2")
