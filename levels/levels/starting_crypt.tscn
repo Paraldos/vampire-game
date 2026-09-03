@@ -1,0 +1,26 @@
+[gd_scene format=4 uid="uid://c4hx48uxrnfdn"]
+
+[ext_resource type="PackedScene" uid="uid://h6t750kmppjs" path="res://levels/level_template.tscn" id="1_8bbfh"]
+[ext_resource type="PackedScene" uid="uid://dypjwabasu1ia" path="res://levels/deco/torch.tscn" id="2_lf4uh"]
+[ext_resource type="PackedScene" uid="uid://disbmvem34vxm" path="res://levels/interactables/coffin.tscn" id="2_u5pfa"]
+[ext_resource type="PackedScene" uid="uid://btd1mto33oj8i" path="res://levels/interactables/door.tscn" id="3_w78au"]
+
+[node name="StartingCrypt" unique_id=39250889 instance=ExtResource("1_8bbfh")]
+
+[node name="TileMap" parent="." index="1" unique_id=42301453]
+tile_map_data = PackedByteArray("AAAAAAAAAgABAAEAAAABAAAAAgABAAEAAAACAAAAAgABAAEAAAADAAAAAgAAAAEAAAAEAAAAAgAAAAEAAAAFAAAAAgAAAAEAAAAGAAAAAgABAAEAAAAAAAEAAgABAAEAAAAAAAIAAgABAAEAAAAAAAMAAgABAAEAAAAAAAQAAgAAAAEAAAAAAAUAAgAAAAEAAAADAAQAAgAAAAAAAAAFAAEAAgAEAAAAAAACAAUAAgAAAAEAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAABAAUAAgABAAEAAAACAAEAAgAAAAAAAAACAAMAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAUAAgAAAAEAAAAEAAEAAgAAAAAAAAAEAAIAAgAFAAAAAAAEAAMAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAUAAgABAAEAAAAFAAIAAgAAAAAAAAAFAAMAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAUAAgABAAEAAAAGAAEAAgABAAEAAAAGAAIAAgAAAAEAAAAGAAQAAgAAAAEAAAAGAAUAAgABAAEAAAACAAQAAgAFAAAAAAA=")
+
+[node name="Torch" parent="Deco" parent_id_path=PackedInt32Array(2000207023) index="0" unique_id=961085286 instance=ExtResource("2_lf4uh")]
+position = Vector2(32, 8)
+
+[node name="Torch2" parent="Deco" parent_id_path=PackedInt32Array(2000207023) index="1" unique_id=462261210 instance=ExtResource("2_lf4uh")]
+position = Vector2(80, 8)
+
+[node name="Coffin" parent="Interactables" parent_id_path=PackedInt32Array(2086868757) index="0" unique_id=1969461338 instance=ExtResource("2_u5pfa")]
+position = Vector2(56, 24)
+
+[node name="Door" parent="Interactables" parent_id_path=PackedInt32Array(2086868757) index="1" unique_id=556206886 instance=ExtResource("3_w78au")]
+position = Vector2(104, 56)
+
+[node name="StartPoint0" parent="StartPoints" parent_id_path=PackedInt32Array(578543551) index="0" unique_id=1235174702]
+position = Vector2(56, 40)

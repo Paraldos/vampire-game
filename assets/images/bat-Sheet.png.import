@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bew4feorh8k4t"
-path="res://.godot/imported/interactables.png-bd3c7239f286d996020bd08b7c5a704c.ctex"
+uid="uid://dkr3g4wowc5ik"
+path="res://.godot/imported/bat-Sheet.png-37745d88973919accfa871ab0e2b12ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/interactables.png"
-dest_files=["res://.godot/imported/interactables.png-bd3c7239f286d996020bd08b7c5a704c.ctex"]
+source_file="res://assets/images/bat-Sheet.png"
+dest_files=["res://.godot/imported/bat-Sheet.png-37745d88973919accfa871ab0e2b12ef.ctex"]
 
 [params]
 
