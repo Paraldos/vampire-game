@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bwbwsi6eyr30u"]
+
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="1_u3obd"]
+[ext_resource type="Script" uid="uid://d1cvv06315y5h" path="res://conversation/conversation_input.gd" id="2_lxb0p"]
+
+[node name="ConversationInput" type="Control" unique_id=1052787313]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_u3obd")
+script = ExtResource("2_lxb0p")
+
+[node name="PlayerInput" type="LineEdit" parent="." unique_id=457961713]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "test one"
+caret_blink = true
+
+[node name="InputSuggestion" type="Label" parent="." unique_id=1052589634]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.44705883)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+text = "Test One"
+vertical_alignment = 1
+
+[connection signal="text_changed" from="PlayerInput" to="." method="_on_player_input_text_changed"]
+[connection signal="text_submitted" from="PlayerInput" to="." method="_on_player_input_text_submitted"]
