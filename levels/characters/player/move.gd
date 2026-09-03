@@ -1,7 +1,9 @@
 extends State
 
 const MOVEMENT_DURATION := 0.4
-const JUMP_HEIGHT := 1.0
+const RISE_DURATION := MOVEMENT_DURATION * 0.4
+const FALL_DURATION := MOVEMENT_DURATION * 0.4
+const JUMP_HEIGHT := 1.5
 
 func start() -> void:
 	var direction: Vector2 = actor.move_direction
@@ -11,6 +13,7 @@ func start() -> void:
 
 	_animation_hop()
 	await _animation_move()
+	#await get_tree().create_timer(0.1).timeout
 
 	transition_to(&"Idle")
 
@@ -33,11 +36,11 @@ func _animation_hop() -> void:
 		actor.sprite,
 		"position:y",
 		-JUMP_HEIGHT,
-		MOVEMENT_DURATION / 2.0
-	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		RISE_DURATION
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property(
 		actor.sprite,
 		"position:y",
 		0.0,
-		MOVEMENT_DURATION / 2.0
-	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+		FALL_DURATION
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
