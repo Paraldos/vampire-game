@@ -3,12 +3,14 @@ class_name SaveManager
 
 const SAVE_GAME_PATH := "user://save_%s.tres"
 const SAVE_INFO_PATH := "user://save_%s_info.tres"
+const START_MAP = preload("uid://c4hx48uxrnfdn")
 
 static func new_game() -> void:
-	GameData.save_game = SaveGame.new()
+	Utils.game_data = GameData.new()
+	SceneManager.change_scene(START_MAP)
 
 static func save_game(slot_number: int = 0) -> Error:
-	return ResourceSaver.save(GameData.save_game, get_save_path(slot_number))
+	return ResourceSaver.save(Utils.game_data.save_game, get_save_path(slot_number))
 
 static func load_game(slot_number: int = 0) -> Error:
 	if not save_exists(slot_number):
@@ -18,11 +20,11 @@ static func load_game(slot_number: int = 0) -> Error:
 		get_save_path(slot_number),
 		"",
 		ResourceLoader.CACHE_MODE_IGNORE
-	) as SaveGame
+	) as GameData
 	if save == null:
 		push_error("Save slot %s could not be loaded." % slot_number)
 		return ERR_FILE_CORRUPT
-	GameData.save_game = save
+	Utils.game_data.save_game = save
 	return OK
 
 # ================================================== Helper

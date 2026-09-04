@@ -6,15 +6,15 @@ const TILE_SIZE := Vector2(16,16)
 # ======================================== set / get
 static var current_level : PackedScene:
 	get:
-		return GameData.save_game.current_level
+		return Utils.game_data.current_level
 	set(value):
-		GameData.save_game.current_level = value
+		Utils.game_data.current_level = value
 
 static var start_point : int:
 	get:
-		return GameData.save_game.start_point
+		return Utils.game_data.start_point
 	set(value):
-		GameData.save_game.start_point = value
+		Utils.game_data.start_point = value
 
 # ======================================== start / stop
 func change_level(new_level: PackedScene, new_start_point := 0) -> void:

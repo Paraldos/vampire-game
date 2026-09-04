@@ -6,15 +6,15 @@ const CONVERSATION_WINDOW = preload("uid://cyebgor0m0ncj")
 # ======================================== set / get
 static var current_conversation : Conversation:
 	get:
-		return GameData.save_game_current_conversation
+		return Utils.game_data.current_conversation
 	set(value):
-		GameData.save_game._current_conversation = value
+		Utils.game_data._current_conversation = value
 
 static var saved_conversations: Array[Conversation]:
 	get:
-		return GameData.save_game._saved_conversations
+		return Utils.game_data._saved_conversations
 	set(value):
-		GameData.save_game._saved_conversations = value
+		Utils.game_data._saved_conversations = value
 
 # ======================================== start / stop
 static func start_conversation(new_conversation: Conversation) -> void:

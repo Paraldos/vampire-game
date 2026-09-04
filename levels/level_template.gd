@@ -15,6 +15,7 @@ func _ready() -> void:
 		target_point = start_points.get_child(0)
 	var target_pos := LevelManager.get_tile_center_pos(target_point.global_position)
 	_spawn_player(target_pos)
+	Utils.game_data.game_state = Enums.GAME_STATES.EXPLORE
 
 func _spawn_player(pos):
 	var p = PLAYER.instantiate()

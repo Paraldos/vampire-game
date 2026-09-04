@@ -4,7 +4,7 @@ func physics_process(_delta: float) -> void:
 	var direction := _get_input_direction()
 	if direction == Vector2.ZERO: return
 	actor.move_direction = direction
-	if GameData.game_state != Enums.GAME_STATES.EXPLORE:
+	if Utils.game_data.game_state != Enums.GAME_STATES.EXPLORE:
 		return
 	if _is_blocked(direction):
 		transition_to(&"Bump")

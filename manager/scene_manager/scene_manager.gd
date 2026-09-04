@@ -14,7 +14,7 @@ func _ready() -> void:
 
 # ============================================================= change scene
 func change_scene(new_scene: PackedScene) -> void:
-	GameData.game_state = Enums.GAME_STATES.CHANGE_SCENE
+	Utils.game_data.game_state = Enums.GAME_STATES.CHANGE_SCENE
 	get_tree().paused = true
 	await _tween_background(fade_color)
 
@@ -27,7 +27,7 @@ func change_scene(new_scene: PackedScene) -> void:
 
 # ============================================================= overlay
 func push_overlay_scene(overlay_scene: PackedScene) -> void:
-	GameData.game_state = Enums.GAME_STATES.CHANGE_SCENE
+	Utils.game_data.game_state = Enums.GAME_STATES.CHANGE_SCENE
 	await _tween_background(fade_color)
 
 	get_tree().current_scene.process_mode = PROCESS_MODE_DISABLED

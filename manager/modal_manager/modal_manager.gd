@@ -15,8 +15,8 @@ func _ready() -> void:
 # ================================================== open / close logic
 func open_modal(modal_scene : PackedScene, properties: Dictionary = {}) -> void:
 	if modal == null:
-		old_game_state = GameData.game_state
-		GameData.game_state = Enums.GAME_STATES.MODAL
+		old_game_state = Utils.game_data.game_state
+		Utils.game_data.game_state = Enums.GAME_STATES.MODAL
 		get_tree().paused = true
 		_fade_background(1.0)
 	else:
@@ -40,7 +40,7 @@ func _on_tree_exited(m: Modal) -> void:
 		return
 	_fade_background(0.0)
 	if old_game_state != null:
-		GameData.game_state = old_game_state
+		Utils.game_data.game_state = old_game_state
 	old_game_state = null
 	tree.paused = false
 

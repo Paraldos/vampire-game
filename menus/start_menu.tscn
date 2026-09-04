@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bf5fvnwwxft7y"]
+
+[ext_resource type="Script" uid="uid://b8wgw3esj6ppp" path="res://menus/start_menu.gd" id="1_1t8nw"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="1_3kg5v"]
+[ext_resource type="Script" uid="uid://cdtalwuv8lr8f" path="res://manager/default_btn.gd" id="3_w3tic"]
+
+[node name="StartMenu" type="CanvasLayer" unique_id=517132890]
+script = ExtResource("1_1t8nw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1705805009]
+z_index = -50
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3kg5v")
+color = Color(0.03529412, 0.039215688, 0.078431375, 1)
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1410786993]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 96.0
+offset_bottom = 200.0
+alignment = 1
+
+[node name="NewBtn" type="Button" parent="ColorRect/VBoxContainer" unique_id=609369062]
+layout_mode = 2
+text = "New Game"
+script = ExtResource("3_w3tic")
+grab_focus_on_ready = true
+metadata/_custom_type_script = "uid://cdtalwuv8lr8f"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/NewBtn" to="." method="_on_new_btn_pressed"]

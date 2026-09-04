@@ -7,15 +7,15 @@ const DEFEAT_MODAL = preload("uid://byeowkfa6q0er")
 # ======================================== set / get
 static var player_turn : bool:
 	get:
-		return GameData.save_game.player_turn
+		return Utils.game_data.player_turn
 	set(value):
-		GameData.save_game.player_turn = value
+		Utils.game_data.player_turn = value
 
 static var enemy : Enemy:
 	get:
-		return GameData.save_game.enemy
+		return Utils.game_data.enemy
 	set(value):
-		GameData.save_game.enemy = value
+		Utils.game_data.enemy = value
 
 # ======================================== controlls
 static func start_combat(new_enemy: Enemy) -> void:

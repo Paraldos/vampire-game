@@ -4,39 +4,39 @@ class_name PlayerManager
 # ======================================== set / get
 static var max_hp: int:
 	set(value):
-		GameData.save_game.max_hp = value
+		Utils.game_data.max_hp = value
 	get:
-		return GameData.save_game.max_hp
+		return Utils.game_data.max_hp
 
 static var current_hp: int:
 	set(value):
-		GameData.save_game.current_hp = value
+		Utils.game_data.current_hp = value
 	get:
-		return GameData.save_game.current_hp
+		return Utils.game_data.current_hp
 
 static var max_armor: int:
 	set(value):
-		GameData.save_game.max_armor = value
+		Utils.game_data.max_armor = value
 	get:
-		return GameData.save_game.max_armor
+		return Utils.game_data.max_armor
 
 static var current_armor: int:
 	set(value):
-		GameData.save_game.current_armor = value
+		Utils.game_data.current_armor = value
 	get:
-		return GameData.save_game.current_armor
+		return Utils.game_data.current_armor
 
 static var attack: int:
 	set(value):
-		GameData.save_game.attack = value
+		Utils.game_data.attack = value
 	get:
-		return GameData.save_game.attack
+		return Utils.game_data.attack
 
 static var actions: Array[Action]:
 	set(value):
-		GameData.save_game.actions = value
+		Utils.game_data.actions = value
 	get:
-		return GameData.save_game.actions
+		return Utils.game_data.actions
 
 # ======================================== helper
 static func deal_damage(amount: int) -> void:

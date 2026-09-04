@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var conversation_output: RichTextLabel = %ConversationOutput
 
 func _ready() -> void:
-	GameData.game_state = Enums.GAME_STATES.CONVERSATION
+	Utils.game_data.game_state = Enums.GAME_STATES.CONVERSATION
 	GlobalSignals.update_conversation.connect(_update)
 	_update()
 
