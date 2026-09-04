@@ -17,7 +17,7 @@ var char
 func _ready() -> void:
 	GlobalSignals.update_combat_stats.connect(_update)
 	if side == SIDE.PLAYER:
-		char = GameData.player_manager
+		char = PlayerManager
 	else:
 		char = CombatManager.enemy
 	_update()

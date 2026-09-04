@@ -39,9 +39,9 @@ func _slash(user_is_player: bool) -> void:
 		Enums.COMBAT_ANIMATIONS.HIT
 	)
 	if user_is_player:
-		var dmg = GameData.player_manager.attack + Utils.roll_dice()
+		var dmg = PlayerManager.attack + Utils.roll_dice()
 		CombatManager.enemy.deal_damage(dmg)
 	else:
 		var dmg = CombatManager.enemy.attack + Utils.roll_dice()
-		GameData.player_manager.deal_damage(dmg)
+		PlayerManager.deal_damage(dmg)
 	await Utils.get_tree().create_timer(ACTION_DURATION).timeout

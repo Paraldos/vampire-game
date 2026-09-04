@@ -4,9 +4,6 @@ extends Node
 var save_game: SaveGame
 var game_state := Enums.GAME_STATES.EXPLORE
 
-var player_manager: PlayerManager:
-	get:
-		return save_game.player_manager
 var level_manager : LevelManager:
 	get:
 		return save_game.level_manager

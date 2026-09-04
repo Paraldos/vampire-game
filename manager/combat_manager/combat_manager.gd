@@ -35,7 +35,7 @@ static func next_turn() -> void:
 	GlobalSignals.update_combat_stats.emit()
 	player_turn = !player_turn
 
-	if GameData.player_manager.current_hp == 0:
+	if PlayerManager.current_hp == 0:
 		_defeat()
 	elif enemy.current_hp == 0:
 		_victory()
