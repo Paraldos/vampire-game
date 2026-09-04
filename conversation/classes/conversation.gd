@@ -2,6 +2,7 @@ extends Resource
 class_name Conversation
 
 @export var character_name := ""
+@export var img : Texture2D
 @export_multiline var greeting := ""
 @export_storage var current_output := ""
 @export var topics: Array[ConversationTopic] = []

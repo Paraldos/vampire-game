@@ -5,12 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://disbmvem34vxm" path="res://levels/interactables/coffin.tscn" id="2_u5pfa"]
 [ext_resource type="PackedScene" uid="uid://btd1mto33oj8i" path="res://levels/interactables/door.tscn" id="3_w78au"]
 [ext_resource type="PackedScene" uid="uid://dmyikyfplkj8r" path="res://levels/characters/test_dummy/test_dummy.tscn" id="5_3klx7"]
-[ext_resource type="Resource" uid="uid://c1hlbq8ugbb3c" path="res://data/enemies/skeleton.tres" id="6_srxmp"]
 
 [node name="StartingCrypt" unique_id=39250889 instance=ExtResource("1_8bbfh")]
-
-[node name="CanvasLayer2" parent="." index="1" unique_id=1015874988]
-visible = true
 
 [node name="TileMap" parent="." index="2" unique_id=42301453]
 tile_map_data = PackedByteArray("AAAAAAAAAgABAAEAAAABAAAAAgABAAEAAAACAAAAAgABAAEAAAADAAAAAgAAAAEAAAAEAAAAAgAAAAEAAAAFAAAAAgAAAAEAAAAGAAAAAgABAAEAAAAAAAEAAgABAAEAAAAAAAIAAgABAAEAAAAAAAMAAgABAAEAAAAAAAQAAgAAAAEAAAAAAAUAAgAAAAEAAAADAAQAAgAAAAAAAAAFAAEAAgAEAAAAAAACAAUAAgAAAAEAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAABAAUAAgABAAEAAAACAAEAAgAAAAAAAAACAAMAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAUAAgAAAAEAAAAEAAEAAgAAAAAAAAAEAAIAAgAFAAAAAAAEAAMAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAUAAgABAAEAAAAFAAIAAgAAAAAAAAAFAAMAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAUAAgABAAEAAAAGAAEAAgABAAEAAAAGAAIAAgAAAAEAAAAGAAQAAgAAAAEAAAAGAAUAAgABAAEAAAACAAQAAgAFAAAAAAA=")
@@ -29,7 +25,6 @@ position = Vector2(104, 56)
 
 [node name="TestDummy" parent="Interactables" parent_id_path=PackedInt32Array(2086868757) index="2" unique_id=1650732549 instance=ExtResource("5_3klx7")]
 position = Vector2(72, 40)
-test_combat = ExtResource("6_srxmp")
 
 [node name="StartPoint0" parent="StartPoints" parent_id_path=PackedInt32Array(578543551) index="0" unique_id=1235174702]
 position = Vector2(56, 40)

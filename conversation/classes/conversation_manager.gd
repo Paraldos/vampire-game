@@ -8,11 +8,11 @@ static var current_conversation : Conversation:
 	get:
 		return Utils.game_data.current_conversation
 	set(value):
-		Utils.game_data._current_conversation = value
+		Utils.game_data.current_conversation = value
 
 static var saved_conversations: Array[Conversation]:
 	get:
-		return Utils.game_data._saved_conversations
+		return Utils.game_data.saved_conversations
 	set(value):
 		Utils.game_data._saved_conversations = value
 

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ConversationTopic" format=3 uid="uid://dt6tb22r3jgsw"]
+
+[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/classes/conversation_topic.gd" id="1_0daky"]
+
+[resource]
+script = ExtResource("1_0daky")
+key = "Master"
+metadata/_custom_type_script = "uid://dcmppcvsfqoed"
