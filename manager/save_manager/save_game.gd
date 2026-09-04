@@ -1,8 +1,6 @@
 extends Resource
 class_name SaveGame
 
-@export var level_manager := LevelManager.new()
-
 # player
 @export_storage var max_hp := 20
 @export_storage var current_hp := max_hp
@@ -13,6 +11,10 @@ class_name SaveGame
 	load("res://data/actions/slash.tres"),
 	load("res://data/actions/defend.tres")
 ]
+
+# level
+@export_storage var current_level : PackedScene = load("uid://h6t750kmppjs")
+@export_storage var start_point := 0
 
 # conversation
 @export_storage var current_conversation: Conversation

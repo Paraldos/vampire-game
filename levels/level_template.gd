@@ -7,7 +7,7 @@ extends Node2D
 const PLAYER = preload("uid://uuu0f4178hm5")
 
 func _ready() -> void:
-	var target_index: int = GameData.level_manager.start_point
+	var target_index: int = LevelManager.start_point
 	var target_point : Node2D
 	if target_index >= 0 and target_index < start_points.get_child_count():
 		target_point = start_points.get_child(target_index)
