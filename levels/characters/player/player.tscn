@@ -14,42 +14,6 @@
 atlas = ExtResource("2_dirf7")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eq050"]
-atlas = ExtResource("2_khmpj")
-region = Rect2(0, 0, 16, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wb0vt"]
-atlas = ExtResource("2_khmpj")
-region = Rect2(16, 0, 16, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kv0sa"]
-atlas = ExtResource("2_khmpj")
-region = Rect2(32, 0, 16, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_60ue2"]
-atlas = ExtResource("2_khmpj")
-region = Rect2(48, 0, 16, 10)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0kc5u"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eq050")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wb0vt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kv0sa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_60ue2")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 10.0
-}]
-
 [sub_resource type="Animation" id="Animation_wb0vt"]
 length = 0.001
 tracks/0/type = "value"
@@ -211,7 +175,7 @@ tracks/12/keys = {
 
 [sub_resource type="Animation" id="Animation_kv0sa"]
 resource_name = "spawn"
-length = 1.5999999999999999
+length = 1.6
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -376,6 +340,42 @@ _data = {
 &"spawn": SubResource("Animation_kv0sa")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq050"]
+atlas = ExtResource("2_khmpj")
+region = Rect2(0, 0, 16, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb0vt"]
+atlas = ExtResource("2_khmpj")
+region = Rect2(16, 0, 16, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv0sa"]
+atlas = ExtResource("2_khmpj")
+region = Rect2(32, 0, 16, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60ue2"]
+atlas = ExtResource("2_khmpj")
+region = Rect2(48, 0, 16, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kc5u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq050")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wb0vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv0sa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60ue2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kc5u"]
 size = Vector2(8, 8)
 
@@ -394,6 +394,10 @@ texture = SubResource("AtlasTexture_0kc5u")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=846613906]
 z_index = 50
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=1133752735]
+libraries/ = SubResource("AnimationLibrary_60ue2")
+autoplay = &"spawn"
 
 [node name="Bat1" type="AnimatedSprite2D" parent="Node2D" unique_id=180722187]
 modulate = Color(1, 1, 1, 0)
@@ -425,10 +429,6 @@ position = Vector2(-8, -72)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
 frame_progress = 0.6874508
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=1133752735]
-libraries/ = SubResource("AnimationLibrary_60ue2")
-autoplay = &"spawn"
 
 [node name="Smoke" type="Sprite2D" parent="Node2D" unique_id=483494776]
 visible = false
