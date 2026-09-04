@@ -4,6 +4,7 @@
 
 [node name="SceneManager" type="CanvasLayer" unique_id=1165676797]
 process_mode = 3
+layer = 5000000
 script = ExtResource("1_6w36t")
 
 [node name="Background" type="ColorRect" parent="." unique_id=2092053226]

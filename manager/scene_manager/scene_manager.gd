@@ -4,7 +4,7 @@ extends CanvasLayer
 
 const COMBAT_WINDOW = preload("uid://dqqin61d3ow2p")
 
-var fade_time := 0.2
+var fade_time := 0.4
 var fade_color := Color("06080a")
 var clear_color := Color("ffffff00")
 var current_overlay_scene: Node = null
