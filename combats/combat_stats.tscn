@@ -19,59 +19,66 @@ region = Rect2(0, 16, 16, 16)
 atlas = ExtResource("3_3ana7")
 region = Rect2(16, 0, 16, 16)
 
-[node name="CombatStats" type="PanelContainer" unique_id=978464238]
+[node name="CombatStats" type="VBoxContainer" unique_id=2094592420]
 z_index = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 45.0
+offset_right = 96.0
+offset_bottom = -104.0
 grow_vertical = 2
 theme = ExtResource("1_dpxyo")
+alignment = 1
 script = ExtResource("2_dpxyo")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1536596751]
+[node name="HPContainer" type="HBoxContainer" parent="." unique_id=1193766351]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
+size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1007197856]
+[node name="TextureRect" type="TextureRect" parent="HPContainer" unique_id=1279141466]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
 layout_mode = 2
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1193766351]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1279141466]
-layout_mode = 2
+size_flags_horizontal = 0
 texture = SubResource("AtlasTexture_0w5ia")
+expand_mode = 1
 
-[node name="HPLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=896635307]
+[node name="HPLabel" type="Label" parent="HPContainer" unique_id=896635307]
 unique_name_in_owner = true
 modulate = Color(0.64705884, 0.1882353, 0.1882353, 1)
 layout_mode = 2
 text = "5/10"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1805769801]
+[node name="ArmorContainer" type="HBoxContainer" parent="." unique_id=1805769801]
 layout_mode = 2
+size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1606459601]
+[node name="TextureRect" type="TextureRect" parent="ArmorContainer" unique_id=1606459601]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 0
 texture = SubResource("AtlasTexture_dhcnt")
+expand_mode = 1
 
-[node name="ArmorLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1044662127]
+[node name="ArmorLabel" type="Label" parent="ArmorContainer" unique_id=1044662127]
 unique_name_in_owner = true
 modulate = Color(0.30980393, 0.56078434, 0.7294118, 1)
 layout_mode = 2
 text = "5/10"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=454557815]
+[node name="AttackContainer" type="HBoxContainer" parent="." unique_id=454557815]
 layout_mode = 2
+size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1245355849]
+[node name="TextureRect" type="TextureRect" parent="AttackContainer" unique_id=1245355849]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 0
 texture = SubResource("AtlasTexture_0kc5u")
+expand_mode = 1
 
-[node name="AttackLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1007712452]
+[node name="AttackLabel" type="Label" parent="AttackContainer" unique_id=1007712452]
 unique_name_in_owner = true
 modulate = Color(0.5058824, 0.5921569, 0.5882353, 1)
 layout_mode = 2

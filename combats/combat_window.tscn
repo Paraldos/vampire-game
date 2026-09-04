@@ -29,38 +29,65 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_diee0")
 
-[node name="PlayerDisplay" parent="ColorRect" unique_id=1255162580 instance=ExtResource("3_x48uq")]
-position = Vector2(96, 80)
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/PanelContainer" unique_id=643276480]
+layout_mode = 2
 
-[node name="EnemyDisplay" parent="ColorRect" unique_id=247224497 instance=ExtResource("4_diee0")]
-position = Vector2(208, 80)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1281510426]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = -6
-alignment = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=2013464239]
+[node name="Control" type="HBoxContainer" parent="ColorRect/PanelContainer/VBoxContainer" unique_id=364729945]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CombatStats" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=978464238 instance=ExtResource("5_d3arh")]
-custom_minimum_size = Vector2(65, 0)
+[node name="CombatStats" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=978464238 instance=ExtResource("5_d3arh")]
 layout_mode = 2
+size_flags_horizontal = 0
 
-[node name="Control" type="Control" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1876003150]
+[node name="Player" type="Control" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=634992833]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CombatStats2" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1807604405 instance=ExtResource("5_d3arh")]
-custom_minimum_size = Vector2(65, 0)
+[node name="Control3" type="Control" parent="ColorRect/PanelContainer/VBoxContainer/Control/Player" unique_id=1457275741]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerDisplay" parent="ColorRect/PanelContainer/VBoxContainer/Control/Player/Control3" unique_id=1255162580 instance=ExtResource("3_x48uq")]
+scale = Vector2(1.2, 1.2)
+
+[node name="Control" type="Control" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=327151802]
+custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
+
+[node name="Enemy" type="Control" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=591826695]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="ColorRect/PanelContainer/VBoxContainer/Control/Enemy" unique_id=988774423]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemyDisplay" parent="ColorRect/PanelContainer/VBoxContainer/Control/Enemy/Control2" unique_id=247224497 instance=ExtResource("4_diee0")]
+scale = Vector2(1.2, 1.2)
+
+[node name="CombatStats2" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=1807604405 instance=ExtResource("5_d3arh")]
+layout_mode = 2
+size_flags_horizontal = 8
 side = 1
 
-[node name="CombatControlls" parent="ColorRect/VBoxContainer" unique_id=120188225 instance=ExtResource("2_gbtqw")]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/PanelContainer/VBoxContainer" unique_id=1003329924]
+layout_mode = 2
+theme_override_constants/margin_left = -6
+theme_override_constants/margin_right = -6
+theme_override_constants/margin_bottom = -6
+
+[node name="CombatControlls" parent="ColorRect/PanelContainer/VBoxContainer/MarginContainer" unique_id=120188225 instance=ExtResource("2_gbtqw")]
 layout_mode = 2

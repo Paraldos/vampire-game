@@ -1,15 +1,15 @@
-extends PanelContainer
-# character stats
+extends VBoxContainer
 
-enum SIDE {
-	PLAYER,
-	ENEMY
-}
+enum SIDE {PLAYER, ENEMY}
 
 @onready var hp_label: Label = %HPLabel
 @onready var armor_label: Label = %ArmorLabel
 @onready var attack_label: Label = %AttackLabel
-
+@onready var container: Array[HBoxContainer] = [
+	$HPContainer,
+	$ArmorContainer,
+	$AttackContainer
+]
 @export var side = SIDE.PLAYER
 
 var char
@@ -20,6 +20,12 @@ func _ready() -> void:
 		char = PlayerManager
 	else:
 		char = CombatManager.enemy
+	for c in container:
+		if side == SIDE.PLAYER:
+			c.alignment = BoxContainer.ALIGNMENT_BEGIN
+		else:
+			c.alignment = BoxContainer.ALIGNMENT_END
+			c.move_child(c.get_child(0), c.get_child_count() - 1)
 	_update()
 
 func _update():
