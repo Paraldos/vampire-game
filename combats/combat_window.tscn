@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://3eqtw7nl6s51" path="res://combats/combat_window.gd" id="1_w54px"]
 [ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="2_diee0"]
 [ext_resource type="PackedScene" uid="uid://bj5y4sdb7wwnn" path="res://combats/combat_controlls.tscn" id="2_gbtqw"]
-[ext_resource type="PackedScene" uid="uid://i3f18rkgtvih" path="res://combats/player_display.tscn" id="3_x48uq"]
-[ext_resource type="PackedScene" uid="uid://bekqeam2og4cq" path="res://combats/enemy_display.tscn" id="4_diee0"]
+[ext_resource type="PackedScene" uid="uid://bpf4uufgywnn8" path="res://character_display/character_display.tscn" id="4_oarx6"]
 [ext_resource type="PackedScene" uid="uid://b651g6cpgp6ia" path="res://combats/combat_stats.tscn" id="5_d3arh"]
 
 [node name="Combat" type="CanvasLayer" unique_id=941987718]
@@ -40,43 +39,24 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Player" type="Control" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=634992833]
+[node name="Player" type="CenterContainer" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=2138110064]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control3" type="Control" parent="ColorRect/PanelContainer/VBoxContainer/Control/Player" unique_id=1457275741]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PlayerDisplay" parent="ColorRect/PanelContainer/VBoxContainer/Control/Player/Control3" unique_id=1255162580 instance=ExtResource("3_x48uq")]
-scale = Vector2(1.2, 1.2)
+[node name="CharacterDisplay" parent="ColorRect/PanelContainer/VBoxContainer/Control/Player" unique_id=651506517 instance=ExtResource("4_oarx6")]
+layout_mode = 2
 
 [node name="Control" type="Control" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=327151802]
 custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
 
-[node name="Enemy" type="Control" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=591826695]
+[node name="Enemy" type="CenterContainer" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=1438218186]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control2" type="Control" parent="ColorRect/PanelContainer/VBoxContainer/Control/Enemy" unique_id=988774423]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="EnemyDisplay" parent="ColorRect/PanelContainer/VBoxContainer/Control/Enemy/Control2" unique_id=247224497 instance=ExtResource("4_diee0")]
-scale = Vector2(1.2, 1.2)
+[node name="CharacterDisplay" parent="ColorRect/PanelContainer/VBoxContainer/Control/Enemy" unique_id=794107579 instance=ExtResource("4_oarx6")]
+layout_mode = 2
+player_display = false
 
 [node name="CombatStats2" parent="ColorRect/PanelContainer/VBoxContainer/Control" unique_id=1807604405 instance=ExtResource("5_d3arh")]
 layout_mode = 2

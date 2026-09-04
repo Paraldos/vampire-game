@@ -8,6 +8,7 @@ var fade_time := 0.4
 var fade_color := Color("06080a")
 var clear_color := Color("ffffff00")
 var current_overlay_scene: Node = null
+var old_game_state : Enums.GAME_STATES
 
 func _ready() -> void:
 	background.modulate = clear_color
@@ -27,6 +28,7 @@ func change_scene(new_scene: PackedScene) -> void:
 
 # ============================================================= overlay
 func push_overlay_scene(overlay_scene: PackedScene) -> void:
+	old_game_state = Utils.game_data.game_state
 	Utils.game_data.game_state = Enums.GAME_STATES.CHANGE_SCENE
 	await _tween_background(fade_color)
 
@@ -47,6 +49,7 @@ func pop_overlay_scene() -> void:
 	get_tree().current_scene.process_mode = PROCESS_MODE_INHERIT
 
 	await _tween_background(clear_color)
+	Utils.game_data.game_state = old_game_state
 
 # ============================================================= helper
 func _tween_background(target_value: Color) -> void:

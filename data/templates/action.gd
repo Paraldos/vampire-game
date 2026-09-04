@@ -30,13 +30,15 @@ func use(user_is_player : bool) -> void:
 	CombatManager.next_turn()
 
 func _slash(user_is_player: bool) -> void:
-	GlobalSignals.play_combat_animation.emit(
+	GlobalSignals.display_animation.emit(
 		user_is_player,
-		Enums.COMBAT_ANIMATIONS.ATTACK
+		Enums.ANIMATIONS.ATTACK,
+		ACTION_DURATION
 	)
-	GlobalSignals.play_combat_animation.emit(
+	GlobalSignals.display_animation.emit(
 		!user_is_player,
-		Enums.COMBAT_ANIMATIONS.HIT
+		Enums.ANIMATIONS.HIT,
+		ACTION_DURATION
 	)
 	if user_is_player:
 		var dmg = PlayerManager.attack + Utils.roll_dice()

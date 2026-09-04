@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bqanfgag7n4dy"]
+
+[ext_resource type="Texture2D" uid="uid://dqyjfdp2ibtxv" path="res://assets/images/vampire-Sheet.png" id="1_0j5i0"]
+[ext_resource type="Script" uid="uid://7squbi3osgat" path="res://character_display/player_sprite.gd" id="1_ogve6"]
+
+[node name="PlayerSprite" type="Sprite2D" unique_id=821733231]
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_ogve6")
+metadata/_custom_type_script = "uid://brx23j7c7kj6y"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1273540213]
+texture = ExtResource("1_0j5i0")
