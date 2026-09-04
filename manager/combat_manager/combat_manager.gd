@@ -4,11 +4,21 @@ class_name CombatManager
 const VICTORY_MODAL = preload("uid://dyjcj21csd2cj")
 const DEFEAT_MODAL = preload("uid://byeowkfa6q0er")
 
-@export_storage var enemy: Enemy
-@export_storage var player_turn := true
+# ======================================== set / get
+static var player_turn : bool:
+	get:
+		return GameData.save_game.player_turn
+	set(value):
+		GameData.save_game.player_turn = value
+
+static var enemy : Enemy:
+	get:
+		return GameData.save_game.enemy
+	set(value):
+		GameData.save_game.enemy = value
 
 # ======================================== controlls
-func start_combat(new_enemy: Enemy) -> void:
+static func start_combat(new_enemy: Enemy) -> void:
 	if new_enemy == null:
 		push_error("Cannot start combat without an enemy.")
 		return
@@ -17,11 +27,11 @@ func start_combat(new_enemy: Enemy) -> void:
 	enemy.current_hp = enemy.max_hp
 	SceneManager.push_overlay_scene(SceneManager.COMBAT_WINDOW)
 
-func end_combat() -> void:
+static func end_combat() -> void:
 	enemy = null
 	SceneManager.pop_overlay_scene()
 
-func next_turn() -> void:
+static func next_turn() -> void:
 	GlobalSignals.update_combat_stats.emit()
 	player_turn = !player_turn
 
@@ -35,12 +45,8 @@ func next_turn() -> void:
 		await Utils.get_tree().create_timer(0.5).timeout
 		enemy.use_randome_action()
 
-func _defeat():
+static func _defeat():
 	ModalManager.open_modal(DEFEAT_MODAL)
 
-func _victory():
+static func _victory():
 	ModalManager.open_modal(VICTORY_MODAL)
-
-# ======================================== helper
-func _get_instance() -> CombatManager:
-	return GameData.save_game.combat_manager

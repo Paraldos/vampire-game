@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xokhntdjbva3" path="res://levels/level_template.gd" id="1_yglgk"]
 [ext_resource type="PackedScene" uid="uid://d2nukwjiluchk" path="res://levels/tile_map.tscn" id="2_glpk1"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="2_skox6"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=39250889]
 z_as_relative = false
@@ -13,6 +14,8 @@ metadata/_edit_lock_ = true
 layer = -50
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1902829503]
+z_index = -50
+z_as_relative = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,6 +23,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.03529412, 0.039215688, 0.078431375, 1)
 metadata/_edit_lock_ = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1015874988]
+layer = 50
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer2" unique_id=1078404348]
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_skox6")
 
 [node name="TileMap" parent="." unique_id=42301453 instance=ExtResource("2_glpk1")]
 tile_map_data = PackedByteArray()

@@ -3,21 +3,18 @@ class_name ConversationManager
 
 const CONVERSATION_WINDOW = preload("uid://cyebgor0m0ncj")
 
-@export_storage var _current_conversation: Conversation
-
+# ======================================== set / get
 static var current_conversation : Conversation:
 	get:
-		return _get_instance()._current_conversation
+		return GameData.save_game_current_conversation
 	set(value):
-		_get_instance()._current_conversation = value
-
-@export_storage var _saved_conversations: Array[Conversation]
+		GameData.save_game._current_conversation = value
 
 static var saved_conversations: Array[Conversation]:
 	get:
-		return _get_instance()._saved_conversations
+		return GameData.save_game._saved_conversations
 	set(value):
-		_get_instance()._saved_conversations = value
+		GameData.save_game._saved_conversations = value
 
 # ======================================== start / stop
 static func start_conversation(new_conversation: Conversation) -> void:
@@ -66,6 +63,3 @@ static func get_character_name() -> String:
 
 static func get_current_output() -> String:
 	return current_conversation.current_output
-
-static func _get_instance() -> ConversationManager:
-	return GameData.save_game.conversation_manager

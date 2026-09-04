@@ -19,7 +19,7 @@ func _ready() -> void:
 	if side == SIDE.PLAYER:
 		char = GameData.player_manager
 	else:
-		char = GameData.combat_manager.enemy
+		char = CombatManager.enemy
 	_update()
 
 func _update():

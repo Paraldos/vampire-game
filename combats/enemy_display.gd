@@ -9,7 +9,7 @@ extends Node2D
 var enemy : Enemy
 
 func _ready() -> void:
-	enemy = GameData.combat_manager.enemy
+	enemy = CombatManager.enemy
 	update_sprites()
 
 func update_sprites():
