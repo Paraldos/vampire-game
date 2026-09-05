@@ -7,7 +7,7 @@ func _ready() -> void:
 	GlobalSignals.update_conversation.connect(_update)
 	_update()
 
-func _update():
+func _update() -> void:
 	if ConversationManager.get_known_keys().is_empty():
 		visible = false
 		return

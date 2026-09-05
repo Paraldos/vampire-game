@@ -4,11 +4,11 @@ class_name ConversationManager
 const CONVERSATION_WINDOW = preload("uid://cyebgor0m0ncj")
 
 # ======================================== set / get
-static var current_conversation : Conversation:
+static var conversation : Conversation:
 	get:
-		return Utils.game_data.current_conversation
+		return Utils.game_data.conversation
 	set(value):
-		Utils.game_data.current_conversation = value
+		Utils.game_data.conversation = value
 
 static var saved_conversations: Array[Conversation]:
 	get:
@@ -20,16 +20,16 @@ static var saved_conversations: Array[Conversation]:
 static func start_conversation(new_conversation: Conversation) -> void:
 	var saved_conversation := get_known_conversation(new_conversation)
 	if saved_conversation:
-		current_conversation = saved_conversation
-		current_conversation.current_output = current_conversation.greeting
+		conversation = saved_conversation
+		conversation.current_output = conversation.greeting
 	else:
-		current_conversation = new_conversation.duplicate(true)
-		current_conversation.init()
-		saved_conversations.append(current_conversation)
+		conversation = new_conversation.duplicate(true)
+		conversation.init()
+		saved_conversations.append(conversation)
 	SceneManager.push_overlay_scene(CONVERSATION_WINDOW)
 
 static func end_conversation() -> void:
-	current_conversation = null
+	conversation = null
 	SceneManager.pop_overlay_scene()
 
 # ======================================== submit
@@ -38,41 +38,39 @@ static func submit_keyword(key: String) -> void:
 		end_conversation()
 		return
 	var topic = get_topic_by_key(key)
-	if topic:
-		current_conversation.change_output(topic.output)
-		current_conversation.append_used_keys(topic.key)
-		topic.use_actions()
+	if not topic or !topic.requirement_met():
+		conversation.change_output("I don't know anything about that.")
 	else:
-		current_conversation.change_output("I don't know anything about that.")
+		conversation.change_output(topic.output)
+		topic.used = true
+		topic.suggested = true
+		topic.use_actions()
 	GlobalSignals.update_conversation.emit()
 
 static func get_topic_by_key(key: String) -> ConversationTopic:
-	for topic in current_conversation.topics:
+	for topic in conversation.topics:
 		if Utils.normalize_txt(topic.key) == Utils.normalize_txt(key):
 			return topic
 	return null
 
 # ======================================== helper
 static func get_known_conversation(new_conversation: Conversation) -> Conversation:
-	for conversation in saved_conversations:
-		if conversation.get_id() == new_conversation.get_id():
-			return conversation
+	for c in saved_conversations:
+		if c.get_id() == new_conversation.get_id():
+			return c
 	return null
 
-static func get_all_keys() -> Array[String]:
-	return current_conversation.list_of_keys
+static func get_suggested_keys()-> Array[String]:
+	return conversation.get_suggested_keys()
 
-static func get_suggested_keys():
-	return current_conversation.suggested_keys
-
-static func get_used_keys():
-	return current_conversation.used_keys
+static func get_used_keys()-> Array[String]:
+	return conversation.get_used_keys()
 
 static func get_known_keys() -> Array[String]:
-	return current_conversation.suggested_keys + current_conversation.used_keys
+	return get_suggested_keys() + get_used_keys()
 
 static func get_character_name() -> String:
-	return current_conversation.character_name
+	return conversation.character_name
 
 static func get_current_output() -> String:
-	return current_conversation.current_output
+	return conversation.current_output

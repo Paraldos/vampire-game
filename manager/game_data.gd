@@ -24,7 +24,7 @@ var game_state = Enums.GAME_STATES.START_MENU
 @export var respawn_level: PackedScene = load("uid://c4hx48uxrnfdn")
 
 # conversation
-@export var current_conversation: Conversation
+@export var conversation: Conversation
 @export var saved_conversations: Array[Conversation]
 
 # combat

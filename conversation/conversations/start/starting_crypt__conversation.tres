@@ -1,14 +1,15 @@
 [gd_resource type="Resource" script_class="Conversation" format=3 uid="uid://fec87p3ywoxr"]
 
-[ext_resource type="Texture2D" uid="uid://dbib78xq775hh" path="res://assets/images/peasant.png" id="1_1dc44"]
-[ext_resource type="Script" uid="uid://cjdth0xnwcu8k" path="res://conversation/conversations/conversation.gd" id="1_ui813"]
-[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversations/conversation_topic.gd" id="2_pkair"]
-[ext_resource type="Resource" uid="uid://dt6tb22r3jgsw" path="res://conversation/conversations/start/starting_crypt__topic_1.tres" id="4_xc1gu"]
+[ext_resource type="Texture2D" uid="uid://dbib78xq775hh" path="res://assets/images/peasant.png" id="1_tkpjr"]
+[ext_resource type="Script" uid="uid://cjdth0xnwcu8k" path="res://conversation/conversations/conversation.gd" id="2_tu4on"]
+[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversations/conversation_topic.gd" id="3_dwrrf"]
+[ext_resource type="Resource" uid="uid://dt6tb22r3jgsw" path="res://conversation/conversations/start/starting_crypt__topic_1.tres" id="4_4lar1"]
+[ext_resource type="Resource" uid="uid://ipgxf0rl8r3c" path="res://conversation/conversations/start/starting_crypt__topic_2.tres" id="5_1ijx2"]
 
 [resource]
-script = ExtResource("1_ui813")
+script = ExtResource("2_tu4on")
 character_name = "Minion"
-img = ExtResource("1_1dc44")
-greeting = "Master! You're awake!"
-topics = Array[ExtResource("2_pkair")]([ExtResource("4_xc1gu")])
+img = ExtResource("1_tkpjr")
+greeting = "Master! Thank god, you're awake!"
+topics = Array[ExtResource("3_dwrrf")]([ExtResource("4_4lar1"), ExtResource("5_1ijx2")])
 metadata/_custom_type_script = "uid://cjdth0xnwcu8k"

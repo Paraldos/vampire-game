@@ -9,6 +9,7 @@
 [sub_resource type="Resource" id="Resource_atg7q"]
 script = ExtResource("4_pdlq7")
 add = Array[ExtResource("2_7cmmx")]([ExtResource("3_5vvyd")])
+forbidden = Array[ExtResource("2_7cmmx")]([ExtResource("3_5vvyd")])
 metadata/_custom_type_script = "uid://dye2qpxj6q4mf"
 
 [resource]

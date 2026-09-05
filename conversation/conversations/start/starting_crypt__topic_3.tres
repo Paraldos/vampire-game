@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ConversationTopic" format=3 uid="uid://dtgk5rckf38bw"]
+
+[ext_resource type="Script" uid="uid://dm3yihrwcxcmw" path="res://actions/action.gd" id="1_i6j71"]
+[ext_resource type="Script" uid="uid://dp17dq3f6568l" path="res://flags/flag.gd" id="2_al4fk"]
+[ext_resource type="Resource" uid="uid://co8or4d42y5oq" path="res://flags/flags/starting_crypt__key.tres" id="3_dq7ym"]
+[ext_resource type="Script" uid="uid://dye2qpxj6q4mf" path="res://actions/flag_action.gd" id="4_uueuh"]
+[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversations/conversation_topic.gd" id="5_kiag6"]
+
+[sub_resource type="Resource" id="Resource_atg7q"]
+script = ExtResource("4_uueuh")
+add = Array[ExtResource("2_al4fk")]([ExtResource("3_dq7ym")])
+forbidden = Array[ExtResource("2_al4fk")]([ExtResource("3_dq7ym")])
+metadata/_custom_type_script = "uid://dye2qpxj6q4mf"
+
+[resource]
+script = ExtResource("5_kiag6")
+key = "door"
+output = "Oh, of course! Here is the key!"
+actions = Array[ExtResource("1_i6j71")]([SubResource("Resource_atg7q")])
+metadata/_custom_type_script = "uid://dcmppcvsfqoed"

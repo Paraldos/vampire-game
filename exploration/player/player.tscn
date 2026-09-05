@@ -12,7 +12,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kc5u"]
 atlas = ExtResource("2_dirf7")
-region = Rect2(0, 16, 16, 16)
+region = Rect2(32, 160, 16, 16)
 
 [sub_resource type="Animation" id="Animation_wb0vt"]
 length = 0.001

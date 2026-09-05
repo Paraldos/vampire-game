@@ -6,6 +6,6 @@ func _ready() -> void:
 		Enums.GAME_STATES.COMBAT:
 			texture = CombatManager.enemy.get_random_sprite()
 		Enums.GAME_STATES.CONVERSATION:
-			texture = ConversationManager.current_conversation.img
+			texture = ConversationManager.conversation.img
 		_:
 			texture = null

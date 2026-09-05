@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ConversationTopic" format=3 uid="uid://g3vt025l4ske"]
+
+[ext_resource type="Script" uid="uid://dm3yihrwcxcmw" path="res://actions/action.gd" id="1_12kod"]
+[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversations/conversation_topic.gd" id="5_3pjso"]
+
+[resource]
+script = ExtResource("5_3pjso")
+key = "door"
+output = "Oh, of course! Here is the key!"
+metadata/_custom_type_script = "uid://dcmppcvsfqoed"
