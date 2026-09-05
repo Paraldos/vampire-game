@@ -19,12 +19,14 @@ static var respawn_level : PackedScene:
 # ======================================== start / stop
 static func change_level(new_level: PackedScene, new_spawn_point := 0) -> void:
 	current_level = new_level
-	await SceneManager.change_scene(current_level)
+	SceneManager.change_scene(current_level)
+	await SceneManager.halfpoint
 	GlobalSignals.trigger_spawn_point.emit(new_spawn_point)
 
 static func respawn():
 	current_level = respawn_level
-	await SceneManager.change_scene(current_level)
+	SceneManager.change_scene(current_level)
+	await SceneManager.halfpoint
 	GlobalSignals.trigger_spawn_point.emit(-1)
 
 static func get_tile_pos(pos: Vector2) -> Vector2:

@@ -12,7 +12,7 @@ func _ready() -> void:
 	Utils.game_data.game_state = Enums.GAME_STATES.EXPLORE
 
 func _on_trigger_spawn_point(idx):
-	if PlayerManager.current_hp <= 0:
+	if idx < 0:
 		return
 	var spawn_point
 	if idx >= 0 and idx < spawn_points.get_child_count():

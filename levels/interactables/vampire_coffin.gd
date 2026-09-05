@@ -9,21 +9,28 @@ var active = false
 
 func _ready() -> void:
 	super()
-	info_label.modulate.a = 0.0 if active else 1.0
+	active = false
+	camera.enabled = false
+	info_label.modulate.a = 0.0
 	GlobalSignals.trigger_spawn_point.connect(_on_trigger_spawn_point)
 
 func _input(event: InputEvent) -> void:
-	if !active:
-		return
+	if !active: return
 	if event.is_action_pressed("ui_accept"):
 		_toggle()
 		GlobalSignals.spawn_player.emit(spawn_point.global_position)
 
+func _bumped() -> void:
+	Utils.spawn_floating_message("Set this coffin as
+	respawn point.", global_position)
+
+# =================================================== spawn
 func _on_trigger_spawn_point(idx):
-	if idx > 0:
+	if idx >= 0:
 		return
-	camera.enabled = true
 	active = true
+	camera.enabled = true
+	info_label.fade_in()
 
 func _toggle():
 	active = !active

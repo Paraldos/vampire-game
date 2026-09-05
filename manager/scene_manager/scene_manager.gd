@@ -2,6 +2,8 @@ extends CanvasLayer
 
 @onready var background: ColorRect = %Background
 
+signal halfpoint
+
 const COMBAT_WINDOW = preload("uid://dqqin61d3ow2p")
 
 var fade_time := 0.4
@@ -21,6 +23,8 @@ func change_scene(new_scene: PackedScene) -> void:
 
 	get_tree().change_scene_to_packed(new_scene)
 	await get_tree().scene_changed
+
+	halfpoint.emit()
 
 	await _tween_background(clear_color)
 	get_tree().paused = false

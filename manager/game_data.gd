@@ -6,7 +6,7 @@ var game_state = Enums.GAME_STATES.START_MENU
 
 # player
 @export_storage var max_hp := 20
-@export_storage var current_hp := 0
+@export_storage var current_hp := max_hp
 @export_storage var max_armor := 20
 @export_storage var current_armor := max_armor
 @export_storage var attack := 10
@@ -16,7 +16,7 @@ var game_state = Enums.GAME_STATES.START_MENU
 ]
 
 # level
-@export_storage var current_level : PackedScene = load("uid://c4hx48uxrnfdn")
+@export_storage var current_level : PackedScene
 @export_storage var respawn_level : PackedScene = load("uid://c4hx48uxrnfdn")
 
 # conversation

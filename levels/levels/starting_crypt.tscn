@@ -29,4 +29,4 @@ position = Vector2(72, 40)
 test_combat = ExtResource("6_srxmp")
 
 [node name="SpawnPoint0" parent="SpawnPoints" parent_id_path=PackedInt32Array(578543551) index="0" unique_id=1235174702]
-position = Vector2(56, 40)
+position = Vector2(24, 72)
