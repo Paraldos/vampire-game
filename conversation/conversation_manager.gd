@@ -34,13 +34,23 @@ static func end_conversation() -> void:
 
 # ======================================== submit
 static func submit_keyword(key: String) -> void:
-	var topic = current_conversation.get_topic_by_key(key)
+	if Utils.normalize_txt(key) == "escape" or Utils.normalize_txt(key) == "exit":
+		end_conversation()
+		return
+	var topic = get_topic_by_key(key)
 	if topic:
-		current_conversation.current_output = topic.output
-		current_conversation.add_key_to_used(topic.key)
-		current_conversation.check_text_for_keys()
+		current_conversation.change_output(topic.output)
+		current_conversation.append_used_keys(topic.key)
+		topic.use_actions()
 	else:
-		current_conversation.current_output = "I don't know anything about that."
+		current_conversation.change_output("I don't know anything about that.")
+	GlobalSignals.update_conversation.emit()
+
+static func get_topic_by_key(key: String) -> ConversationTopic:
+	for topic in current_conversation.topics:
+		if Utils.normalize_txt(topic.key) == Utils.normalize_txt(key):
+			return topic
+	return null
 
 # ======================================== helper
 static func get_known_conversation(new_conversation: Conversation) -> Conversation:
@@ -49,6 +59,9 @@ static func get_known_conversation(new_conversation: Conversation) -> Conversati
 			return conversation
 	return null
 
+static func get_all_keys() -> Array[String]:
+	return current_conversation.list_of_keys
+
 static func get_suggested_keys():
 	return current_conversation.suggested_keys
 
@@ -56,7 +69,7 @@ static func get_used_keys():
 	return current_conversation.used_keys
 
 static func get_known_keys() -> Array[String]:
-	return current_conversation.suggested_keys	+ current_conversation.used_keys
+	return current_conversation.suggested_keys + current_conversation.used_keys
 
 static func get_character_name() -> String:
 	return current_conversation.character_name

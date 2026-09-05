@@ -8,12 +8,11 @@ func _ready() -> void:
 	_update()
 
 func _update():
-	text = start_phrase
 	if ConversationManager.get_known_keys().is_empty():
 		visible = false
 		return
-	else:
-		visible = true
+	text = start_phrase
+	visible = true
 	if !ConversationManager.get_suggested_keys().is_empty():
 		text += ", ".join(ConversationManager.get_suggested_keys())
 	if !ConversationManager.get_used_keys().is_empty():

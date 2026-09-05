@@ -25,7 +25,6 @@ func _on_player_input_text_submitted(input: String) -> void:
 	if input.is_empty(): return
 	player_input.clear()
 	ConversationManager.submit_keyword(input)
-	GlobalSignals.update_conversation.emit()
 
 # ========================================== controlls
 func _on_tab() -> void:
