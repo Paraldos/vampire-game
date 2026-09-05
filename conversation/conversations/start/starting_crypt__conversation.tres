@@ -5,11 +5,12 @@
 [ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversations/conversation_topic.gd" id="3_dwrrf"]
 [ext_resource type="Resource" uid="uid://dt6tb22r3jgsw" path="res://conversation/conversations/start/starting_crypt__topic_1.tres" id="4_4lar1"]
 [ext_resource type="Resource" uid="uid://ipgxf0rl8r3c" path="res://conversation/conversations/start/starting_crypt__topic_2.tres" id="5_1ijx2"]
+[ext_resource type="Resource" uid="uid://dtgk5rckf38bw" path="res://conversation/conversations/start/starting_crypt__topic_3.tres" id="6_tu4on"]
 
 [resource]
 script = ExtResource("2_tu4on")
 character_name = "Minion"
 img = ExtResource("1_tkpjr")
 greeting = "Master! Thank god, you're awake!"
-topics = Array[ExtResource("3_dwrrf")]([ExtResource("4_4lar1"), ExtResource("5_1ijx2")])
+topics = Array[ExtResource("3_dwrrf")]([ExtResource("4_4lar1"), ExtResource("5_1ijx2"), ExtResource("6_tu4on")])
 metadata/_custom_type_script = "uid://cjdth0xnwcu8k"

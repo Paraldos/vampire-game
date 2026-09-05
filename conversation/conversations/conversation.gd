@@ -17,10 +17,8 @@ func get_id() -> StringName:
 func get_used_keys():
 	var arr: Array[String] = []
 	for topic in topics:
-		if !topic.used:
-			continue
-		if !topic.requirement_met():
-			continue
+		if !topic.used: continue
+		if !topic.requirement_met(): continue
 		arr.push_back(topic.key)
 	return arr
 
@@ -29,6 +27,7 @@ func get_suggested_keys():
 	for topic in topics:
 		if !topic.suggested: continue
 		if topic.used: continue
+		if !topic.requirement_met(): continue
 		arr.push_back(topic.key)
 	return arr
 

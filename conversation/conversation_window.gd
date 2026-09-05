@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var conversation_output: RichTextLabel = %ConversationOutput
 
-const TEXT_SPEED := 45.0
+const TEXT_SPEED := 100.0
 
 func _ready() -> void:
 	Utils.game_data.game_state = Enums.GAME_STATES.CONVERSATION
@@ -18,7 +18,6 @@ func _update_conversation():
 		ConversationManager.get_character_name(),
 		ConversationManager.get_current_output()]
 	_fade_in_text()
-
 
 func _fade_in_text() -> void:
 	var character_count := conversation_output.get_total_character_count()
