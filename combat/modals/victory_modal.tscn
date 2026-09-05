@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dyjcj21csd2cj"]
 
-[ext_resource type="PackedScene" uid="uid://dao4mat0yimv" path="res://manager/modal_manager/modal_template.tscn" id="1_0khgr"]
+[ext_resource type="PackedScene" uid="uid://dao4mat0yimv" path="res://templates/modals/modal_template.tscn" id="1_0khgr"]
 [ext_resource type="Script" uid="uid://bepewndhgw8sp" path="res://combat/modals/victory_modal.gd" id="2_7fu2e"]
-[ext_resource type="Script" uid="uid://cdtalwuv8lr8f" path="res://manager/default_btn.gd" id="2_8idh2"]
+[ext_resource type="Script" uid="uid://cdtalwuv8lr8f" path="res://templates/default_btn.gd" id="2_8idh2"]
 
 [node name="VictoryModal" unique_id=1120063405 instance=ExtResource("1_0khgr")]
 script = ExtResource("2_7fu2e")

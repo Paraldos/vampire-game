@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bjjsmg4jdfe52"]
+
+[ext_resource type="Script" uid="uid://d2upxg7qrm4vf" path="res://exploration/interactables/templates/interactable.gd" id="1_ml3qu"]
+[ext_resource type="Script" uid="uid://deavujqc1odno" path="res://templates/bumper/bumper.gd" id="2_5v4wu"]
+
+[node name="Interactable" type="Node2D" unique_id=1969461338]
+script = ExtResource("1_ml3qu")
+
+[node name="MainSprite" type="Sprite2D" parent="." unique_id=463402219]
+unique_name_in_owner = true
+
+[node name="Bumper" type="StaticBody2D" parent="." unique_id=442086694]
+unique_name_in_owner = true
+position = Vector2(0, -2)
+script = ExtResource("2_5v4wu")
+metadata/_custom_type_script = "uid://deavujqc1odno"
+
+[connection signal="bumped" from="Bumper" to="." method="_bumped"]

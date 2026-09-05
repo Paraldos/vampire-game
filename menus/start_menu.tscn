@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8wgw3esj6ppp" path="res://menus/start_menu.gd" id="1_1t8nw"]
 [ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="1_3kg5v"]
-[ext_resource type="Script" uid="uid://cdtalwuv8lr8f" path="res://manager/default_btn.gd" id="3_w3tic"]
+[ext_resource type="Script" uid="uid://cdtalwuv8lr8f" path="res://templates/default_btn.gd" id="3_w3tic"]
 
 [node name="StartMenu" type="CanvasLayer" unique_id=517132890]
 script = ExtResource("1_1t8nw")

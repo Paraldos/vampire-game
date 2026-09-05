@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://byeowkfa6q0er"]
 
-[ext_resource type="PackedScene" uid="uid://dao4mat0yimv" path="res://manager/modal_manager/modal_template.tscn" id="1_8thld"]
+[ext_resource type="PackedScene" uid="uid://dao4mat0yimv" path="res://templates/modals/modal_template.tscn" id="1_8thld"]
 [ext_resource type="Script" uid="uid://d0ut3yofwcbsh" path="res://combat/modals/defeat_modal.gd" id="2_i8fx3"]
-[ext_resource type="Script" uid="uid://cdtalwuv8lr8f" path="res://manager/default_btn.gd" id="2_t6p82"]
+[ext_resource type="Script" uid="uid://cdtalwuv8lr8f" path="res://templates/default_btn.gd" id="2_t6p82"]
 
 [node name="DefeatModal" unique_id=1120063405 instance=ExtResource("1_8thld")]
 script = ExtResource("2_i8fx3")

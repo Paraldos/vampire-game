@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://h6t750kmppjs"]
+
+[ext_resource type="Script" uid="uid://xokhntdjbva3" path="res://exploration/levels/templates/level_template.gd" id="1_yglgk"]
+[ext_resource type="PackedScene" uid="uid://d2nukwjiluchk" path="res://exploration/levels/templates/tile_map.tscn" id="2_glpk1"]
+[ext_resource type="Texture2D" uid="uid://swg7302sfvun" path="res://assets/images/panel_empty.png" id="2_skox6"]
+
+[node name="LevelTemplate" type="Node2D" unique_id=39250889]
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_yglgk")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1069849025]
+layer = -50
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1902829503]
+z_index = -50
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03529412, 0.039215688, 0.078431375, 1)
+metadata/_edit_lock_ = true
+
+[node name="TileMap" parent="." unique_id=42301453 instance=ExtResource("2_glpk1")]
+tile_map_data = PackedByteArray()
+metadata/_edit_lock_ = true
+
+[node name="PlayerContainer" type="Node2D" parent="." unique_id=1549044503]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Deco" type="Node2D" parent="." unique_id=2000207023]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="Interactables" type="Node2D" parent="." unique_id=2086868757]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=578543551]
+unique_name_in_owner = true
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="SpawnPoint0" type="Marker2D" parent="SpawnPoints" unique_id=1235174702]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1015874988]
+layer = 0
+
+[node name="TextureRect" type="NinePatchRect" parent="CanvasLayer2" unique_id=461932063]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_skox6")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+metadata/_edit_lock_ = true

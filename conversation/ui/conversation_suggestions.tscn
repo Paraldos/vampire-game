@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://i8u8d8fjoh3v"]
+
+[ext_resource type="Script" uid="uid://bcjooic02n5tb" path="res://conversation/ui/conversation_suggestions.gd" id="1_4dn6k"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="1_pk3lb"]
+
+[node name="ConversationTopics" type="RichTextLabel" unique_id=894950012]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pk3lb")
+bbcode_enabled = true
+text = "Topics: ???"
+script = ExtResource("1_4dn6k")

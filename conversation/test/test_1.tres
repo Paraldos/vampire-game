@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ConversationTopic" format=3 uid="uid://dpxv7e6e7q5fq"]
-
-[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/classes/conversation_topic.gd" id="1_pexvf"]
-
-[resource]
-script = ExtResource("1_pexvf")
-key = "Test One"
-output = "111 Test Two"
-metadata/_custom_type_script = "uid://dcmppcvsfqoed"

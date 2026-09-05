@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://disbmvem34vxm"]
+
+[ext_resource type="PackedScene" uid="uid://bjjsmg4jdfe52" path="res://exploration/interactables/templates/interactable.tscn" id="1_0pifb"]
+[ext_resource type="Texture2D" uid="uid://bew4feorh8k4t" path="res://assets/images/deco.png" id="2_bxelr"]
+[ext_resource type="Script" uid="uid://cfvcasy3wu0dp" path="res://exploration/interactables/vampire_coffin.gd" id="2_drttt"]
+[ext_resource type="PackedScene" uid="uid://bfrposkbliuio" path="res://templates/hovering_label/hovering_label.tscn" id="4_bxelr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gofvn"]
+atlas = ExtResource("2_bxelr")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kc5u"]
+size = Vector2(16, 16)
+
+[node name="SpawnCoffin" unique_id=1969461338 instance=ExtResource("1_0pifb")]
+script = ExtResource("2_drttt")
+
+[node name="MainSprite" parent="." index="0" unique_id=463402219]
+texture = SubResource("AtlasTexture_gofvn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper" parent_id_path=PackedInt32Array(442086694) index="0" unique_id=349090717]
+shape = SubResource("RectangleShape2D_0kc5u")
+
+[node name="SpawnPoint" type="Marker2D" parent="." index="2" unique_id=1025012893]
+unique_name_in_owner = true
+position = Vector2(0, 16)
+
+[node name="Camera" type="Camera2D" parent="." index="3" unique_id=114637213]
+unique_name_in_owner = true
+position = Vector2(0, 16)
+
+[node name="InfoLabel" parent="." index="4" unique_id=691980641 instance=ExtResource("4_bxelr")]
+unique_name_in_owner = true
+position = Vector2(0, -24)
+text = "Press SPACE
+to RISE"
