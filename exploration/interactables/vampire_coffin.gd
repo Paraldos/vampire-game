@@ -3,16 +3,19 @@ extends "res://exploration/interactables/templates/interactable.gd"
 @onready var spawn_point: Marker2D = %SpawnPoint
 @onready var info_label: Node2D = %InfoLabel
 @onready var camera: Camera2D = %Camera
+@onready var vision_range: Node2D = %VisionRange
 
 const PLAYER = preload("uid://uuu0f4178hm5")
 var active = false
 
 func _ready() -> void:
+	GlobalSignals.trigger_spawn_point.connect(_on_trigger_spawn_point)
 	super()
 	active = false
 	camera.enabled = false
 	info_label.modulate.a = 0.0
-	GlobalSignals.trigger_spawn_point.connect(_on_trigger_spawn_point)
+	await get_tree().physics_frame
+	vision_range.reveal()
 
 func _input(event: InputEvent) -> void:
 	if !active: return
@@ -26,8 +29,7 @@ func _bumped() -> void:
 
 # =================================================== spawn
 func _on_trigger_spawn_point(idx):
-	if idx >= 0:
-		return
+	if idx >= 0: return
 	active = true
 	camera.enabled = true
 	info_label.fade_in()

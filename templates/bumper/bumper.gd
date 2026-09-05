@@ -1,3 +1,4 @@
+@tool
 extends StaticBody2D
 class_name Bumper
 
@@ -5,10 +6,8 @@ signal bumped
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 func _init() -> void:
-	collision_layer = 0
-	set_collision_layer_value(1, true)
-	set_collision_layer_value(3, true)
-	collision_mask = 0
+	collision_layer = 1 << 2 # Layer 3
+	collision_mask = 0      # Keine Mask
 
 func bump() -> void:
 	bumped.emit()

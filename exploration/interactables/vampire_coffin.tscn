@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bew4feorh8k4t" path="res://assets/images/deco.png" id="2_bxelr"]
 [ext_resource type="Script" uid="uid://cfvcasy3wu0dp" path="res://exploration/interactables/vampire_coffin.gd" id="2_drttt"]
 [ext_resource type="PackedScene" uid="uid://bfrposkbliuio" path="res://templates/hovering_label/hovering_label.tscn" id="4_bxelr"]
+[ext_resource type="PackedScene" uid="uid://dncfx0x5ut74a" path="res://exploration/player/vision_range.tscn" id="5_p8qm8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gofvn"]
 atlas = ExtResource("2_bxelr")
@@ -34,3 +35,7 @@ unique_name_in_owner = true
 position = Vector2(0, -24)
 text = "Press SPACE
 to RISE"
+
+[node name="VisionRange" parent="." index="5" unique_id=673141076 instance=ExtResource("5_p8qm8")]
+unique_name_in_owner = true
+position = Vector2(0, 16)

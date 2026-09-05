@@ -35,6 +35,12 @@ static func respawn():
 	await SceneManager.halfpoint
 	GlobalSignals.trigger_spawn_point.emit(-1)
 
+static func pos_to_tile(pos: Vector2) -> Vector2i:
+	return Vector2i((pos / TILE_SIZE).floor())
+
+static func tile_to_center_pos(tile: Vector2i) -> Vector2:
+	return Vector2(tile) * TILE_SIZE + TILE_SIZE / 2.0
+
 static func get_tile_pos(pos: Vector2) -> Vector2:
 	return pos.snapped(TILE_SIZE)
 

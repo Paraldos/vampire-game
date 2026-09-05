@@ -10,6 +10,8 @@ script = ExtResource("1_nylvv")
 unique_name_in_owner = true
 
 [node name="Bumper" type="StaticBody2D" parent="." unique_id=386841896]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("2_efdbi")
 metadata/_custom_type_script = "uid://deavujqc1odno"
 

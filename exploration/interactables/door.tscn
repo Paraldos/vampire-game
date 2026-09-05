@@ -21,5 +21,8 @@ required_flags = Array[ExtResource("3_qx586")]([])
 texture = SubResource("AtlasTexture_kdhm5")
 hframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper" parent_id_path=PackedInt32Array(442086694) index="0" unique_id=1553895274]
+[node name="Bumper" parent="." index="1" unique_id=442086694]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper" index="0" unique_id=1553895274]
 shape = SubResource("RectangleShape2D_0kc5u")

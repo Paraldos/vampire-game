@@ -1,5 +1,7 @@
 extends State
 
+@onready var vision_range: Node2D = %VisionRange
+
 const MOVEMENT_DURATION := 0.4
 const RISE_DURATION := MOVEMENT_DURATION * 0.4
 const FALL_DURATION := MOVEMENT_DURATION * 0.4
@@ -13,7 +15,8 @@ func start() -> void:
 
 	_animation_hop()
 	await _animation_move()
-	#await get_tree().create_timer(0.1).timeout
+
+	vision_range.reveal()
 
 	transition_to(&"Idle")
 

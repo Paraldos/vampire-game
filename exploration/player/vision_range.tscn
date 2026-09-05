@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dncfx0x5ut74a"]
+
+[ext_resource type="Script" uid="uid://dkivcgfoka8rk" path="res://exploration/player/vision_range.gd" id="1_wlrl5"]
+
+[node name="VisionRange" type="Node2D" unique_id=673141076]
+script = ExtResource("1_wlrl5")
+
+[node name="VisionCast" type="RayCast2D" parent="." unique_id=1545373526]
+unique_name_in_owner = true
