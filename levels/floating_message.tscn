@@ -76,6 +76,7 @@ offset_top = -40.0
 offset_right = 88.0
 offset_bottom = 40.0
 theme = ExtResource("2_x48al")
+theme_override_constants/outline_size = 5
 text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -10,4 +10,5 @@ region = Rect2(0, 16, 16, 16)
 [resource]
 script = ExtResource("2_lffrv")
 img = SubResource("AtlasTexture_bt6d0")
+description = "Skip this turn"
 metadata/_custom_type_script = "uid://dmyvvs8hheiig"
