@@ -1,4 +1,5 @@
 extends CanvasLayer
 
 func _on_new_btn_pressed() -> void:
-	SaveManager.new_game()
+	Utils.game_data = GameData.new()
+	LevelManager.respawn()

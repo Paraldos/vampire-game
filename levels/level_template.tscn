@@ -40,12 +40,12 @@ metadata/_edit_lock_ = true
 y_sort_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="StartPoints" type="Node2D" parent="." unique_id=578543551]
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=578543551]
 unique_name_in_owner = true
 y_sort_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="StartPoint0" type="Marker2D" parent="StartPoints" unique_id=1235174702]
+[node name="SpawnPoint0" type="Marker2D" parent="SpawnPoints" unique_id=1235174702]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1015874988]
 layer = 0

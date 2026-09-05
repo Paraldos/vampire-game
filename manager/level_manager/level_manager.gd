@@ -10,20 +10,22 @@ static var current_level : PackedScene:
 	set(value):
 		Utils.game_data.current_level = value
 
-static var start_point : int:
+static var respawn_level : PackedScene:
 	get:
-		return Utils.game_data.start_point
+		return Utils.game_data.respawn_level
 	set(value):
-		Utils.game_data.start_point = value
+		Utils.game_data.respawn_level = value
 
 # ======================================== start / stop
-func change_level(new_level: PackedScene, new_start_point := 0) -> void:
+static func change_level(new_level: PackedScene, new_spawn_point := 0) -> void:
 	current_level = new_level
-	start_point = new_start_point
-	SceneManager.change_scene(current_level)
+	await SceneManager.change_scene(current_level)
+	GlobalSignals.trigger_spawn_point.emit(new_spawn_point)
 
-func reload_level():
-	SceneManager.change_scene(current_level)
+static func respawn():
+	current_level = respawn_level
+	await SceneManager.change_scene(current_level)
+	GlobalSignals.trigger_spawn_point.emit(-1)
 
 static func get_tile_pos(pos: Vector2) -> Vector2:
 	return pos.snapped(LevelManager.TILE_SIZE)

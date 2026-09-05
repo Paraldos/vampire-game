@@ -22,6 +22,10 @@ GlobalSignals="*uid://dqvsj5tgbkeqe"
 Utils="*uid://b8g7vu5kip8tx"
 ModalManager="*uid://ckfrq0t0mj170"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/size/viewport_width=304

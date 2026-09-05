@@ -5,10 +5,6 @@ const SAVE_GAME_PATH := "user://save_%s.tres"
 const SAVE_INFO_PATH := "user://save_%s_info.tres"
 const START_MAP = preload("uid://c4hx48uxrnfdn")
 
-static func new_game() -> void:
-	Utils.game_data = GameData.new()
-	SceneManager.change_scene(START_MAP)
-
 static func save_game(slot_number: int = 0) -> Error:
 	return ResourceSaver.save(Utils.game_data.save_game, get_save_path(slot_number))
 

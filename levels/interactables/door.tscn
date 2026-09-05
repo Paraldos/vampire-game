@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://btd1mto33oj8i"]
 
 [ext_resource type="PackedScene" uid="uid://bjjsmg4jdfe52" path="res://levels/interactable.tscn" id="1_8rerx"]
+[ext_resource type="Script" uid="uid://bmen80yp2ubvq" path="res://levels/interactables/door.gd" id="2_t01yo"]
 [ext_resource type="Texture2D" uid="uid://bew4feorh8k4t" path="res://assets/images/deco.png" id="2_yney3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdhm5"]
@@ -11,6 +12,7 @@ region = Rect2(0, 0, 32, 16)
 size = Vector2(16, 16)
 
 [node name="Door" unique_id=1969461338 instance=ExtResource("1_8rerx")]
+script = ExtResource("2_t01yo")
 
 [node name="MainSprite" parent="." index="0" unique_id=463402219]
 texture = SubResource("AtlasTexture_kdhm5")
@@ -18,5 +20,3 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper" parent_id_path=PackedInt32Array(442086694) index="0" unique_id=1553895274]
 shape = SubResource("RectangleShape2D_0kc5u")
-
-[connection signal="bumped" from="Bumper" to="." method="_on_bumper_bumped"]
