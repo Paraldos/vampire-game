@@ -1,6 +1,6 @@
 extends DefaultBtn
 
-@export var action : Action
+@export var action : CombatAction
 
 func _ready() -> void:
 	GlobalSignals.disable_action_btns.connect(_on_disable_action_btns)

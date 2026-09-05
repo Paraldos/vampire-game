@@ -32,7 +32,7 @@ static var attack: int:
 	get:
 		return Utils.game_data.attack
 
-static var actions: Array[Action]:
+static var actions: Array[CombatAction]:
 	set(value):
 		Utils.game_data.actions = value
 	get:

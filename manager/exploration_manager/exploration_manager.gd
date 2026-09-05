@@ -1,5 +1,5 @@
 extends Resource
-class_name LevelManager
+class_name ExplorationManager
 
 const TILE_SIZE := Vector2(16,16)
 
@@ -16,6 +16,12 @@ static var respawn_level : PackedScene:
 	set(value):
 		Utils.game_data.respawn_level = value
 
+static var flags : Array[Flag]:
+	get:
+		return Utils.game_data.flags
+	set(value):
+		Utils.game_data.flags = value
+
 # ======================================== start / stop
 static func change_level(new_level: PackedScene, new_spawn_point := 0) -> void:
 	current_level = new_level
@@ -30,7 +36,7 @@ static func respawn():
 	GlobalSignals.trigger_spawn_point.emit(-1)
 
 static func get_tile_pos(pos: Vector2) -> Vector2:
-	return pos.snapped(LevelManager.TILE_SIZE)
+	return pos.snapped(TILE_SIZE)
 
 static func get_tile_center_pos(pos: Vector2) -> Vector2:
-	return pos.snapped(LevelManager.TILE_SIZE) - LevelManager.TILE_SIZE / 2
+	return pos.snapped(TILE_SIZE) - TILE_SIZE / 2

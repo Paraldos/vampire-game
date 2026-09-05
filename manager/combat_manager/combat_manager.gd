@@ -29,12 +29,12 @@ static func start_combat(new_enemy: Enemy) -> void:
 
 static func end_combat() -> void:
 	enemy = null
+	PlayerManager.current_armor = PlayerManager.max_armor
 	SceneManager.pop_overlay_scene()
 
 static func next_turn() -> void:
 	GlobalSignals.update_combat_stats.emit()
 	player_turn = !player_turn
-
 	if PlayerManager.current_hp == 0:
 		_defeat()
 	elif enemy.current_hp == 0:

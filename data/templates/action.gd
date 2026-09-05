@@ -1,5 +1,5 @@
 extends Resource
-class_name Action
+class_name CombatAction
 
 enum TYPE {
 	UNKNOWN,

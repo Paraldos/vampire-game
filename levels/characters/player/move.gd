@@ -8,8 +8,8 @@ const JUMP_HEIGHT := 1.5
 func start() -> void:
 	var direction: Vector2 = actor.move_direction
 
-	actor.global_position += direction * LevelManager.TILE_SIZE
-	actor.sprite_parent.position -= direction * LevelManager.TILE_SIZE
+	actor.global_position += direction * ExplorationManager.TILE_SIZE
+	actor.sprite_parent.position -= direction * ExplorationManager.TILE_SIZE
 
 	_animation_hop()
 	await _animation_move()

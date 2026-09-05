@@ -24,4 +24,4 @@ func spawn_floating_message(txt: String, pos: Vector2):
 	m.text = txt
 	m.global_position = pos
 	get_tree().current_scene.add_child(m)
-	LevelManager.respawn_level = LevelManager.current_level
+	ExplorationManager.respawn_level = ExplorationManager.current_level

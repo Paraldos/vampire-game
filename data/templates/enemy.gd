@@ -2,7 +2,7 @@ extends Resource
 class_name Enemy
 
 @export var name: String
-@export var actions: Array[Action] = []
+@export var actions: Array[CombatAction] = []
 
 @export_group("Display")
 @export var group := false

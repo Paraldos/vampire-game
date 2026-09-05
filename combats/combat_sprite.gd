@@ -13,7 +13,7 @@ class_name CombatSprite
 		player_display = value
 		if is_instance_valid(sprite):
 			sprite.flip_h = !value
-var duration := Action.ACTION_DURATION
+var duration := CombatAction.ACTION_DURATION
 
 func _ready() -> void:
 	GlobalSignals.display_animation.connect(_on_play_attack_animation)
