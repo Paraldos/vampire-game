@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c8t0w0kp6l44p"]
+
+[ext_resource type="PackedScene" uid="uid://tr1a444tmlo4" path="res://exploration/characters/character.tscn" id="1_1jr87"]
+[ext_resource type="Texture2D" uid="uid://1xuiitqltmym" path="res://assets/images/small_characters.png" id="2_s8o25"]
+[ext_resource type="Resource" uid="uid://fec87p3ywoxr" path="res://conversation/conversations/start/start_conversation.tres" id="2_t4wfb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gje1h"]
+atlas = ExtResource("2_s8o25")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kc5u"]
+size = Vector2(8, 8)
+
+[node name="Minion" unique_id=1750802176 instance=ExtResource("1_1jr87")]
+conversation = ExtResource("2_t4wfb")
+
+[node name="Sprite" parent="." index="0" unique_id=1543407215]
+texture = SubResource("AtlasTexture_gje1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper" parent_id_path=PackedInt32Array(386841896) index="0" unique_id=903407461]
+shape = SubResource("RectangleShape2D_0kc5u")

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bjjsmg4jdfe52" path="res://exploration/interactables/templates/interactable.tscn" id="1_8rerx"]
 [ext_resource type="Script" uid="uid://bmen80yp2ubvq" path="res://exploration/interactables/door.gd" id="2_t01yo"]
 [ext_resource type="Texture2D" uid="uid://bew4feorh8k4t" path="res://assets/images/deco.png" id="2_yney3"]
+[ext_resource type="Script" uid="uid://dp17dq3f6568l" path="res://flags/flag.gd" id="3_qx586"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdhm5"]
 atlas = ExtResource("2_yney3")
@@ -13,6 +14,7 @@ size = Vector2(16, 16)
 
 [node name="Door" unique_id=1969461338 instance=ExtResource("1_8rerx")]
 script = ExtResource("2_t01yo")
+required_flags = Array[ExtResource("3_qx586")]([])
 
 [node name="MainSprite" parent="." index="0" unique_id=463402219]
 texture = SubResource("AtlasTexture_kdhm5")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://tr1a444tmlo4"]
+
+[ext_resource type="Script" uid="uid://jumnb2p1krew" path="res://exploration/characters/character.gd" id="1_nylvv"]
+[ext_resource type="Script" uid="uid://deavujqc1odno" path="res://templates/bumper/bumper.gd" id="2_efdbi"]
+
+[node name="Character" type="CharacterBody2D" unique_id=1750802176]
+script = ExtResource("1_nylvv")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1543407215]
+unique_name_in_owner = true
+
+[node name="Bumper" type="StaticBody2D" parent="." unique_id=386841896]
+script = ExtResource("2_efdbi")
+metadata/_custom_type_script = "uid://deavujqc1odno"
+
+[connection signal="bumped" from="Bumper" to="." method="_on_bumper_bumped"]

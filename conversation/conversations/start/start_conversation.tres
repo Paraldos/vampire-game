@@ -1,9 +1,14 @@
 [gd_resource type="Resource" script_class="Conversation" format=3 uid="uid://fec87p3ywoxr"]
 
+[ext_resource type="Texture2D" uid="uid://dbib78xq775hh" path="res://assets/images/peasant.png" id="1_1dc44"]
 [ext_resource type="Script" uid="uid://cjdth0xnwcu8k" path="res://conversation/conversations/conversation.gd" id="1_ui813"]
 [ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversations/conversation_topic.gd" id="2_pkair"]
+[ext_resource type="Resource" uid="uid://dt6tb22r3jgsw" path="res://conversation/conversations/start/start_1.tres" id="4_xc1gu"]
 
 [resource]
 script = ExtResource("1_ui813")
-greeting = "Hello Master"
+character_name = "Minion"
+img = ExtResource("1_1dc44")
+greeting = "Master! You're awake!"
+topics = Array[ExtResource("2_pkair")]([ExtResource("4_xc1gu")])
 metadata/_custom_type_script = "uid://cjdth0xnwcu8k"

@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_0daky")
 key = "Master"
+output = "I am your loyal servant, my Master."
 metadata/_custom_type_script = "uid://dcmppcvsfqoed"
