@@ -87,4 +87,5 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_vrq6r")
 theme_override_styles/focus = SubResource("StyleBoxTexture_glk6c")
 script = ExtResource("3_ffen4")
 
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

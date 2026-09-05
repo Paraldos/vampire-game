@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="CombatAction" format=3 uid="uid://hjdega387jrv"]
 
-[ext_resource type="Texture2D" uid="uid://s2xebhigljv4" path="res://assets/images/actions.png" id="1_3tice"]
-[ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://combat/combat_actions/combat_action.gd" id="2_7rrv7"]
+[ext_resource type="Texture2D" uid="uid://s2xebhigljv4" path="res://assets/images/actions.png" id="1_jn4sf"]
+[ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://combat/combat_actions/combat_action.gd" id="2_sesct"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_miamk"]
-atlas = ExtResource("1_3tice")
+atlas = ExtResource("1_jn4sf")
 region = Rect2(0, 0, 16, 16)
 
 [resource]
-script = ExtResource("2_7rrv7")
-type = 1
+script = ExtResource("2_sesct")
 img = SubResource("AtlasTexture_miamk")
+target_dmg = 1.0
 user_animation = 1
 target_animation = 2
 metadata/_custom_type_script = "uid://dmyvvs8hheiig"

@@ -2,7 +2,7 @@ extends CanvasLayer
 class_name Modal
 
 @onready var content_container: Control = %ContentContainer
-const ANIMATION_DURATION = 0.3
+const ANIMATION_DURATION = 0.5
 var is_closing := false
 var screen_width : Vector2
 var pos_start : Vector2

@@ -19,3 +19,6 @@ func _on_disable_action_btns():
 
 func _on_enable_action_btns():
 	button_disabled = !action.can_be_used(true)
+
+func _on_focus_entered() -> void:
+	GlobalSignals.combat_action_focused.emit(action)

@@ -4,6 +4,7 @@ extends Node
 signal disable_action_btns
 signal enable_action_btns
 signal update_combat_stats
+signal combat_action_focused(action: CombatAction)
 
 signal update_conversation
 

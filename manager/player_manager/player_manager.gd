@@ -39,7 +39,14 @@ static var actions: Array[CombatAction]:
 		return Utils.game_data.actions
 
 # ======================================== helper
-static func deal_damage(amount: int) -> void:
-	var remaining_damage := maxi(amount - current_armor, 0)
-	current_armor = maxi(current_armor - amount, 0)
-	current_hp = maxi(current_hp - remaining_damage, 0)
+static func deal_dmg(dmg: int, bypass_armor := false) -> void:
+	if dmg <= 0: return
+	if bypass_armor:
+		current_hp = maxi(current_hp - dmg, 0)
+	else:
+		var remaining_damage := maxi(dmg - current_armor, 0)
+		current_armor = maxi(current_armor - dmg, 0)
+		current_hp = maxi(current_hp - remaining_damage, 0)
+
+static func restore_armor(amount) -> void:
+	current_armor = mini(current_armor + amount, max_armor)

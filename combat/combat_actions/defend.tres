@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Action" format=3 uid="uid://c2j3acita8x32"]
+[gd_resource type="Resource" script_class="CombatAction" format=3 uid="uid://c2j3acita8x32"]
 
 [ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://combat/combat_actions/combat_action.gd" id="1_maj3s"]
 [ext_resource type="Texture2D" uid="uid://s2xebhigljv4" path="res://assets/images/actions.png" id="1_mvehk"]
@@ -9,6 +9,6 @@ region = Rect2(16, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_maj3s")
-type = 3
 img = SubResource("AtlasTexture_mvehk")
+restore_armor = 0.25
 metadata/_custom_type_script = "uid://dmyvvs8hheiig"

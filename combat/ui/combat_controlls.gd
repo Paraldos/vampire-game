@@ -1,16 +1,23 @@
 extends PanelContainer
 
 @onready var actions_container: GridContainer = %ActionsContainer
+@onready var description: RichTextLabel = %Description
+
 const ACTION_BTN = preload("uid://bgaxwo36tpkjn")
 const PASS = preload("uid://cw20rruuk1qco")
 
 func _ready() -> void:
 	GlobalSignals.enable_action_btns.connect(grab_first_valid_btn)
+	GlobalSignals.combat_action_focused.connect(_on_combat_action_focused)
 	Utils.clear_container(actions_container)
 	for action in PlayerManager.actions:
 		_add_action_btn(action)
 	_add_action_btn(PASS)
 	grab_first_valid_btn()
+
+func _on_combat_action_focused(action: CombatAction):
+	description.text = action.get_action_name() + "\n"
+	description.text += action.get_description()
 
 func _add_action_btn(action : CombatAction):
 	var btn := ACTION_BTN.instantiate()
