@@ -3,6 +3,96 @@
 [ext_resource type="Script" uid="uid://xokhntdjbva3" path="res://exploration/levels/templates/level_template.gd" id="1_yglgk"]
 [ext_resource type="PackedScene" uid="uid://d2nukwjiluchk" path="res://exploration/levels/templates/tile_map.tscn" id="2_glpk1"]
 [ext_resource type="Texture2D" uid="uid://swg7302sfvun" path="res://assets/images/panel_empty.png" id="2_skox6"]
+[ext_resource type="Texture2D" uid="uid://o60eyv7coplq" path="res://assets/images/fog_of_war.png" id="3_eqr5r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jotdx"]
+texture = ExtResource("3_eqr5r")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:0/0/terrains_peering_bit/top_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/top_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/terrains_peering_bit/right_side = 0
+2:0/0/terrains_peering_bit/top_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/terrains_peering_bit/right_side = 0
+3:0/0/terrains_peering_bit/bottom_side = 0
+3:0/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/terrains_peering_bit/right_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/terrains_peering_bit/right_side = 0
+2:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/terrains_peering_bit/right_side = 0
+3:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0/terrains_peering_bit/left_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/terrains_peering_bit/bottom_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/terrains_peering_bit/bottom_side = 0
+2:2/0/terrains_peering_bit/left_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/terrains_peering_bit/bottom_side = 0
+3:2/0/terrains_peering_bit/left_side = 0
+3:2/0/terrains_peering_bit/top_side = 0
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/terrain = 0
+1:3/0/terrains_peering_bit/left_side = 0
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/terrain = 0
+2:3/0/terrains_peering_bit/left_side = 0
+2:3/0/terrains_peering_bit/top_side = 0
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/terrain = 0
+3:3/0/terrains_peering_bit/right_side = 0
+3:3/0/terrains_peering_bit/left_side = 0
+3:3/0/terrains_peering_bit/top_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/left_side = 0
+0:3/0 = 0
+0:3/0/terrain_set = 0
+0:3/0/terrain = 0
+
+[sub_resource type="TileSet" id="TileSet_0kc5u"]
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "FogOfWar"
+terrain_set_0/terrain_0/color = Color(0.5019608, 1, 0.2509804, 1)
+sources/0 = SubResource("TileSetAtlasSource_jotdx")
 
 [node name="LevelTemplate" type="Node2D" unique_id=39250889]
 z_as_relative = false
@@ -27,6 +117,9 @@ metadata/_edit_lock_ = true
 [node name="TileMap" parent="." unique_id=42301453 instance=ExtResource("2_glpk1")]
 tile_map_data = PackedByteArray()
 metadata/_edit_lock_ = true
+
+[node name="FogOfWar" type="TileMapLayer" parent="." unique_id=1644633210]
+tile_set = SubResource("TileSet_0kc5u")
 
 [node name="PlayerContainer" type="Node2D" parent="." unique_id=1549044503]
 unique_name_in_owner = true
