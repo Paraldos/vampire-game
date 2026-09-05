@@ -10,15 +10,18 @@ var game_state = Enums.GAME_STATES.START_MENU
 @export var max_armor := 20
 @export var current_armor := max_armor
 @export var attack := 10
+
 @export var actions: Array[CombatAction] = [
 	preload("uid://hjdega387jrv"),
 	preload("uid://c2j3acita8x32")
 ]
 
+# flags
+@export var flags: Array[Flag]
+
 # exploration
 @export var current_level: PackedScene
 @export var respawn_level: PackedScene = load("uid://c4hx48uxrnfdn")
-@export var flags: Array[Flag]
 
 # conversation
 @export var current_conversation: Conversation
