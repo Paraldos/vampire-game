@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Action" format=3 uid="uid://c2j3acita8x32"]
 
-[ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://data/templates/action.gd" id="1_maj3s"]
+[ext_resource type="Script" uid="uid://dmyvvs8hheiig" path="res://combat/combat_actions/combat_action.gd" id="1_maj3s"]
 [ext_resource type="Texture2D" uid="uid://s2xebhigljv4" path="res://assets/images/actions.png" id="1_mvehk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvehk"]

@@ -11,6 +11,7 @@ enum GAME_STATES {
 	MODAL,
 }
 enum ANIMATIONS {
+	NONE,
 	ATTACK,
 	HIT,
 	DEFEND

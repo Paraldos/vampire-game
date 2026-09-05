@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bj5y4sdb7wwnn"]
 
 [ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="1_65ica"]
-[ext_resource type="Script" uid="uid://c7qro5mi67wjj" path="res://combats/combat_controlls.gd" id="2_gbx52"]
+[ext_resource type="Script" uid="uid://c7qro5mi67wjj" path="res://combat/ui/combat_controlls.gd" id="2_gbx52"]
 
 [node name="CombatControlls" type="PanelContainer" unique_id=1457925255]
 anchors_preset = 12

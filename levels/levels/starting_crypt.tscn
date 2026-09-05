@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://disbmvem34vxm" path="res://levels/interactables/vampire_coffin.tscn" id="2_u5pfa"]
 [ext_resource type="PackedScene" uid="uid://btd1mto33oj8i" path="res://levels/interactables/door.tscn" id="3_w78au"]
 [ext_resource type="PackedScene" uid="uid://dmyikyfplkj8r" path="res://levels/characters/test_dummy/test_dummy.tscn" id="5_3klx7"]
-[ext_resource type="Resource" uid="uid://c1hlbq8ugbb3c" path="res://data/enemies/skeleton.tres" id="6_srxmp"]
+[ext_resource type="Resource" uid="uid://c1hlbq8ugbb3c" path="res://combat/enemies/skeleton.tres" id="6_srxmp"]
 
 [node name="StartingCrypt" unique_id=39250889 instance=ExtResource("1_8bbfh")]
 

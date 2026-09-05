@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dqqin61d3ow2p"]
 
-[ext_resource type="Script" uid="uid://3eqtw7nl6s51" path="res://combats/combat_window.gd" id="1_w54px"]
+[ext_resource type="Script" uid="uid://3eqtw7nl6s51" path="res://combat/combat_window.gd" id="1_w54px"]
 [ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="2_diee0"]
-[ext_resource type="PackedScene" uid="uid://bj5y4sdb7wwnn" path="res://combats/combat_controlls.tscn" id="2_gbtqw"]
+[ext_resource type="PackedScene" uid="uid://bj5y4sdb7wwnn" path="res://combat/ui/combat_controlls.tscn" id="2_gbtqw"]
 [ext_resource type="PackedScene" uid="uid://bpf4uufgywnn8" path="res://character_display/character_display.tscn" id="4_oarx6"]
-[ext_resource type="PackedScene" uid="uid://b651g6cpgp6ia" path="res://combats/combat_stats.tscn" id="5_d3arh"]
+[ext_resource type="PackedScene" uid="uid://b651g6cpgp6ia" path="res://combat/ui/combat_stats.tscn" id="5_d3arh"]
 
 [node name="Combat" type="CanvasLayer" unique_id=941987718]
 script = ExtResource("1_w54px")
