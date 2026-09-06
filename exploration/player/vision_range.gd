@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var vision_cast: RayCast2D = %VisionCast
 
-var vision_range := 3
+@export var vision_range := 3
 
 func reveal() -> void:
 	var center_tile := ExplorationManager.pos_to_tile(global_position)
