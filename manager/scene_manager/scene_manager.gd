@@ -24,10 +24,11 @@ func change_scene(new_scene: PackedScene) -> void:
 	get_tree().change_scene_to_packed(new_scene)
 	await get_tree().scene_changed
 
+	get_tree().paused = false
+	await get_tree().create_timer(0.1).timeout
 	halfpoint.emit()
 
 	await _tween_background(clear_color)
-	get_tree().paused = false
 	await get_tree().create_timer(0.1).timeout
 
 # ============================================================= overlay

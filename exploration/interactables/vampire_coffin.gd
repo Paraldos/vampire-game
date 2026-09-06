@@ -14,7 +14,9 @@ func _ready() -> void:
 	active = false
 	camera.enabled = false
 	info_label.modulate.a = 0.0
-	await get_tree().physics_frame
+
+	await SceneManager.halfpoint
+
 	vision_range.reveal()
 
 func _input(event: InputEvent) -> void:
