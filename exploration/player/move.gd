@@ -1,7 +1,5 @@
 extends State
 
-@onready var vision_range: Node2D = %VisionRange
-
 const MOVEMENT_DURATION := 0.4
 const RISE_DURATION := MOVEMENT_DURATION * 0.4
 const FALL_DURATION := MOVEMENT_DURATION * 0.4
@@ -9,14 +7,10 @@ const JUMP_HEIGHT := 1.5
 
 func start() -> void:
 	var direction: Vector2 = actor.move_direction
-
 	actor.global_position += direction * ExplorationManager.TILE_SIZE
 	actor.sprite_parent.position -= direction * ExplorationManager.TILE_SIZE
-
 	_animation_hop()
 	await _animation_move()
-
-	vision_range.reveal()
 	transition_to(&"Idle")
 
 func _animation_move() -> void:

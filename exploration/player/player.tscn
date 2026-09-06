@@ -108,3 +108,4 @@ metadata/_custom_type_script = "uid://dkc2dfpq78y2p"
 
 [node name="VisionRange" parent="." unique_id=673141076 instance=ExtResource("10_tag5u")]
 unique_name_in_owner = true
+vision_range = 4

@@ -1,6 +1,7 @@
 extends State
 
 @onready var encounter_detector: Area2D = %EncounterDetector
+@onready var vision_range: Node2D = %VisionRange
 
 func physics_process(_delta: float) -> void:
 	var direction := _get_input_direction()
@@ -14,7 +15,7 @@ func physics_process(_delta: float) -> void:
 		transition_to(&"Move")
 
 func start():
-	super()
+	vision_range.reveal()
 	for area in encounter_detector.get_overlapping_areas():
 		if area is not RandomEncounterZone: continue
 		area.try_trigger_encounter()

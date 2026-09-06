@@ -1,7 +1,10 @@
 extends Node2D
 
-@onready var vision_cast: RayCast2D = %VisionCast
-
+@onready var vision_casts: Array[RayCast2D] = [
+	%VisionCast1,
+	%VisionCast2,
+	%VisionCast3,
+	%VisionCast4]
 @export var vision_range := 3
 
 func reveal() -> void:
@@ -16,11 +19,17 @@ func reveal() -> void:
 
 func _can_see_tile(target_tile: Vector2i) -> bool:
 	var target_pos := ExplorationManager.tile_to_center_pos(target_tile)
-	vision_cast.target_position = vision_cast.to_local(target_pos)
-	vision_cast.force_raycast_update()
-	if not vision_cast.is_colliding():
-		return true
-	var direction := (target_pos - vision_cast.global_position).normalized()
-	var collision_position := (vision_cast.get_collision_point() + direction * 0.5)
-	var collision_tile := ExplorationManager.pos_to_tile(collision_position)
-	return collision_tile == target_tile
+	for cast in vision_casts:
+		cast.target_position = cast.to_local(target_pos)
+		cast.force_raycast_update()
+		if not cast.is_colliding():
+			return true
+		var direction := (target_pos - cast.global_position).normalized()
+		var collision_position := (
+			cast.get_collision_point()
+			+ direction * 0.5)
+		var collision_tile := ExplorationManager.pos_to_tile(
+			collision_position)
+		if collision_tile == target_tile:
+			return true
+	return false
