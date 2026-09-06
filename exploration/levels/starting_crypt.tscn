@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://dp17dq3f6568l" path="res://flags/flag.gd" id="5_djvfw"]
 [ext_resource type="PackedScene" uid="uid://c8t0w0kp6l44p" path="res://exploration/characters/minion.tscn" id="5_ouoyx"]
 [ext_resource type="Resource" uid="uid://co8or4d42y5oq" path="res://flags/flags/starting_crypt__key.tres" id="6_djvfw"]
+[ext_resource type="PackedScene" uid="uid://1lj1tpa7rqnj" path="res://exploration/random_encounter_zone/random_encounter_zone.tscn" id="8_i5cv3"]
+[ext_resource type="Script" uid="uid://cxjxss65t8lqy" path="res://combat/enemies/enemy.gd" id="9_66y38"]
+[ext_resource type="Resource" uid="uid://c1hlbq8ugbb3c" path="res://combat/enemies/skeleton.tres" id="10_dklug"]
 
 [node name="StartingCrypt" unique_id=39250889 instance=ExtResource("1_8bbfh")]
 
@@ -34,3 +37,9 @@ position = Vector2(88, 40)
 
 [node name="SpawnPoint0" parent="SpawnPoints" parent_id_path=PackedInt32Array(578543551) index="0" unique_id=1235174702]
 position = Vector2(24, 72)
+
+[node name="RandomEncounterZone" parent="." index="8" unique_id=1588379552 instance=ExtResource("8_i5cv3")]
+possible_encounters = Array[ExtResource("9_66y38")]([ExtResource("10_dklug")])
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RandomEncounterZone" index="0" unique_id=1237682784]
+polygon = PackedVector2Array(112, -96, 112, 176, 176, 176, 176, -96)

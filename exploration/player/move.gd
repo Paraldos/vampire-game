@@ -17,7 +17,6 @@ func start() -> void:
 	await _animation_move()
 
 	vision_range.reveal()
-
 	transition_to(&"Idle")
 
 func _animation_move() -> void:
@@ -36,13 +35,13 @@ func _animation_hop() -> void:
 	var tween := create_tween()
 	tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	tween.tween_property(
-		actor.sprite,
+		actor.main_sprite,
 		"position:y",
 		-JUMP_HEIGHT,
 		RISE_DURATION
 	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property(
-		actor.sprite,
+		actor.main_sprite,
 		"position:y",
 		0.0,
 		FALL_DURATION

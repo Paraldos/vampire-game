@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://1lj1tpa7rqnj"]
+
+[ext_resource type="Script" uid="uid://bnwi7oddknypn" path="res://exploration/random_encounter_zone/random_encounter_zone.gd" id="1_0hk1q"]
+
+[node name="RandomEncounterZone" type="Area2D" unique_id=1588379552]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_0hk1q")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

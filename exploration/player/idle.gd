@@ -1,5 +1,7 @@
 extends State
 
+@onready var encounter_detector: Area2D = %EncounterDetector
+
 func physics_process(_delta: float) -> void:
 	var direction := _get_input_direction()
 	if direction == Vector2.ZERO: return
@@ -10,6 +12,12 @@ func physics_process(_delta: float) -> void:
 		transition_to(&"Bump")
 	else:
 		transition_to(&"Move")
+
+func start():
+	super()
+	for area in encounter_detector.get_overlapping_areas():
+		if area is not RandomEncounterZone: continue
+		area.try_trigger_encounter()
 
 func _get_input_direction() -> Vector2:
 	if Input.is_action_pressed("left"):

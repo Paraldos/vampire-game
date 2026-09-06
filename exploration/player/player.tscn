@@ -389,58 +389,67 @@ visible = false
 
 [node name="Camera2D" type="Camera2D" parent="SpriteParent" unique_id=1407368996]
 
-[node name="Sprite" type="Sprite2D" parent="SpriteParent" unique_id=2004140448]
+[node name="MainSprite" type="Sprite2D" parent="SpriteParent" unique_id=2004140448]
 unique_name_in_owner = true
 texture = SubResource("AtlasTexture_0kc5u")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=846613906]
+[node name="SpawnAnimation" type="Node2D" parent="." unique_id=846613906]
 z_index = 50
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=1133752735]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpawnAnimation" unique_id=1133752735]
 libraries/ = SubResource("AnimationLibrary_60ue2")
 autoplay = &"spawn"
 
-[node name="Bat1" type="AnimatedSprite2D" parent="Node2D" unique_id=180722187]
+[node name="Bat1" type="AnimatedSprite2D" parent="SpawnAnimation" unique_id=180722187]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(72, 24)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
 frame_progress = 0.64684135
 
-[node name="Bat2" type="AnimatedSprite2D" parent="Node2D" unique_id=271128706]
+[node name="Bat2" type="AnimatedSprite2D" parent="SpawnAnimation" unique_id=271128706]
 position = Vector2(-64, -64)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
 frame_progress = 0.0072837737
 
-[node name="Bat3" type="AnimatedSprite2D" parent="Node2D" unique_id=45647769]
+[node name="Bat3" type="AnimatedSprite2D" parent="SpawnAnimation" unique_id=45647769]
 position = Vector2(72, -16)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
 frame_progress = 0.78349304
 
-[node name="Bat4" type="AnimatedSprite2D" parent="Node2D" unique_id=918479373]
+[node name="Bat4" type="AnimatedSprite2D" parent="SpawnAnimation" unique_id=918479373]
 position = Vector2(-56, 0)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
 frame_progress = 0.040155854
 
-[node name="Bat5" type="AnimatedSprite2D" parent="Node2D" unique_id=2070700038]
+[node name="Bat5" type="AnimatedSprite2D" parent="SpawnAnimation" unique_id=2070700038]
 position = Vector2(-8, -72)
 sprite_frames = SubResource("SpriteFrames_0kc5u")
 autoplay = "default"
 frame_progress = 0.6874508
 
-[node name="Smoke" type="Sprite2D" parent="Node2D" unique_id=483494776]
+[node name="Smoke" type="Sprite2D" parent="SpawnAnimation" unique_id=483494776]
 visible = false
 texture = ExtResource("4_eq050")
 hframes = 9
 
-[node name="Area2D" type="Area2D" parent="." unique_id=43891641]
+[node name="PlayerArea" type="Area2D" parent="." unique_id=43891641]
+unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=171216001]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea" unique_id=171216001]
+shape = SubResource("RectangleShape2D_0kc5u")
+
+[node name="EncounterDetector" type="Area2D" parent="." unique_id=1560969888]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EncounterDetector" unique_id=2035975516]
 shape = SubResource("RectangleShape2D_0kc5u")
 
 [node name="Down" type="RayCast2D" parent="." unique_id=532155370]
