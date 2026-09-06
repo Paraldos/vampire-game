@@ -41,6 +41,7 @@ _data = {
 }
 
 [node name="HoveringLabel" type="Node2D" unique_id=691980641]
+z_index = 75
 script = ExtResource("1_w0y7t")
 
 [node name="AnimationNode" type="Node2D" parent="." unique_id=474612562]

@@ -360,6 +360,7 @@ _data = {
 }
 
 [node name="SpawnAnimation" type="Node2D" unique_id=546800491]
+z_index = 50
 script = ExtResource("1_1h77u")
 
 [node name="Bat1" type="AnimatedSprite2D" parent="." unique_id=413879807]

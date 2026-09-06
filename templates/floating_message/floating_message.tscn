@@ -65,6 +65,7 @@ _data = {
 }
 
 [node name="FloatingMessage" type="Node2D" unique_id=909619580]
+z_index = 75
 script = ExtResource("1_xkjny")
 
 [node name="AnimatedNode" type="Node2D" parent="." unique_id=1069583201]
