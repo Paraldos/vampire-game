@@ -42,4 +42,4 @@ position = Vector2(24, 72)
 possible_encounters = Array[ExtResource("9_66y38")]([ExtResource("10_dklug")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RandomEncounterZone" index="0" unique_id=1237682784]
-polygon = PackedVector2Array(112, -96, 112, 176, 176, 176, 176, -96)
+polygon = PackedVector2Array(112, -96, 0, -96, 0, 0, 112, 0, 112, 176, 176, 176, 176, -96)

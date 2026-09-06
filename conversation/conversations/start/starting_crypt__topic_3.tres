@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://dye2qpxj6q4mf"
 [resource]
 script = ExtResource("5_kiag6")
 key = "door"
-output = "Oh, of course! Here is the key!"
+output = "\"Oh, of course! I locked the door to keep the undead at bay. Your crypt isn’t exactly the friendliest of places, Master. Here’s the key!\""
 actions = Array[ExtResource("1_i6j71")]([SubResource("Resource_atg7q")])
 metadata/_custom_type_script = "uid://dcmppcvsfqoed"

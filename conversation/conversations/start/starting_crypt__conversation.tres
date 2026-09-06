@@ -6,11 +6,16 @@
 [ext_resource type="Resource" uid="uid://dt6tb22r3jgsw" path="res://conversation/conversations/start/starting_crypt__topic_1.tres" id="4_4lar1"]
 [ext_resource type="Resource" uid="uid://ipgxf0rl8r3c" path="res://conversation/conversations/start/starting_crypt__topic_2.tres" id="5_1ijx2"]
 [ext_resource type="Resource" uid="uid://dtgk5rckf38bw" path="res://conversation/conversations/start/starting_crypt__topic_3.tres" id="6_tu4on"]
+[ext_resource type="Resource" uid="uid://g3vt025l4ske" path="res://conversation/conversations/start/starting_crypt__topic_4.tres" id="7_1ijx2"]
+[ext_resource type="Resource" uid="uid://ckytbgsbmvg6x" path="res://conversation/conversations/start/starting_crypt__topic_5.tres" id="8_aktsh"]
+[ext_resource type="Resource" uid="uid://davel5u7d58wc" path="res://conversation/conversations/start/starting_crypt__topic_6.tres" id="9_aqqsy"]
+[ext_resource type="Resource" uid="uid://bopkpm5g1swje" path="res://conversation/conversations/start/starting_crypt__topic_7.tres" id="10_aqqsy"]
+[ext_resource type="Resource" uid="uid://dimlhdfapbb72" path="res://conversation/conversations/start/starting_crypt__topic_8.tres" id="11_kutxh"]
 
 [resource]
 script = ExtResource("2_tu4on")
-character_name = "Minion"
+character_name = "Alexander"
 img = ExtResource("1_tkpjr")
-greeting = "Master! Thank god, you're awake!"
-topics = Array[ExtResource("3_dwrrf")]([ExtResource("4_4lar1"), ExtResource("5_1ijx2"), ExtResource("6_tu4on")])
+greeting = "It worked! You'r awake! A real vampire!"
+topics = Array[ExtResource("3_dwrrf")]([ExtResource("4_4lar1"), ExtResource("5_1ijx2"), ExtResource("6_tu4on"), ExtResource("7_1ijx2"), ExtResource("8_aktsh"), ExtResource("9_aqqsy"), ExtResource("10_aqqsy"), ExtResource("11_kutxh")])
 metadata/_custom_type_script = "uid://cjdth0xnwcu8k"

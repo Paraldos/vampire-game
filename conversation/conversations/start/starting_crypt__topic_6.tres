@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ConversationTopic" format=3 uid="uid://davel5u7d58wc"]
+
+[ext_resource type="Script" uid="uid://dm3yihrwcxcmw" path="res://actions/action.gd" id="1_tieim"]
+[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversations/conversation_topic.gd" id="2_06j17"]
+
+[resource]
+script = ExtResource("2_06j17")
+key = "Ring"
+output = "“Yes, my lord, a Ring of Protection. It’s a magical trinket that makes it easier to sneak past lesser undead. I would gladly give it to you, but I’m afraid its magic only works for the living. Forgive me.”"
+metadata/_custom_type_script = "uid://dcmppcvsfqoed"

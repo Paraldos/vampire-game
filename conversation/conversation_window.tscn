@@ -9,6 +9,7 @@
 
 [node name="ConversationWindow" type="CanvasLayer" unique_id=2002008773]
 process_mode = 3
+layer = 26
 script = ExtResource("1_eo638")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1133037233]

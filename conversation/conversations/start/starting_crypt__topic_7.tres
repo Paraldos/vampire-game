@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ConversationTopic" format=3 uid="uid://bopkpm5g1swje"]
+
+[ext_resource type="Script" uid="uid://dm3yihrwcxcmw" path="res://actions/action.gd" id="1_3joiv"]
+[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversations/conversation_topic.gd" id="2_50fgm"]
+
+[resource]
+script = ExtResource("2_50fgm")
+key = "Ritual"
+output = "“I performed a ritual to awaken you without the ravenous hunger that usually follows. I was afraid you might kill me if I simply pulled the stakes from your heart.”"
+metadata/_custom_type_script = "uid://dcmppcvsfqoed"

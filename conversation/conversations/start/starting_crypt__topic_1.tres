@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("2_ul5r2")
-key = "Master"
-output = "I am Alexander, your loyal servant, Master. I inherited this duty from my father, Thomas. Perhaps you remember him? He was only a child when you laid yourself down to sleep, but our family has kept its oath."
+key = "Vampire"
+output = "“I can hardly believe it. The Ritual worked! You’re a real vampire! Oh, um… I would appreciate it if you didn’t eat me, my lord.” He bows. “Please accept me as your loyal servant.”"
 metadata/_custom_type_script = "uid://dcmppcvsfqoed"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ConversationTopic" format=3 uid="uid://ckytbgsbmvg6x"]
+
+[ext_resource type="Script" uid="uid://dm3yihrwcxcmw" path="res://actions/action.gd" id="1_dhwr6"]
+[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversations/conversation_topic.gd" id="2_pwju0"]
+
+[resource]
+script = ExtResource("2_pwju0")
+key = "Undead"
+output = "“The crypt is swarming with lesser undead. I only managed to sneak past them thanks to my Ring. Aren’t they your minions? They aren’t? Then I’m afraid they may attack you as well.”"
+metadata/_custom_type_script = "uid://dcmppcvsfqoed"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ConversationTopic" format=3 uid="uid://dimlhdfapbb72"]
+
+[ext_resource type="Script" uid="uid://dm3yihrwcxcmw" path="res://actions/action.gd" id="1_jpgo4"]
+[ext_resource type="Script" uid="uid://dcmppcvsfqoed" path="res://conversation/conversations/conversation_topic.gd" id="2_nodvs"]
+
+[resource]
+script = ExtResource("2_nodvs")
+key = "Stake"
+output = "“Your memory is probably a little hazy, my lord. An angry mob stormed your manor about a hundred years ago. Thankfully, they staked you and buried you in this crypt, unaware that a stake merely paralyzes a vampire rather than killing one.”"
+metadata/_custom_type_script = "uid://dcmppcvsfqoed"

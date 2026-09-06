@@ -5,6 +5,7 @@
 -25 = Background
 0 = World
 25 = fog_of_war
+26 = Windows
 50 = animation
 75 = messages
 100 = Modal

@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("5_3pjso")
-key = "door"
-output = "Oh, of course! Here is the key!"
+key = "Servant"
+output = "“My name is Alexander, my lord. I’m a scholar of the undead and the occult. I would be humbled if you allowed me to serve you - and to study your condition while doing so.”"
 metadata/_custom_type_script = "uid://dcmppcvsfqoed"

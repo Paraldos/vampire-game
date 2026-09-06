@@ -12,7 +12,7 @@ script = ExtResource("1_yglgk")
 metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1069849025]
-layer = -50
+layer = -25
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1902829503]
 z_index = -50
