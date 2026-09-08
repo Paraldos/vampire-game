@@ -7,20 +7,20 @@ script = ExtResource("1_wlrl5")
 
 [node name="VisionCast1" type="RayCast2D" parent="." unique_id=1545373526]
 unique_name_in_owner = true
-position = Vector2(-6, -6)
+position = Vector2(-7, -7)
 target_position = Vector2(8, 8)
 
 [node name="VisionCast2" type="RayCast2D" parent="." unique_id=896506720]
 unique_name_in_owner = true
-position = Vector2(6, -6)
+position = Vector2(7, -7)
 target_position = Vector2(-8, 8)
 
 [node name="VisionCast3" type="RayCast2D" parent="." unique_id=1974703474]
 unique_name_in_owner = true
-position = Vector2(-6, 6)
+position = Vector2(-7, 7)
 target_position = Vector2(8, -8)
 
 [node name="VisionCast4" type="RayCast2D" parent="." unique_id=68955069]
 unique_name_in_owner = true
-position = Vector2(6, 6)
+position = Vector2(7, 7)
 target_position = Vector2(-8, -8)

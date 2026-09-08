@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const ANIMATION_DURATION = 0.3
+const ANIMATION_DURATION = 0.6
 
 @onready var background: ColorRect = $Background
 

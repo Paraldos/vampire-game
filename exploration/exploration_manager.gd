@@ -1,7 +1,7 @@
 extends Resource
 class_name ExplorationManager
 
-const TILE_SIZE := Vector2(16,16)
+const CELL_SIZE := Vector2(16,16)
 
 # ======================================== set / get
 static var current_level : PackedScene:
@@ -35,14 +35,11 @@ static func respawn():
 	await SceneManager.halfpoint
 	GlobalSignals.trigger_spawn_point.emit(-1)
 
-static func pos_to_tile(pos: Vector2) -> Vector2i:
-	return Vector2i((pos / TILE_SIZE).floor())
+static func pos_to_cell(pos: Vector2) -> Vector2i:
+	return Vector2i((pos / CELL_SIZE).floor())
 
-static func tile_to_center_pos(tile: Vector2i) -> Vector2:
-	return Vector2(tile) * TILE_SIZE + TILE_SIZE / 2.0
+static func cell_to_pos(cell: Vector2i) -> Vector2:
+	return Vector2(cell) * CELL_SIZE
 
-static func get_tile_pos(pos: Vector2) -> Vector2:
-	return pos.snapped(TILE_SIZE)
-
-static func get_tile_center_pos(pos: Vector2) -> Vector2:
-	return pos.snapped(TILE_SIZE) - TILE_SIZE / 2
+static func cell_to_pos_center(cell: Vector2i) -> Vector2:
+	return cell_to_pos(cell) + CELL_SIZE / 2.0

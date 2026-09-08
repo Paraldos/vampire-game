@@ -2,7 +2,7 @@ extends TileMapLayer
 
 const SOURCE_ID := 0
 
-const UNKNOWN_TILE := Vector2i(0, 0)
+const UNKNOWN_TILE := Vector2i(1, 0)
 const FOG_TILE := Vector2i(1, 0)
 const VISIBLE_TILE := Vector2i(2, 0)
 
