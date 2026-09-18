@@ -15,7 +15,7 @@ static func load_game(slot_number: int = 0) -> Error:
 	var save := ResourceLoader.load(
 		get_save_path(slot_number),
 		"",
-		ResourceLoader.CACHE_MODE_IGNORE
+		ResourceLoader.CACHE_MODE_IGNORE,
 	) as GameData
 	if save == null:
 		push_error("Save slot %s could not be loaded." % slot_number)
@@ -38,10 +38,4 @@ static func save_exists(slot_number: int) -> bool:
 
 static func get_current_date() -> String:
 	var date := Time.get_datetime_dict_from_system()
-	return "%02d.%02d.%04d - %02d:%02d" % [
-		date.day,
-		date.month,
-		date.year,
-		date.hour,
-		date.minute,
-	]
+	return "%02d.%02d.%04d - %02d:%02d" % [date.day, date.month, date.year, date.hour, date.minute]
