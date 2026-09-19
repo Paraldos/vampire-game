@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cyebgor0m0ncj"]
 
 [ext_resource type="Script" uid="uid://dfywu7cf2ek6v" path="res://conversation/conversation_window.gd" id="1_eo638"]
-[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="2_a0seo"]
-[ext_resource type="Texture2D" uid="uid://swg7302sfvun" path="res://assets/images/panel_empty.png" id="2_rjkae"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/images/ui/main_theme.tres" id="2_a0seo"]
+[ext_resource type="Texture2D" uid="uid://swg7302sfvun" path="res://assets/images/ui/panel_empty.png" id="2_rjkae"]
 [ext_resource type="PackedScene" uid="uid://i8u8d8fjoh3v" path="res://conversation/ui/conversation_suggestions.tscn" id="4_6ng5p"]
 [ext_resource type="PackedScene" uid="uid://bpf4uufgywnn8" path="res://templates/character_display/character_display.tscn" id="4_rjkae"]
 [ext_resource type="PackedScene" uid="uid://bwbwsi6eyr30u" path="res://conversation/ui/conversation_input.tscn" id="5_yetcl"]

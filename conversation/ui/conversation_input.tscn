@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bwbwsi6eyr30u"]
 
-[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="1_u3obd"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/images/ui/main_theme.tres" id="1_u3obd"]
 [ext_resource type="Script" uid="uid://d1cvv06315y5h" path="res://conversation/ui/conversation_input.gd" id="2_lxb0p"]
 
 [node name="ConversationInput" type="Control" unique_id=1052787313]
@@ -9,6 +9,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -190.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_u3obd")
@@ -26,7 +27,7 @@ grow_vertical = 2
 text = "test one"
 caret_blink = true
 
-[node name="InputSuggestion" type="Label" parent="." unique_id=1052589634]
+[node name="InputSuggestion" type="Label" parent="PlayerInput" unique_id=1052589634]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.44705883)
 layout_mode = 1

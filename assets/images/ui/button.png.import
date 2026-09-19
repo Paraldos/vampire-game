@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6w2s1naf7bmi"
-path="res://.godot/imported/vampire.png-925c63c6f76272ab05776609b0dd1d8f.ctex"
+uid="uid://dsqypj001k2ip"
+path="res://.godot/imported/button.png-125190c77b623d7aba7858801f9abab2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/vampire.png"
-dest_files=["res://.godot/imported/vampire.png-925c63c6f76272ab05776609b0dd1d8f.ctex"]
+source_file="res://assets/images/ui/button.png"
+dest_files=["res://.godot/imported/button.png-125190c77b623d7aba7858801f9abab2.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://swg7302sfvun"
-path="res://.godot/imported/panel_empty.png-b2a38b6b939d8fe5d09d834dcba8df33.ctex"
+uid="uid://dbib78xq775hh"
+path="res://.godot/imported/peasant.png-5cfdb97fcc72156b6059e6912b9d9d43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/panel_empty.png"
-dest_files=["res://.godot/imported/panel_empty.png-b2a38b6b939d8fe5d09d834dcba8df33.ctex"]
+source_file="res://assets/images/characters/peasant.png"
+dest_files=["res://.godot/imported/peasant.png-5cfdb97fcc72156b6059e6912b9d9d43.ctex"]
 
 [params]
 

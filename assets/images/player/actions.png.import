@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbib78xq775hh"
-path="res://.godot/imported/peasant.png-d28f45e5d29462c57ec3db48d7faf638.ctex"
+uid="uid://s2xebhigljv4"
+path="res://.godot/imported/actions.png-4d2314c81b7205c25d994ce8c1f4e7bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/peasant.png"
-dest_files=["res://.godot/imported/peasant.png-d28f45e5d29462c57ec3db48d7faf638.ctex"]
+source_file="res://assets/images/player/actions.png"
+dest_files=["res://.godot/imported/actions.png-4d2314c81b7205c25d994ce8c1f4e7bc.ctex"]
 
 [params]
 

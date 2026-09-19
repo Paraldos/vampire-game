@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsqypj001k2ip"
-path="res://.godot/imported/button.png-7ad2fecf8e41de8db458bf41ec642058.ctex"
+uid="uid://c43dl7hig8vt"
+path="res://.godot/imported/skeleton_bow.png-2cfbcd9b383782be1228ec9a6515cfbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/button.png"
-dest_files=["res://.godot/imported/button.png-7ad2fecf8e41de8db458bf41ec642058.ctex"]
+source_file="res://assets/images/characters/skeleton_bow.png"
+dest_files=["res://.godot/imported/skeleton_bow.png-2cfbcd9b383782be1228ec9a6515cfbd.ctex"]
 
 [params]
 

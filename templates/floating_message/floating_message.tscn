@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cakdlilotuy2i"]
 
 [ext_resource type="Script" uid="uid://lox45wqidybd" path="res://templates/floating_message/floating_message.gd" id="1_xkjny"]
-[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="2_x48al"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/images/ui/main_theme.tres" id="2_x48al"]
 
 [sub_resource type="Animation" id="Animation_x48al"]
 length = 0.001

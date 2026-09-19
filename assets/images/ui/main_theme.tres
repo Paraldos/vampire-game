@@ -1,11 +1,11 @@
 [gd_resource type="Theme" format=3 uid="uid://cd6ht6ujise3c"]
 
-[ext_resource type="Texture2D" uid="uid://dsqypj001k2ip" path="res://assets/images/button.png" id="1_vhku8"]
-[ext_resource type="Texture2D" uid="uid://cs1vgbnmyam8t" path="res://assets/images/panel.png" id="2_gvtt4"]
-[ext_resource type="FontFile" uid="uid://b8kva33tt0lh6" path="res://assets/fonts/PixelSimpel.otf" id="3_axncs"]
+[ext_resource type="Texture2D" uid="uid://dsqypj001k2ip" path="res://assets/images/ui/button.png" id="1_0yw4f"]
+[ext_resource type="Texture2D" uid="uid://cs1vgbnmyam8t" path="res://assets/images/ui/panel.png" id="2_2m0i1"]
+[ext_resource type="FontFile" uid="uid://dl2aa2sas4r2q" path="res://assets/fonts/mac's Extended Minecraft.ttf" id="3_0yw4f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0omi4"]
-atlas = ExtResource("1_vhku8")
+atlas = ExtResource("1_0yw4f")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a2l2q"]
@@ -20,7 +20,7 @@ texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2l2q"]
-atlas = ExtResource("1_vhku8")
+atlas = ExtResource("1_0yw4f")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0omi4"]
@@ -35,7 +35,7 @@ texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_58jnp"]
-atlas = ExtResource("1_vhku8")
+atlas = ExtResource("1_0yw4f")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_466ly"]
@@ -50,7 +50,7 @@ texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_50yph"]
-atlas = ExtResource("1_vhku8")
+atlas = ExtResource("1_0yw4f")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0kc5u"]
@@ -65,7 +65,7 @@ texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_466ly"]
-atlas = ExtResource("1_vhku8")
+atlas = ExtResource("1_0yw4f")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58jnp"]
@@ -87,7 +87,7 @@ color = Color(0.65882355, 0.70980394, 0.69803923, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0kc5u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gsqoc"]
-texture = ExtResource("2_gvtt4")
+texture = ExtResource("2_2m0i1")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
@@ -98,8 +98,8 @@ color = Color(0.61960787, 0.6862745, 0.6, 1)
 vertical = true
 
 [resource]
-default_font = ExtResource("3_axncs")
-default_font_size = 7
+default_font = ExtResource("3_0yw4f")
+default_font_size = 8
 Button/colors/font_color = Color(0.03529412, 0.039215688, 0.078431375, 1)
 Button/colors/font_disabled_color = Color(0.03529412, 0.039215688, 0.078431375, 0.7019608)
 Button/colors/font_focus_color = Color(0.03529412, 0.039215688, 0.078431375, 1)

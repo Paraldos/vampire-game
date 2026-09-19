@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cowwhhhvkg3ee"]
 
 [ext_resource type="Script" uid="uid://8fsvkd1n3waa" path="res://exploration/player/spawn_animation.gd" id="1_1h77u"]
-[ext_resource type="Texture2D" uid="uid://dkr3g4wowc5ik" path="res://assets/images/bat-Sheet.png" id="1_e0nwp"]
+[ext_resource type="Texture2D" uid="uid://dkr3g4wowc5ik" path="res://assets/images/player/bat-Sheet.png" id="1_e0nwp"]
 [ext_resource type="Texture2D" uid="uid://b5myixpsr88la" path="res://assets/images/smoke-Sheet.png" id="2_g6nhp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eq050"]

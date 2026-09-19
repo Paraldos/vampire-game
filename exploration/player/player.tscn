@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://uuu0f4178hm5"]
 
 [ext_resource type="Script" uid="uid://dph1s3sbovvxt" path="res://exploration/player/player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://1xuiitqltmym" path="res://assets/images/small_characters.png" id="2_dirf7"]
+[ext_resource type="Texture2D" uid="uid://coflnvfx3n7ut" path="res://assets/images/player/player_small.png" id="2_tag5u"]
 [ext_resource type="Script" uid="uid://dubx0s3uf7qgt" path="res://templates/state_machine/state_machine.gd" id="3_x0jl3"]
 [ext_resource type="Script" uid="uid://bdb12rgmtx0us" path="res://exploration/player/idle.gd" id="4_h1q25"]
 [ext_resource type="Script" uid="uid://dsjtwreh5q4cd" path="res://exploration/player/move.gd" id="5_h1q25"]
@@ -10,10 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cowwhhhvkg3ee" path="res://exploration/player/spawn_animation.tscn" id="8_tag5u"]
 [ext_resource type="Script" uid="uid://bbgexo12ubj24" path="res://exploration/player/spawn.gd" id="9_cr5xj"]
 [ext_resource type="PackedScene" uid="uid://dncfx0x5ut74a" path="res://exploration/player/vision_range.tscn" id="10_tag5u"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0kc5u"]
-atlas = ExtResource("2_dirf7")
-region = Rect2(32, 160, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kc5u"]
 size = Vector2(8, 8)
@@ -29,7 +25,7 @@ visible = false
 
 [node name="MainSprite" type="Sprite2D" parent="SpriteParent" unique_id=2004140448]
 unique_name_in_owner = true
-texture = SubResource("AtlasTexture_0kc5u")
+texture = ExtResource("2_tag5u")
 
 [node name="PlayerArea" type="Area2D" parent="." unique_id=43891641]
 unique_name_in_owner = true

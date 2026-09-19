@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dao4mat0yimv"]
 
 [ext_resource type="Script" uid="uid://7rpx4q5tnosj" path="res://templates/modals/modal_template.gd" id="1_s4v13"]
-[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="2_5snw8"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/images/ui/main_theme.tres" id="2_5snw8"]
 
 [node name="ModalTemplate" type="CanvasLayer" unique_id=1120063405]
 process_mode = 3

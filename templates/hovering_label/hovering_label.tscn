@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfrposkbliuio"]
 
 [ext_resource type="Script" uid="uid://di7i7nb2ecnex" path="res://templates/hovering_label/hovering_label.gd" id="1_w0y7t"]
-[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/themes/main_theme.tres" id="2_nlv3g"]
+[ext_resource type="Theme" uid="uid://cd6ht6ujise3c" path="res://assets/images/ui/main_theme.tres" id="2_nlv3g"]
 
 [sub_resource type="Animation" id="Animation_0pifb"]
 length = 0.001
